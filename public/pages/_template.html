@@ -8,7 +8,10 @@
   3. Add it to the PAGES list at the top of js/chrome.js — that is
      the only place the navigation is defined, so one line adds the
      page to the nav and the footer on every page at once
-  4. Put the page's own styles in css/<your-page>.css if it needs any
+  4. Add it to the PAGES list in scripts/build-meta.mjs and run
+     `node scripts/build-meta.mjs`, which writes the share-preview
+     tags, the canonical URL and the sitemap entry
+  5. Put the page's own styles in css/<your-page>.css if it needs any
 
   Delete this comment once you have made it yours.
   ─────────────────────────────────────────────────────────────────

@@ -63,11 +63,32 @@ wrangler.jsonc                  Cloudflare config: which folder to deploy
 
 ## Adding a new page
 
-1. Copy `pages/_template.html` and rename it.
-2. Add one entry to the `PAGES` list at the top of `js/chrome.js`.
+1. Copy `public/pages/_template.html` and rename it.
+2. Add one entry to the `PAGES` list at the top of `public/js/chrome.js` — the
+   navigation and footer are generated from that list, so the page appears in
+   both, everywhere, at once.
+3. Add it to the `PAGES` list in `scripts/build-meta.mjs` and run:
 
-That is the whole job. The navigation and footer are generated from that one
-list, so the new page appears in both on every page of the site at once.
+```bash
+node scripts/build-meta.mjs
+```
+
+That writes the share-preview tags and canonical URL into every page and
+rebuilds `sitemap.xml`. It is safe to run repeatedly — it replaces its own
+output rather than stacking up duplicates.
+
+## Link previews
+
+When the address is pasted into WhatsApp, X, Facebook or a group chat, the
+preview comes from `public/assets/share-card.jpg` — a 1200×630 card built from
+the M8 mosaic with the wordmark on it. To change which photograph it uses, edit
+`scripts/build-meta.mjs`'s companion card build, or simply replace that file
+with any 1200×630 image.
+
+Social networks cache these hard. After changing the card, re-scrape it with
+Facebook's [Sharing Debugger](https://developers.facebook.com/tools/debug/) and
+X's [Card Validator](https://cards-dev.twitter.com/validator), or the old
+preview will keep appearing for days.
 
 ## Refreshing the data
 
