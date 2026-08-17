@@ -1,0 +1,21 @@
+// Cloudflare deployment config.
+//
+// This is a static site with no server code, so there is no "main" worker
+// script — only an assets directory. Naming that directory explicitly is the
+// whole point of this file: left to auto-detection Cloudflare serves the
+// repository root, which sweeps in node_modules (Wrangler itself is ~144 MiB,
+// well over the 25 MiB per-asset limit) and the build fails.
+//
+// Everything deployable lives in public/. Tooling — scripts/, package.json,
+// the README — stays outside it and is never uploaded or reachable.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "astrapharma-site",
+  "compatibility_date": "2026-08-17",
+  "assets": {
+    "directory": "./public"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

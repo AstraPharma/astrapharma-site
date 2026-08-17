@@ -20,36 +20,45 @@ than opened as `file://`, because they fetch the data files.
 
 ## What is where
 
+**Everything deployable lives in `public/`.** Tooling lives outside it and is
+never uploaded or reachable from the web.
+
 ```
-index.html            Sky atlas — the main page
-pages/gallery.html    Every image as a grid
-pages/videos.html     The YouTube channel
-pages/about.html      Story, observing sites, full equipment list
-pages/_template.html  Copy this to start a new page
+public/
+  index.html            Sky atlas — the main page
+  pages/gallery.html    Every image as a grid
+  pages/videos.html     The YouTube channel
+  pages/about.html      Story, observing sites, full equipment list
+  pages/_template.html  Copy this to start a new page
 
-css/fonts.css         Self-hosted Inter + Cormorant Garamond
-css/base.css          Design tokens and everything shared (nav, footer, drawer)
-css/skymap.css        The atlas
-css/gallery.css       The gallery grid
-css/videos.css        The videos grid
-css/about.css         The about page
+  css/fonts.css         Self-hosted Inter + Cormorant Garamond
+  css/base.css          Design tokens and everything shared (nav, footer, drawer)
+  css/skymap.css        The atlas
+  css/gallery.css       The gallery grid
+  css/videos.css        The videos grid
+  css/about.css         The about page
 
-js/chrome.js          Nav + footer + scroll reveals. THE PAGE LIST LIVES HERE
-js/data.js            Loads the data files; all the formatting helpers
-js/detail.js          The slide-in image panel, shared by atlas and gallery
-js/sky-fields.js      Draws the photographs onto the sky, and hit-tests clicks
-js/skymap.js          Atlas controller — Aladin, overlays, rail, controls
-js/gallery.js         Gallery page
-js/videos.js          Videos page
-js/about.js           About page
+  js/chrome.js          Nav + footer + scroll reveals. THE PAGE LIST LIVES HERE
+  js/data.js            Loads the data files; all the formatting helpers
+  js/detail.js          The slide-in image panel, shared by atlas and gallery
+  js/sky-fields.js      Draws the photographs onto the sky, and hit-tests clicks
+  js/skymap.js          Atlas controller — Aladin, overlays, rail, controls
+  js/gallery.js         Gallery page
+  js/videos.js          Videos page
+  js/about.js           About page
 
-data/images.json      The catalogue: every image and everything about it
-data/sky-lines.json   Constellation figures, borders and label positions
-data/channel.json     Brand details, social links, bio and the video list
+  data/images.json      The catalogue: every image and everything about it
+  data/sky-lines.json   Constellation figures, borders and label positions
+  data/channel.json     Brand details, social links, bio and the video list
 
-assets/               Logo files, hero photograph, fonts, favicon
-scripts/harvest.mjs   Rebuilds images.json from AstroBin
-scripts/serve.mjs     The local dev server
+  assets/               Logo files, hero photograph, fonts, favicon
+
+scripts/harvest.mjs             Rebuilds public/data/images.json from AstroBin
+scripts/build-constellations.mjs  Builds public/data/sky-lines.json
+scripts/build-brand.mjs         Builds the mark and favicon from the lockup
+scripts/sources/                Raw d3-celestial files — build inputs only
+scripts/serve.mjs               The local dev server (serves public/ only)
+wrangler.jsonc                  Cloudflare config: which folder to deploy
 ```
 
 ## Adding a new page
@@ -159,9 +168,17 @@ Things worth knowing:
 
 ## Publishing it
 
-The whole folder is static, so it can be dropped onto any host — GitHub Pages,
-Netlify, Cloudflare Pages — with no build command. Point the host at the
-repository root and it serves `index.html`.
+Hosted on Cloudflare, deployed straight from the GitHub repository: push to
+`main` and it goes live a minute later. No build step runs.
+
+`wrangler.jsonc` is what makes that work — it names `./public` as the assets
+directory. Without it Cloudflare auto-detects and serves the repository root,
+which sweeps in `node_modules` (Wrangler alone is ~144 MiB, far past the 25 MiB
+per-asset limit) and the deploy fails. If you ever move the site files, update
+that path.
+
+Any other static host works the same way: point it at `public/`, no build
+command.
 
 ## Credits
 

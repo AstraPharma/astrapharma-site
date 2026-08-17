@@ -11,7 +11,7 @@ const ROOT = resolve(HERE, '..');
 // The raw d3-celestial files are build inputs only — the browser never fetches
 // them — so they live beside this script rather than in the deployed data/.
 const SOURCES = resolve(HERE, 'sources');
-const DATA = resolve(ROOT, 'data');
+const DATA = resolve(ROOT, 'public', 'data');
 
 // d3-celestial stores right ascension as a longitude in -180..180. Aladin wants 0..360.
 const toRa = (lon) => (lon < 0 ? lon + 360 : lon);

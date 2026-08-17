@@ -11,7 +11,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const ASSETS = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'assets');
+const ASSETS = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'public', 'assets');
 const GOLD = '#d9b26a';
 const TILE = '#05070e';
 

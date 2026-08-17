@@ -7,7 +7,9 @@ import { extname, join, normalize, resolve, sep } from 'node:path';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+// Serve the deployable site only, exactly as the host will — tooling and
+// source files live outside public/ and must never be reachable.
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'public');
 const PORT = Number(process.argv[2] ?? process.env.PORT ?? 4173);
 
 const TYPES = {
