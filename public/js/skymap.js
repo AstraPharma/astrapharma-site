@@ -29,7 +29,6 @@ const esc = (s) =>
 const WHOLE_SKY_FOV = 240;
 const MIN_FOV = 0.03;
 const MAX_FOV = 320;
-const ALL_SKY_ABOVE = 70;
 
 // Overlay colours. These sit on top of the Mellinger wide-field survey, whose
 // Milky Way band is bright and warm, so they are pitched light and cool enough
