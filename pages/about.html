@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — AstraPharma</title>
+    <meta
+      name="description"
+      content="Ali Alobaidly — AstraPharma — photographs the deep sky from the Kuwaiti desert. About the work, the sites and the equipment."
+    />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/about.css" />
+  </head>
+  <body>
+    <header data-nav></header>
+
+    <!-- ── Hero: the rig under the Milky Way, brand lockup over it ── -->
+    <section class="hero">
+      <div class="hero__image"></div>
+      <div class="hero__scrim"></div>
+      <div class="hero__inner">
+        <span class="brand-lockup hero__lockup" aria-label="AstraPharma"></span>
+        <p class="hero__lede">
+          Deep sky photography from the desert west of Kuwait City, built one
+          five-minute exposure at a time.
+        </p>
+        <div class="hero__by">
+          <span class="hero__by-line"></span>
+          <span>Ali Alobaidly</span>
+        </div>
+      </div>
+      <div class="hero__credit">Al Salmy Desert, Kuwait</div>
+    </section>
+
+    <main>
+      <!-- ── Numbers ── -->
+      <section class="stats-band">
+        <div class="stats" id="stats" data-reveal aria-label="Collection at a glance"></div>
+      </section>
+
+      <div class="page">
+        <!-- ── Story, in his own words ── -->
+        <section class="story" data-reveal>
+          <div class="story__portrait">
+            <!--
+              Drop a photograph at assets/ali-portrait.jpg to fill this frame.
+              If the file is missing the layout closes up on its own.
+            -->
+            <img id="portrait" src="../assets/ali-portrait.jpg" alt="Ali Alobaidly" />
+            <figcaption class="story__caption">Ali Alobaidly — AstraPharma</figcaption>
+          </div>
+          <div class="story__text">
+            <p class="eyebrow">How it started</p>
+            <h2>An eight-year-old in a gift shop</h2>
+            <div class="rule"></div>
+            <div id="bio" class="story__body"></div>
+          </div>
+        </section>
+
+        <!-- ── The work ── -->
+        <section class="prose" data-reveal>
+          <p class="eyebrow">The work</p>
+          <h2>Long nights, faint signal</h2>
+          <div class="rule"></div>
+          <p>
+            Almost everything here is a long-exposure deep sky image: emission nebulae,
+            reflection nebulae, the dark dust lanes that hide between them, and the
+            occasional galaxy. Most frames combine luminance, red, green and blue with
+            narrowband hydrogen-alpha, so the faint ionised gas keeps its structure while
+            the stars keep their natural colour.
+          </p>
+          <p>
+            Nothing is captured remotely. Every frame on this site was taken from the
+            ground in Kuwait, carried out to the site and set up for the night, which is
+            why the integration times matter so much — the faintest signal in these
+            pictures was assembled a five-minute subframe at a time, across many
+            separate nights.
+          </p>
+        </section>
+
+        <!-- ── Sites ── -->
+        <section class="prose" data-reveal>
+          <p class="eyebrow">Where</p>
+          <h2>Observing sites</h2>
+          <div class="rule"></div>
+          <div class="sites" id="sites"></div>
+          <p class="muted site-note">
+            The desert site sits at roughly Bortle class 4.5 — genuinely dark for a
+            small and brightly lit country, though never far from a horizon glow. The
+            few frames taken from home were shot straight out of a Bortle 9 city sky.
+          </p>
+        </section>
+
+        <!-- ── Equipment ── -->
+        <section data-reveal>
+          <p class="eyebrow">The kit</p>
+          <h2 class="gear-heading">Equipment</h2>
+          <div class="rule"></div>
+          <p class="muted gear-intro">
+            Two optical setups do most of the work: a fast apochromatic refractor for wide
+            fields and mosaics, and a Schmidt-Cassegrain at long focal length for small,
+            tight targets. Every piece of hardware credited on the images, ordered by how
+            often it appears.
+          </p>
+          <div class="gear-table" id="gear"></div>
+        </section>
+
+        <!-- ── Recognition and links ── -->
+        <section class="closing" data-reveal>
+          <p class="eyebrow">Recognition</p>
+          <h2 id="awards-heading">Where the work has landed</h2>
+          <div class="rule"></div>
+          <div id="honours"></div>
+          <p id="awards-text" class="muted">Loading…</p>
+          <p class="muted">
+            Full-resolution versions, revision history and the original acquisition
+            records all live on AstroBin. Reviews and desert imaging vlogs go up on
+            YouTube.
+          </p>
+          <div class="closing__actions">
+            <a class="btn btn--primary" href="https://app.astrobin.com/u/AstraPharma" target="_blank" rel="noopener">
+              AstroBin profile
+            </a>
+            <a class="btn" href="https://www.youtube.com/@AstraPharmaq8" target="_blank" rel="noopener">
+              YouTube channel
+            </a>
+            <a class="btn btn--ghost" href="../index.html">Open the sky atlas</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer data-footer></footer>
+
+    <script type="module" src="../js/chrome.js"></script>
+    <script type="module" src="../js/about.js"></script>
+  </body>
+</html>

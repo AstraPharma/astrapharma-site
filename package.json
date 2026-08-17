@@ -1,0 +1,13 @@
+{
+  "name": "astro-gallery",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive sky atlas and gallery of Ali Alobaidly's astrophotography",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "harvest": "node scripts/harvest.mjs",
+    "constellations": "node scripts/build-constellations.mjs",
+    "refresh": "npm run harvest && npm run constellations"
+  }
+}

@@ -1,0 +1,500 @@
+/* ---------------------------------------------------------------
+   About page: image hero, stat band, story, sites, equipment.
+   --------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  min-height: min(72vh, 660px);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  /* Plain URL first as the fallback, then image-set for displays that support it. */
+  background-image: url("../assets/desert-rig.jpg");
+  background-image: image-set(
+    url("../assets/desert-rig.jpg") 1x,
+    url("../assets/desert-rig-2x.jpg") 2x
+  );
+  background-size: cover;
+  background-position: center 32%;
+  transform: scale(1.03);
+  animation: hero-drift 24s ease-in-out infinite alternate;
+}
+
+@keyframes hero-drift {
+  to {
+    transform: scale(1.09);
+  }
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #05070e8f 0%,
+    #05070e59 34%,
+    #05070ee0 78%,
+    var(--bg) 100%
+  );
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 120px 26px 62px;
+}
+
+.hero__lockup {
+  width: min(400px, 82vw);
+  color: var(--text);
+  margin-bottom: 26px;
+  filter: drop-shadow(0 4px 24px #05070ecc);
+}
+
+.hero__lede {
+  max-width: 46ch;
+  font-size: clamp(16px, 2vw, 19px);
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.hero__by {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 26px;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero__by-line {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+}
+
+.hero__credit {
+  position: absolute;
+  right: 26px;
+  bottom: 22px;
+  z-index: 2;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* --- Stat band ----------------------------------------------------- */
+
+.stats-band {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-1);
+}
+
+.stats {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 26px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.stat {
+  padding: 30px 20px 30px 0;
+  border-left: 1px solid var(--line);
+  padding-left: 22px;
+}
+
+.stat:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.stat__v {
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat__k {
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 9px;
+}
+
+/* --- Story --------------------------------------------------------- */
+
+.story {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 56px;
+  align-items: start;
+  margin-bottom: 92px;
+}
+
+.story.no-portrait {
+  grid-template-columns: 1fr;
+  max-width: 72ch;
+}
+
+.story.no-portrait .story__portrait {
+  display: none;
+}
+
+.story__portrait {
+  margin: 0;
+  position: relative;
+}
+
+.story__portrait img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--bg-2);
+  box-shadow: var(--shadow);
+}
+
+.story__caption {
+  margin-top: 14px;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  text-align: center;
+}
+
+.story__text h2 {
+  font-size: clamp(26px, 3.4vw, 38px);
+  margin-top: 8px;
+}
+
+.story__body {
+  color: var(--text-dim);
+  font-size: 16px;
+}
+
+/* The opening line of his story, set larger */
+.story__body p:first-child {
+  font-family: var(--serif);
+  font-size: 25px;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 0.7em;
+}
+
+.story__body blockquote {
+  margin: 26px 0;
+  padding-left: 20px;
+  border-left: 1px solid var(--gold-dim);
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--gold-bright);
+}
+
+/* --- Prose --------------------------------------------------------- */
+
+.prose {
+  max-width: 70ch;
+  margin-bottom: 84px;
+}
+
+.prose h2,
+.gear-heading,
+.closing h2 {
+  font-size: clamp(24px, 3vw, 34px);
+  margin-top: 8px;
+}
+
+.prose p {
+  color: var(--text-dim);
+  font-size: 16px;
+}
+
+.site-note {
+  font-size: 14px;
+}
+
+/* --- Sites --------------------------------------------------------- */
+
+.sites {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+  margin: 26px 0 20px;
+}
+
+.site {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  background: var(--bg-1);
+  transition: border-color var(--med);
+}
+
+.site:hover {
+  border-color: var(--gold-dim);
+}
+
+.site__name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.site__where {
+  color: var(--text-faint);
+  font-size: 12.5px;
+  margin-top: 3px;
+}
+
+.site__meta {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* --- Equipment ------------------------------------------------------ */
+
+.gear-intro {
+  max-width: 70ch;
+  font-size: 16px;
+}
+
+.gear-table {
+  margin: 34px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 34px 48px;
+  align-items: start;
+}
+
+.gear-group__title {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-bottom: 11px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 4px;
+}
+
+.gear-line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+.gear-line__count {
+  color: var(--text-faint);
+  font-family: var(--mono);
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+
+/* The overflow rows. Animating grid-template-rows from 0fr to 1fr expands to
+   the content's natural height, which a max-height guess cannot do. */
+.gear-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--med);
+}
+
+.gear-group.is-open .gear-more {
+  grid-template-rows: 1fr;
+}
+
+.gear-more > div {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.gear-toggle {
+  margin-top: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  transition: color var(--fast);
+}
+
+.gear-toggle::after {
+  content: "+";
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0;
+  transition: transform var(--med);
+}
+
+.gear-group.is-open .gear-toggle::after {
+  content: "−";
+}
+
+.gear-toggle:hover {
+  color: var(--gold);
+}
+
+/* --- Honours: NASA APOD and AstroBin Image of the Day ------------------- */
+
+.honour {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 18px;
+  margin: 8px 0 14px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--bg-1);
+  color: var(--text);
+  transition: border-color var(--med), transform var(--med), box-shadow var(--med);
+}
+
+.honour:last-child {
+  margin-bottom: 30px;
+}
+
+.honour:hover {
+  color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--line-strong);
+}
+
+/* The APOD is the headline of the two, so it carries the gold. */
+.honour--apod {
+  border-color: var(--gold-dim);
+  background: linear-gradient(120deg, var(--gold-glow), transparent 62%), var(--bg-1);
+}
+
+.honour--apod:hover {
+  border-color: var(--gold);
+}
+
+.honour__img {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+
+.honour__eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.honour--iotd .honour__eyebrow {
+  color: var(--ice);
+}
+
+.honour__title {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.4vw, 27px);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 10px 0 8px;
+}
+
+.honour__meta {
+  display: block;
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.honour__link {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--gold);
+}
+
+.honour--iotd .honour__link {
+  color: var(--ice);
+}
+
+@media (max-width: 700px) {
+  .honour {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* --- Closing -------------------------------------------------------- */
+
+.closing {
+  margin-top: 84px;
+  padding-top: 56px;
+  border-top: 1px solid var(--line);
+  max-width: 70ch;
+}
+
+.closing__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+@media (max-width: 880px) {
+  .story {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .story__portrait {
+    max-width: 300px;
+  }
+
+  .hero__inner {
+    padding: 96px 18px 48px;
+  }
+
+  .stats {
+    padding: 0 18px;
+  }
+
+  .stat {
+    padding: 22px 14px 22px 16px;
+  }
+
+  .stat__v {
+    font-size: 27px;
+  }
+
+  .hero__credit {
+    right: 18px;
+  }
+}

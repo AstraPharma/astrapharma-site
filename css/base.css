@@ -1,0 +1,981 @@
+/* ---------------------------------------------------------------
+   AstraPharma — shared foundation.
+   Design tokens, reset, page chrome, shared components.
+   Every page loads fonts.css then this file.
+   --------------------------------------------------------------- */
+
+:root {
+  /* Surfaces, darkest first. Cool near-black, so the gold reads warm. */
+  --bg: #05070e;
+  --bg-1: #090d17;
+  --bg-2: #0e1420;
+  --bg-3: #151d2d;
+
+  /* Hairlines: translucent so they sit correctly on any surface. */
+  --line: #ffffff14;
+  --line-soft: #ffffff0d;
+  --line-strong: #ffffff26;
+
+  /* Text */
+  --text: #eef1f7;
+  --text-dim: #a6b0c4;
+  --text-faint: #6f7b93;
+
+  /* Brand. Gold lifted from the logo — restrained, not neon. */
+  --gold: #d9b26a;
+  --gold-bright: #f0d199;
+  --gold-dim: #d9b26a33;
+  --gold-glow: #d9b26a1f;
+  --ice: #8fb8d8;
+  --violet: #a897d8;
+  --rose: #d98a9e;
+
+  /* Filter colours for the integration breakdown */
+  --f-l: #dde3ee;
+  --f-r: #e0716f;
+  --f-g: #6cbe80;
+  --f-b: #6f9ade;
+  --f-ha: #e06d85;
+  --f-oiii: #4fc4bb;
+  --f-sii: #dda45c;
+  --f-other: #8790a5;
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 2px 12px #00000059;
+  --shadow: 0 24px 60px -18px #000000d9;
+  --shadow-lg: 0 40px 90px -24px #000000e6;
+
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --mono: "Cascadia Mono", "SF Mono", Consolas, monospace;
+
+  /* One easing curve everywhere, so motion feels like one hand made it. */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --fast: 160ms var(--ease);
+  --med: 320ms var(--ease);
+  --slow: 620ms var(--ease);
+
+  --nav-h: 68px;
+
+  /* Paths resolve against this stylesheet, so they are correct from every
+     page regardless of folder depth. */
+  --mark-url: url("../assets/astrapharma-mark.svg");
+  --lockup-url: url("../assets/astrapharma-lockup.svg");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15.5px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.005em;
+}
+
+h4,
+h5 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+p {
+  margin: 0 0 1.1em;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color var(--fast);
+}
+
+a:hover {
+  color: var(--gold-bright);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+::selection {
+  background: var(--gold);
+  color: #12100a;
+}
+
+/* --- Shared type helpers ----------------------------------------- */
+
+.eyebrow {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+
+.eyebrow--quiet {
+  color: var(--text-faint);
+}
+
+.muted {
+  color: var(--text-dim);
+}
+
+.mono {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Thin gold rule used to open sections */
+.rule {
+  width: 46px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 14px 0 20px;
+}
+
+/* --- Brand marks -------------------------------------------------- */
+
+/* The logo files are single-colour vector paths, so they are used as CSS
+   masks rather than <img>. That way the mark takes whatever colour the
+   surrounding element carries — gold in the nav, white in the footer,
+   a gradient in the hero — from one cached file, with no inline SVG. */
+.brand-mark,
+.brand-lockup {
+  display: block;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+/* The Saturn emblem on its own, cropped from the lockup — 1147 x 572 */
+.brand-mark {
+  aspect-ratio: 1147 / 572;
+  -webkit-mask-image: var(--mark-url);
+  mask-image: var(--mark-url);
+}
+
+/* Full lockup, mark plus the AstraPharma wordmark — 1141 x 700 */
+.brand-lockup {
+  aspect-ratio: 1141 / 700;
+  -webkit-mask-image: var(--lockup-url);
+  mask-image: var(--lockup-url);
+}
+
+/* --- Navigation ---------------------------------------------------- */
+
+.nav {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 0 26px;
+  background: #05070ecc;
+  backdrop-filter: blur(20px) saturate(140%);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 60;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  white-space: nowrap;
+  transition: opacity var(--fast);
+}
+
+.nav__brand:hover {
+  color: var(--text);
+  opacity: 0.82;
+}
+
+/* The emblem is roughly 2:1, so it needs more width than a square mark
+   would to read at the same optical size. */
+.nav__brand .brand-mark {
+  width: 52px;
+  flex: none;
+  color: var(--gold);
+}
+
+.nav__wordmark {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.055em;
+  line-height: 1;
+}
+
+.nav__person {
+  display: block;
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 4px;
+}
+
+.nav__links {
+  display: flex;
+  gap: 2px;
+  margin-left: auto;
+  align-items: center;
+  /* Never let the links wrap onto a second line: the atlas sizes itself from
+     --nav-h, so a taller header would push the map out of the viewport. */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.nav__links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav__link {
+  position: relative;
+  flex: none;
+  white-space: nowrap;
+  color: var(--text-dim);
+  padding: 9px 15px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color var(--fast);
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 3px;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--med);
+}
+
+.nav__link:hover {
+  color: var(--text);
+}
+
+.nav__link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav__link[aria-current="page"] {
+  color: var(--gold);
+}
+
+.nav__link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.nav__socials {
+  display: flex;
+  gap: 6px;
+  margin-left: 14px;
+  padding-left: 18px;
+  border-left: 1px solid var(--line);
+}
+
+.nav__social {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--text-faint);
+  border: 1px solid transparent;
+  transition: color var(--fast), border-color var(--fast), background var(--fast);
+}
+
+.nav__social svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.nav__social:hover {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+  background: var(--gold-glow);
+}
+
+/* The AstraPharma mark, always gold, linking to the AstroBin profile. */
+.nav__social--brand {
+  color: var(--gold);
+}
+
+.nav__social--brand .brand-mark {
+  width: 30px;
+}
+
+.nav__social--brand:hover {
+  color: var(--gold-bright);
+}
+
+/* --- Buttons ------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 20px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: #ffffff08;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: background var(--med), border-color var(--med), transform var(--med),
+    color var(--fast);
+}
+
+.btn:hover {
+  background: #ffffff12;
+  border-color: var(--line-strong);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.btn--primary {
+  background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+  border-color: transparent;
+  color: #17130a;
+  font-weight: 600;
+}
+
+.btn--primary:hover {
+  color: #17130a;
+  box-shadow: 0 10px 30px -10px #d9b26a8c;
+}
+
+.btn--ghost {
+  background: none;
+  border-color: var(--line);
+  color: var(--text-dim);
+}
+
+.btn--ghost:hover {
+  color: var(--text);
+  border-color: var(--gold-dim);
+}
+
+/* --- Chips --------------------------------------------------------- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  background: #ffffff08;
+  white-space: nowrap;
+}
+
+/* NASA APOD outranks everything else, so it is the only filled chip. */
+.chip--apod {
+  color: #1a1408;
+  border-color: transparent;
+  background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+  font-weight: 700;
+}
+
+.chip--iotd {
+  color: #f4dcae;
+  border-color: var(--gold-dim);
+  background: var(--gold-glow);
+}
+
+.chip--tp {
+  color: #bcd8ee;
+  border-color: #8fb8d840;
+  background: #8fb8d81a;
+}
+
+.chip--tpn {
+  color: #cec4ea;
+  border-color: #a897d840;
+  background: #a897d817;
+}
+
+/* --- Footer --------------------------------------------------------- */
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 54px 26px 44px;
+  background: var(--bg-1);
+}
+
+.footer__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.footer__lockup {
+  width: 210px;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+.footer__tag {
+  color: var(--text-faint);
+  font-size: 12.5px;
+  margin: 16px 0 0;
+  max-width: 34ch;
+}
+
+.footer__cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 30px;
+}
+
+.footer__h {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 12px;
+}
+
+.footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer__list a {
+  color: var(--text-dim);
+  font-size: 13.5px;
+}
+
+.footer__list a:hover {
+  color: var(--gold);
+}
+
+.footer__base {
+  max-width: 1180px;
+  margin: 40px auto 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  align-items: center;
+  color: var(--text-faint);
+  font-size: 12px;
+}
+
+.footer__base span:last-child {
+  margin-left: auto;
+}
+
+/* --- Page shell ------------------------------------------------------ */
+
+.page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 68px 26px 96px;
+}
+
+.page--wide {
+  max-width: 1440px;
+}
+
+.section-head {
+  margin-bottom: 34px;
+}
+
+.section-head h1,
+.section-head h2 {
+  font-size: clamp(30px, 4.4vw, 46px);
+}
+
+.section-head p {
+  color: var(--text-dim);
+  max-width: 62ch;
+  margin: 12px 0 0;
+}
+
+/* --- Scroll reveal ---------------------------------------------------- */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity var(--slow), transform var(--slow);
+}
+
+[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --- Detail drawer ----------------------------------------------------- */
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #03050ac4;
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--med);
+  z-index: 200;
+}
+
+.drawer-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(580px, 100%);
+  background: var(--bg-1);
+  border-left: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  transform: translateX(100%);
+  transition: transform 420ms var(--ease);
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  overscroll-behavior: contain;
+}
+
+.drawer.is-open {
+  transform: none;
+}
+
+.drawer__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: #05070ecc;
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 17px;
+  line-height: 1;
+  transition: background var(--fast), transform var(--fast);
+}
+
+.drawer__close:hover {
+  background: #05070e;
+  transform: rotate(90deg);
+}
+
+.drawer__body {
+  overflow-y: auto;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-3) transparent;
+}
+
+.drawer__body::-webkit-scrollbar {
+  width: 10px;
+}
+
+.drawer__body::-webkit-scrollbar-thumb {
+  background: var(--bg-3);
+  border-radius: 10px;
+  border: 3px solid var(--bg-1);
+}
+
+.drawer__hero {
+  position: relative;
+  background: #000;
+  border-bottom: 1px solid var(--line);
+}
+
+.drawer__hero img {
+  width: 100%;
+  max-height: 48vh;
+  object-fit: contain;
+}
+
+.drawer__hero-link {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: #05070ed9;
+  border: 1px solid var(--line-strong);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  transition: background var(--fast);
+}
+
+.drawer__hero-link:hover {
+  background: #05070e;
+  color: #fff;
+}
+
+.drawer__content {
+  padding: 28px 30px 60px;
+}
+
+.drawer__title {
+  font-size: 27px;
+  margin-bottom: 12px;
+}
+
+.drawer__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 22px;
+}
+
+.drawer__desc {
+  color: var(--text-dim);
+  font-size: 15px;
+  border-left: 1px solid var(--gold-dim);
+  padding-left: 18px;
+  margin-bottom: 30px;
+}
+
+.drawer__desc p:last-child {
+  margin-bottom: 0;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section__title {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 16px;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  gap: 16px 22px;
+}
+
+.fact__k {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 4px;
+}
+
+.fact__v {
+  font-size: 14.5px;
+  color: var(--text);
+}
+
+.integration__bar {
+  display: flex;
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--bg-3);
+  margin-bottom: 18px;
+}
+
+.integration__seg {
+  height: 100%;
+  transition: opacity var(--fast);
+}
+
+.integration__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.integration__row {
+  display: grid;
+  grid-template-columns: 9px 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.integration__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+}
+
+.integration__name {
+  color: var(--text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.integration__subs {
+  color: var(--text-faint);
+  font-size: 11.5px;
+}
+
+.integration__time {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+/* Featured-elsewhere panel in the detail drawer */
+.feature {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 15px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--gold-dim);
+  background: var(--gold-glow);
+  color: var(--text);
+  transition: border-color var(--fast), background var(--fast);
+}
+
+.feature:hover {
+  border-color: var(--gold);
+  background: #d9b26a2e;
+  color: var(--text);
+}
+
+.feature__badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+  color: #1a1408;
+}
+
+.feature__text strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.feature__text span {
+  display: block;
+  font-size: 12px;
+  color: var(--text-faint);
+  margin-top: 3px;
+}
+
+.feature__go {
+  color: var(--gold);
+  font-size: 15px;
+}
+
+.gear {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gear__row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 14px;
+  font-size: 13.5px;
+}
+
+.gear__k {
+  color: var(--text-faint);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding-top: 4px;
+}
+
+.gear__v {
+  color: var(--text-dim);
+}
+
+.gear__v span {
+  display: block;
+}
+
+/* --- Responsive ------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --nav-h: 58px;
+  }
+
+  .nav {
+    gap: 10px;
+    padding: 0 14px;
+  }
+
+  .nav__person {
+    display: none;
+  }
+
+  .nav__brand .brand-mark {
+    width: 42px;
+  }
+
+  .nav__wordmark {
+    font-size: 18px;
+    letter-spacing: 0.03em;
+  }
+
+  .nav__link {
+    padding: 7px 9px;
+    font-size: 12.5px;
+  }
+
+  .nav__socials {
+    display: none;
+  }
+
+  .drawer {
+    width: 100%;
+  }
+
+  .drawer__content {
+    padding: 24px 20px 52px;
+  }
+
+  .page {
+    padding: 44px 18px 68px;
+  }
+
+  .footer {
+    padding: 40px 18px 32px;
+  }
+
+  .footer__base span:last-child {
+    margin-left: 0;
+  }
+}

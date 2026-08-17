@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AstraPharma — Sky Atlas</title>
+    <meta
+      name="description"
+      content="An interactive atlas of the night sky showing exactly where each of Ali Alobaidly's astrophotographs was taken."
+    />
+    <meta property="og:title" content="AstraPharma — Sky Atlas" />
+    <meta
+      property="og:description"
+      content="Pan and zoom the real sky and find every frame in the place it was captured."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/skymap.css" />
+    <script src="https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js" charset="utf-8"></script>
+  </head>
+  <body class="body--app">
+    <header data-nav></header>
+
+    <main class="atlas">
+      <!-- ── Left rail: search, filters, the list of every image ── -->
+      <aside class="rail" id="rail">
+        <div class="rail__head">
+          <div class="rail__search">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <path d="M11 11l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            </svg>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search targets, gear, constellations…"
+              autocomplete="off"
+              aria-label="Search images"
+            />
+          </div>
+          <div class="rail__filters">
+            <select id="filter-constellation" aria-label="Filter by constellation">
+              <option value="">All constellations</option>
+            </select>
+            <select id="sort" aria-label="Sort images">
+              <option value="published">Newest first</option>
+              <option value="integration">Most integration</option>
+              <option value="likes">Most liked</option>
+              <option value="ra">Right ascension</option>
+              <option value="title">Title A–Z</option>
+            </select>
+          </div>
+          <div class="rail__count" id="rail-count"></div>
+        </div>
+        <ul class="rail__list" id="rail-list"></ul>
+      </aside>
+
+      <!-- ── The sky ── -->
+      <div class="sky-wrap">
+        <div id="sky" class="sky"></div>
+        <canvas id="sky-thumbs" class="sky-thumbs"></canvas>
+        <div class="sky-vignette" aria-hidden="true"></div>
+
+        <!-- First-run introduction, dismissed on entry -->
+        <div class="intro" id="intro">
+          <div class="intro__panel">
+            <span class="brand-lockup intro__lockup" aria-label="AstraPharma"></span>
+            <p class="intro__lede">
+              Seven hundred hours of the night sky, put back where they came from.
+              Every photograph below sits in the exact patch of sky it was taken from.
+            </p>
+            <div class="intro__stats" id="intro-stats"></div>
+            <button class="btn btn--primary intro__go" type="button" id="intro-go">
+              Explore the sky
+            </button>
+            <p class="intro__hint">Drag to pan · scroll to zoom · click a frame to open it</p>
+          </div>
+        </div>
+
+        <div class="sky-loading" id="sky-loading">
+          <div class="sky-loading__ring"></div>
+          <p>Opening the sky</p>
+        </div>
+
+        <button class="rail-toggle" id="rail-toggle" type="button" aria-label="Show image list">
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- Hover card -->
+        <div class="sky-tip" id="sky-tip" hidden>
+          <img alt="" id="sky-tip-img" />
+          <div>
+            <strong id="sky-tip-title"></strong>
+            <span id="sky-tip-sub"></span>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="sky-controls">
+          <div class="sky-controls__group">
+            <button class="sky-btn" type="button" data-zoom="in" aria-label="Zoom in">+</button>
+            <button class="sky-btn" type="button" data-zoom="out" aria-label="Zoom out">−</button>
+            <button class="sky-btn sky-btn--wide" type="button" id="reset-view">Whole sky</button>
+          </div>
+
+          <details class="sky-panel" id="layers-panel">
+            <summary>Layers</summary>
+            <div class="sky-panel__body">
+              <label class="sky-toggle">
+                <input type="checkbox" id="t-figures" checked /><span>Constellation figures</span>
+              </label>
+              <label class="sky-toggle">
+                <input type="checkbox" id="t-names" checked /><span>Constellation names</span>
+              </label>
+              <label class="sky-toggle">
+                <input type="checkbox" id="t-borders" /><span>Constellation borders</span>
+              </label>
+              <label class="sky-toggle">
+                <input type="checkbox" id="t-grid" /><span>Coordinate grid</span>
+              </label>
+              <hr />
+              <label class="sky-toggle">
+                <input type="checkbox" id="t-fields" checked /><span>My fields</span>
+              </label>
+              <label class="sky-toggle">
+                <input type="checkbox" id="t-photos" checked /><span>Photos on the sky</span>
+              </label>
+              <hr />
+              <label class="sky-select">
+                <span>Sky survey</span>
+                <!--
+                  Direct HiPS service URLs rather than short ids: passing an id
+                  makes Aladin probe mirrors first, and one of them answers
+                  without CORS headers, costing a failed round trip on load.
+                -->
+                <select id="survey">
+                  <option value="https://alasky.cds.unistra.fr/DSS/DSSColor">DSS2 colour</option>
+                  <option value="https://alasky.cds.unistra.fr/MellingerRGB">Mellinger wide field</option>
+                  <option value="https://alasky.cds.unistra.fr/FinkbeinerHalpha">Finkbeiner H-alpha</option>
+                  <option value="https://alasky.cds.unistra.fr/AllWISE/RGB-W4-W2-W1">AllWISE infrared</option>
+                  <option value="https://alasky.cds.unistra.fr/2MASS/Color">2MASS near infrared</option>
+                  <option value="https://alasky.cds.unistra.fr/DSS/DSS2Merged">DSS2 red</option>
+                </select>
+              </label>
+              <label class="sky-select">
+                <span>Projection</span>
+                <select id="projection">
+                  <option value="auto">Automatic</option>
+                  <option value="AIT">Aitoff (all sky)</option>
+                  <option value="SIN">Orthographic</option>
+                  <option value="MOL">Mollweide</option>
+                  <option value="MER">Mercator</option>
+                </select>
+              </label>
+            </div>
+          </details>
+        </div>
+
+        <div class="sky-readout mono" id="readout">
+          <span data-k="RA" id="ro-ra">—</span>
+          <span data-k="Dec" id="ro-dec">—</span>
+          <span data-k="FOV" id="ro-fov">—</span>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="js/chrome.js"></script>
+    <script type="module" src="js/skymap.js"></script>
+  </body>
+</html>

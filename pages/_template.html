@@ -1,0 +1,64 @@
+<!doctype html>
+<!--
+  ─────────────────────────────────────────────────────────────────
+  STARTER FOR A NEW PAGE
+
+  1. Copy this file to pages/<your-page>.html
+  2. Change the <title>, the description and the <h1>
+  3. Add it to the PAGES list at the top of js/chrome.js — that is
+     the only place the navigation is defined, so one line adds the
+     page to the nav and the footer on every page at once
+  4. Put the page's own styles in css/<your-page>.css if it needs any
+
+  Delete this comment once you have made it yours.
+  ─────────────────────────────────────────────────────────────────
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New page — AstraPharma</title>
+    <meta name="description" content="Describe this page in a sentence." />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+  </head>
+  <body>
+    <header data-nav></header>
+
+    <main class="page">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">Section label</p>
+        <h1>New page</h1>
+        <div class="rule"></div>
+        <p>A sentence of introduction goes here.</p>
+      </header>
+
+      <section data-reveal>
+        <p class="muted">
+          Write the page here. Shared classes you already have:
+          <code>.page</code>, <code>.section-head</code>, <code>.eyebrow</code>,
+          <code>.rule</code>, <code>.facts</code>, <code>.chip</code>,
+          <code>.btn</code>, <code>.stats</code>. Add <code>data-reveal</code> to any
+          element to have it fade in as it scrolls into view.
+        </p>
+      </section>
+
+      <!--
+        Need the image data on this page?
+
+        <script type="module">
+          import { loadCatalogue } from '../js/data.js';
+          const catalogue = await loadCatalogue();
+        </script>
+
+        The YouTube data lives in loadChannel(), and openDetail() from
+        js/detail.js opens the shared image panel.
+      -->
+    </main>
+
+    <footer data-footer></footer>
+
+    <script type="module" src="../js/chrome.js"></script>
+  </body>
+</html>

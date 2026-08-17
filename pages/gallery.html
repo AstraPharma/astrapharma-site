@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery — AstraPharma</title>
+    <meta
+      name="description"
+      content="Every published astrophotograph by Ali Alobaidly, with full acquisition details."
+    />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/gallery.css" />
+  </head>
+  <body>
+    <header data-nav></header>
+
+    <main class="page page--wide">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">The complete collection</p>
+        <h1>Gallery</h1>
+        <div class="rule"></div>
+        <p id="gallery-lede">Loading the collection…</p>
+      </header>
+
+      <div class="gallery__toolbar" data-reveal>
+        <div class="gallery__search">
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6" />
+            <path d="M11 11l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
+          <input id="search" type="search" placeholder="Search targets, gear, constellations…" aria-label="Search images" />
+        </div>
+        <select id="filter-constellation" aria-label="Filter by constellation">
+          <option value="">All constellations</option>
+        </select>
+        <select id="filter-award" aria-label="Filter by award">
+          <option value="">Any recognition</option>
+          <option value="iotd">Image of the Day</option>
+          <option value="tp">Top Pick</option>
+          <option value="tpn">Top Pick nomination</option>
+        </select>
+        <select id="sort" aria-label="Sort images">
+          <option value="published">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="integration">Most integration</option>
+          <option value="likes">Most liked</option>
+          <option value="title">Title A–Z</option>
+        </select>
+      </div>
+
+      <p class="gallery__count" id="count"></p>
+      <div class="gallery__grid" id="grid"></div>
+    </main>
+
+    <footer data-footer></footer>
+
+    <script type="module" src="../js/chrome.js"></script>
+    <script type="module" src="../js/gallery.js"></script>
+  </body>
+</html>
