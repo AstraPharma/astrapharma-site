@@ -120,6 +120,9 @@ async function boot() {
     for (const figure of skyLines.figures) {
       for (const line of figure.lines) overlay.add(A.polyline(line));
     }
+    // Off by default: the first view should be the sky and the photographs,
+    // with the reference layers there for whoever wants them.
+    overlay.hide();
     return overlay;
   });
 
@@ -146,6 +149,7 @@ async function boot() {
     catalog.addSources(
       skyLines.constellations.map((c) => A.source(c.ra, c.dec, { name: c.name })),
     );
+    catalog.hide();
     return catalog;
   });
 
