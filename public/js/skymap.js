@@ -160,7 +160,8 @@ async function boot() {
 
   /* --- View helpers ----------------------------------------------- */
 
-  let projectionMode = 'auto';
+  // Aitoff throughout. The projection only changes when the visitor picks a
+  // different one — nothing switches under them as they zoom.
   let activeProjection = 'AIT';
   let introDismissed = false;
 
@@ -183,14 +184,8 @@ async function boot() {
     attempt('setProjection', () => aladin.setProjection(name));
   }
 
-  function syncProjection(fov) {
-    if (projectionMode !== 'auto') return;
-    setProjection(fov > ALL_SKY_ABOVE ? 'AIT' : 'SIN');
-  }
-
   function setFov(value) {
     const clamped = Math.min(MAX_FOV, Math.max(MIN_FOV, value));
-    syncProjection(clamped);
     attempt('setFoV', () => aladin.setFoV(clamped));
   }
 
@@ -204,8 +199,6 @@ async function boot() {
   }
 
   function resetView() {
-    projectionMode = $('projection').value === 'auto' ? 'auto' : projectionMode;
-    setProjection(projectionMode === 'auto' ? 'AIT' : activeProjection);
     attempt('gotoRaDec', () => aladin.gotoRaDec(90, 10));
     attempt('setFoV', () => aladin.setFoV(WHOLE_SKY_FOV));
   }
@@ -396,15 +389,19 @@ async function boot() {
     attempt('setBaseImageLayer', () => aladin.setBaseImageLayer(event.target.value));
   });
 
-  $('projection').addEventListener('change', (event) => {
-    const value = event.target.value;
-    projectionMode = value === 'auto' ? 'auto' : 'manual';
-    if (value === 'auto') syncProjection(currentFov());
-    else setProjection(value);
-  });
+  $('projection').addEventListener('change', (event) => setProjection(event.target.value));
 
   const railEl = $('rail');
+  const closeRail = () => railEl.classList.remove('is-open');
   $('rail-toggle').addEventListener('click', () => railEl.classList.toggle('is-open'));
+  $('rail-close').addEventListener('click', closeRail);
+
+  // On a narrow screen the rail covers the map, so picking an image should
+  // hand the map back rather than leave the list in the way.
+  const narrow = () => window.matchMedia('(max-width: 980px)').matches;
+  listEl.addEventListener('click', () => {
+    if (narrow()) closeRail();
+  });
 
   /* --- Pointer ------------------------------------------------------
      Aladin stops propagation on its own canvas, so these listen in the
@@ -417,19 +414,19 @@ async function boot() {
   const tipSub = $('sky-tip-sub');
   let press = null;
 
-  // How far the pointer may travel and still count as a tap rather than a pan.
-  // A finger routinely wanders several pixels during a deliberate tap, so a
-  // cursor-sized threshold makes the map feel unresponsive to touch.
-  const TAP_SLOP = { mouse: 5, pen: 8, touch: 16 };
-
-  // Proximity radius for the hit test. Fingertips need a far larger target.
-  const HIT_TOLERANCE = { mouse: 15, pen: 18, touch: 28 };
-
-  const slopFor = (type) => TAP_SLOP[type] ?? TAP_SLOP.touch;
+  // Proximity radius for the hit test. Fingertips need a far larger target
+  // than a cursor.
+  const HIT_TOLERANCE = { mouse: 15, pen: 18, touch: 30 };
   const toleranceFor = (type) => HIT_TOLERANCE[type] ?? HIT_TOLERANCE.touch;
+
+  // Which image the tap-preview card is currently showing, so a second tap on
+  // the same frame can open it rather than just re-previewing it.
+  let previewed = null;
 
   function hideTip() {
     tip.hidden = true;
+    tip.classList.remove('is-pinned');
+    previewed = null;
     fields.setHovered(null);
     wrap.style.cursor = '';
   }
@@ -444,7 +441,12 @@ async function boot() {
     return { x: event.clientX - rect.left, y: event.clientY - rect.top, rect };
   };
 
-  function showTip(image, x, y, rect) {
+  /**
+   * Fills the card. `pinned` is the touch presentation: the card sits at the
+   * bottom of the map, takes taps of its own, and stays until dismissed.
+   * Otherwise it trails the cursor and ignores the pointer.
+   */
+  function showTip(image, x, y, rect, pinned) {
     tipImg.src = image.thumbnails.small || '';
     tipTitle.textContent = image.title;
     const place = image.constellation
@@ -452,22 +454,49 @@ async function boot() {
       : 'Solar system';
     tipSub.textContent = place + ' · ' + formatHours(image.acquisitions.totalHours);
     tip.hidden = false;
+    tip.classList.toggle('is-pinned', !!pinned);
+
+    if (pinned) {
+      tip.style.left = '';
+      tip.style.top = '';
+      return;
+    }
     const width = tip.offsetWidth || 260;
     const height = tip.offsetHeight || 74;
     tip.style.left = Math.min(Math.max(8, x + 16), rect.width - width - 8) + 'px';
     tip.style.top = Math.min(Math.max(8, y + 16), rect.height - height - 8) + 'px';
   }
 
+  /**
+   * What a completed tap or click on the map means.
+   *
+   * With a cursor there is already a hover card, so a click goes straight to
+   * the full details. With a finger there is no hover, so the first tap raises
+   * the card and a second tap on the same frame opens it — which also gives
+   * somewhere to aim when frames overlap.
+   */
+  function handleTap(image, type) {
+    dismissIntro();
+    if (type === 'mouse') {
+      hideTip();
+      select(image);
+      return;
+    }
+    if (previewed === image.hash) {
+      hideTip();
+      select(image);
+      return;
+    }
+    previewed = image.hash;
+    fields.setHovered(image.hash);
+    showTip(image, 0, 0, null, true);
+  }
+
   wrap.addEventListener(
     'pointerdown',
     (event) => {
-      if (isChrome(event.target)) return;
-      press = {
-        x: event.clientX,
-        y: event.clientY,
-        type: event.pointerType,
-        dragged: false,
-      };
+      if (isChrome(event.target) || tip.contains(event.target)) return;
+      press = { type: event.pointerType };
     },
     true,
   );
@@ -475,63 +504,70 @@ async function boot() {
   wrap.addEventListener(
     'pointermove',
     (event) => {
-      if (press) {
-        const travelled = Math.hypot(event.clientX - press.x, event.clientY - press.y);
-        if (travelled > slopFor(press.type)) press.dragged = true;
-      }
-
       // Moving onto the controls must clear the card too, or it is left
       // stranded over the map with nothing under the pointer.
       if (isChrome(event.target)) {
-        hideTip();
+        if (!tip.classList.contains('is-pinned')) hideTip();
         return;
       }
 
-      // The hover card only makes sense for a cursor. On touch there is no
-      // hover state to leave, so the card would simply stay on screen after
-      // the finger lifts.
+      // Hover only exists for a cursor. On touch the card is raised by a tap
+      // instead, further down.
       if (event.pointerType !== 'mouse') return;
 
       const { x, y, rect } = localPoint(event);
-      const hit = press && press.dragged ? null : fields.hitTest(x, y, toleranceFor('mouse'));
+      const hit = fields.hitTest(x, y, toleranceFor('mouse'));
       fields.setHovered(hit ? hit.hash : null);
       wrap.style.cursor = hit ? 'pointer' : '';
-      if (hit) showTip(hit, x, y, rect);
+      if (hit) showTip(hit, x, y, rect, false);
       else tip.hidden = true;
     },
     true,
   );
 
+  /*
+     Taps come from the click event rather than being reconstructed from
+     pointerdown/pointerup. The browser already distinguishes a tap from a pan
+     using the platform's own thresholds and its knowledge of the gesture the
+     touch was consumed by — hand-rolling that from raw coordinates got it
+     wrong on real hardware.
+  */
   wrap.addEventListener(
-    'pointerup',
+    'click',
     (event) => {
-      const wasTap = press && !press.dragged;
-      const type = press ? press.type : event.pointerType;
+      const type = press ? press.type : 'mouse';
       press = null;
-      if (event.pointerType !== 'mouse') hideTip();
-      if (!wasTap || isChrome(event.target)) return;
+      if (isChrome(event.target) || tip.contains(event.target)) return;
+
       const { x, y } = localPoint(event);
       const hit = fields.hitTest(x, y, toleranceFor(type));
-      if (hit) {
-        select(hit);
-        dismissIntro();
-      }
+      if (hit) handleTap(hit, type);
+      else if (tip.classList.contains('is-pinned')) hideTip();
     },
     true,
   );
 
-  // A cancelled gesture (scroll takeover, call interruption) must not leave
-  // a stale card or a half-finished press behind.
-  wrap.addEventListener(
-    'pointercancel',
-    () => {
-      press = null;
+  // The card itself: tapping it opens the image, the cross dismisses it.
+  tip.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (event.target.closest('.sky-tip__close')) {
       hideTip();
-    },
-    true,
-  );
+      return;
+    }
+    const image = previewed ? imageFor(previewed) : null;
+    hideTip();
+    if (image) select(image);
+  });
 
-  wrap.addEventListener('pointerleave', hideTip);
+  // A cancelled gesture (scroll takeover, call interruption) must not leave a
+  // half-finished press behind.
+  wrap.addEventListener('pointercancel', () => {
+    press = null;
+  }, true);
+
+  wrap.addEventListener('pointerleave', () => {
+    if (!tip.classList.contains('is-pinned')) hideTip();
+  });
   // Opening the detail panel covers the map; the card underneath is just clutter.
   document.addEventListener('detail:open', hideTip);
 
@@ -547,7 +583,6 @@ async function boot() {
     const fov = currentFov();
     if (centre && (centre[0] !== last.ra || centre[1] !== last.dec || fov !== last.fov)) {
       last = { ra: centre[0], dec: centre[1], fov };
-      syncProjection(fov);
       fields.draw();
       roRa.textContent = formatRa(centre[0]);
       roDec.textContent = formatDec(centre[1]);

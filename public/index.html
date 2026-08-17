@@ -26,6 +26,11 @@
       <!-- ── Left rail: search, filters, the list of every image ── -->
       <aside class="rail" id="rail">
         <div class="rail__head">
+          <!-- Only shown on narrow screens, where the rail covers the map and
+               the hamburger that opened it. -->
+          <button class="rail__close" id="rail-close" type="button">
+            <span aria-hidden="true">←</span> Back to the sky
+          </button>
           <div class="rail__search">
             <svg viewBox="0 0 16 16" aria-hidden="true">
               <circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6" />
@@ -87,13 +92,18 @@
           <span></span><span></span><span></span>
         </button>
 
-        <!-- Hover card -->
+        <!-- Preview card. Follows the cursor on a mouse; on touch it pins to
+             the bottom, and tapping it opens the full details. -->
         <div class="sky-tip" id="sky-tip" hidden>
           <img alt="" id="sky-tip-img" />
-          <div>
+          <div class="sky-tip__text">
             <strong id="sky-tip-title"></strong>
             <span id="sky-tip-sub"></span>
+            <span class="sky-tip__cta" id="sky-tip-cta">Tap for full details</span>
           </div>
+          <button class="sky-tip__close" id="sky-tip-close" type="button" aria-label="Dismiss">
+            &times;
+          </button>
         </div>
 
         <!-- Controls -->
@@ -146,7 +156,6 @@
               <label class="sky-select">
                 <span>Projection</span>
                 <select id="projection">
-                  <option value="auto">Automatic</option>
                   <option value="AIT">Aitoff (all sky)</option>
                   <option value="SIN">Orthographic</option>
                   <option value="MOL">Mollweide</option>

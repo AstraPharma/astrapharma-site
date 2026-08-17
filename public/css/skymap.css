@@ -36,6 +36,33 @@
   gap: 11px;
 }
 
+/* Only needed where the rail covers the map and the button that opened it. */
+.rail__close {
+  display: none;
+  align-items: center;
+  gap: 9px;
+  align-self: flex-start;
+  padding: 9px 15px 9px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #ffffff0a;
+  color: var(--text-dim);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: color var(--fast), border-color var(--fast);
+}
+
+.rail__close span {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.rail__close:hover {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+}
+
 .rail__search {
   position: relative;
   display: flex;
@@ -583,6 +610,69 @@
   background: var(--bg-3);
 }
 
+.sky-tip__text {
+  min-width: 0;
+}
+
+.sky-tip__cta {
+  display: none;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.sky-tip__close {
+  display: none;
+  width: 30px;
+  height: 30px;
+  flex: none;
+  align-self: flex-start;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  font-size: 17px;
+  line-height: 1;
+  place-items: center;
+}
+
+/* Raised by a tap rather than trailing a cursor: pinned to the bottom of the
+   map, and interactive so it can be opened or dismissed. */
+.sky-tip.is-pinned {
+  pointer-events: auto;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  top: auto;
+  max-width: none;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 18;
+}
+
+.sky-tip.is-pinned img {
+  width: 62px;
+  height: 62px;
+}
+
+.sky-tip.is-pinned .sky-tip__text {
+  flex: 1;
+}
+
+.sky-tip.is-pinned .sky-tip__cta {
+  display: block;
+}
+
+.sky-tip.is-pinned .sky-tip__close {
+  display: grid;
+}
+
+.sky-tip.is-pinned .sky-tip__close:hover {
+  color: var(--text);
+  border-color: var(--text-faint);
+}
+
 .sky-tip strong {
   display: block;
   font-size: 13px;
@@ -645,6 +735,10 @@
 
   .rail-toggle {
     display: flex;
+  }
+
+  .rail__close {
+    display: inline-flex;
   }
 
   /* The bottom strip belongs to the zoom and layer controls on a narrow
