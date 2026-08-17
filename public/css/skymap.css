@@ -647,10 +647,22 @@
     display: flex;
   }
 
+  /* The bottom strip belongs to the zoom and layer controls on a narrow
+     screen, and the readout was sitting on top of them. Move it to the top
+     right, clear of both the controls and the rail toggle. */
   .sky-readout {
-    font-size: 10.5px;
-    gap: 11px;
-    padding: 7px 12px;
+    top: 18px;
+    right: 14px;
+    bottom: auto;
+    font-size: 10px;
+    gap: 9px;
+    padding: 6px 11px;
+  }
+
+  .sky-readout span::before {
+    margin-right: 4px;
+    font-size: 8.5px;
+    letter-spacing: 0.08em;
   }
 
   .intro__stat {

@@ -258,9 +258,12 @@ export function createFieldsLayer({ canvas, container, aladin }) {
   /**
    * The frame under the pointer. Prefers the smallest frame containing the
    * point, so a tight crop inside a mosaic still wins, and falls back to
-   * proximity for frames too small to click accurately.
+   * proximity for frames too small to hit accurately.
+   *
+   * `tolerance` is that proximity radius. A fingertip covers far more of the
+   * screen than a cursor, so the caller passes a larger value for touch.
    */
-  function hitTest(x, y) {
+  function hitTest(x, y, tolerance = MIN_HIT_PX) {
     resize();
     const pxPerDeg = scale();
     let smallest = null;
@@ -270,14 +273,14 @@ export function createFieldsLayer({ canvas, container, aladin }) {
       const geometry = project(image, pxPerDeg);
       if (!geometry) continue;
 
-      if (!geometry.wrapped && geometry.span >= MIN_HIT_PX && contains(geometry.points, x, y)) {
+      if (!geometry.wrapped && geometry.span >= tolerance && contains(geometry.points, x, y)) {
         const area = geometry.width * geometry.height;
         if (!smallest || area < smallest.area) smallest = { image, area };
         continue;
       }
 
       const distance = Math.hypot(geometry.cx - x, geometry.cy - y);
-      if (distance <= MIN_HIT_PX && (!nearest || distance < nearest.distance)) {
+      if (distance <= tolerance && (!nearest || distance < nearest.distance)) {
         nearest = { image, distance };
       }
     }

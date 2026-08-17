@@ -31,14 +31,17 @@ const MIN_FOV = 0.03;
 const MAX_FOV = 320;
 const ALL_SKY_ABOVE = 70;
 
-const FIGURE_COLOUR = '#41577f';
-const BORDER_COLOUR = '#28324b';
-const LABEL_COLOUR = '#8494b5';
-const GRID_COLOUR = '#33405c';
+// Overlay colours. These sit on top of the Mellinger wide-field survey, whose
+// Milky Way band is bright and warm, so they are pitched light and cool enough
+// to stay legible over it as well as over empty sky.
+const FIGURE_COLOUR = '#93bce6';
+const BORDER_COLOUR = '#6d80a6';
+const LABEL_COLOUR = '#dce8f7';
+const GRID_COLOUR = '#7286ab';
 
-// The direct CDS service URL for DSS2 colour. Using the short id instead makes
-// Aladin probe mirrors, and one answers without CORS headers.
-const DEFAULT_SURVEY = 'https://alasky.cds.unistra.fr/DSS/DSSColor';
+// Direct CDS service URL. Using the short id instead makes Aladin probe
+// mirrors, and one answers without CORS headers.
+const DEFAULT_SURVEY = 'https://alasky.cds.unistra.fr/MellingerRGB';
 
 // Keyed by the short label from topAward().
 const AWARD_COLOUR = {
@@ -112,7 +115,7 @@ async function boot() {
   /* --- Constellation figures, borders and names ------------------- */
 
   const figuresOverlay = attempt('figures', () => {
-    const overlay = A.graphicOverlay({ name: 'Constellation figures', color: FIGURE_COLOUR, lineWidth: 1 });
+    const overlay = A.graphicOverlay({ name: 'Constellation figures', color: FIGURE_COLOUR, lineWidth: 1.4 });
     aladin.addOverlay(overlay);
     for (const figure of skyLines.figures) {
       for (const line of figure.lines) overlay.add(A.polyline(line));
@@ -137,7 +140,7 @@ async function boot() {
       displayLabel: true,
       labelColumn: 'name',
       labelColor: LABEL_COLOUR,
-      labelFont: '12px "Segoe UI", sans-serif',
+      labelFont: '600 13px "Inter", "Segoe UI", sans-serif',
     });
     aladin.addCatalog(catalog);
     catalog.addSources(
@@ -410,6 +413,23 @@ async function boot() {
   const tipSub = $('sky-tip-sub');
   let press = null;
 
+  // How far the pointer may travel and still count as a tap rather than a pan.
+  // A finger routinely wanders several pixels during a deliberate tap, so a
+  // cursor-sized threshold makes the map feel unresponsive to touch.
+  const TAP_SLOP = { mouse: 5, pen: 8, touch: 16 };
+
+  // Proximity radius for the hit test. Fingertips need a far larger target.
+  const HIT_TOLERANCE = { mouse: 15, pen: 18, touch: 28 };
+
+  const slopFor = (type) => TAP_SLOP[type] ?? TAP_SLOP.touch;
+  const toleranceFor = (type) => HIT_TOLERANCE[type] ?? HIT_TOLERANCE.touch;
+
+  function hideTip() {
+    tip.hidden = true;
+    fields.setHovered(null);
+    wrap.style.cursor = '';
+  }
+
   // Anything drawn over the map that should absorb its own clicks rather than
   // selecting whatever frame happens to sit behind it.
   const isChrome = (target) =>
@@ -438,7 +458,12 @@ async function boot() {
     'pointerdown',
     (event) => {
       if (isChrome(event.target)) return;
-      press = { x: event.clientX, y: event.clientY, dragged: false };
+      press = {
+        x: event.clientX,
+        y: event.clientY,
+        type: event.pointerType,
+        dragged: false,
+      };
     },
     true,
   );
@@ -446,13 +471,25 @@ async function boot() {
   wrap.addEventListener(
     'pointermove',
     (event) => {
-      if (press && Math.hypot(event.clientX - press.x, event.clientY - press.y) > 5) {
-        press.dragged = true;
+      if (press) {
+        const travelled = Math.hypot(event.clientX - press.x, event.clientY - press.y);
+        if (travelled > slopFor(press.type)) press.dragged = true;
       }
-      if (isChrome(event.target)) return;
+
+      // Moving onto the controls must clear the card too, or it is left
+      // stranded over the map with nothing under the pointer.
+      if (isChrome(event.target)) {
+        hideTip();
+        return;
+      }
+
+      // The hover card only makes sense for a cursor. On touch there is no
+      // hover state to leave, so the card would simply stay on screen after
+      // the finger lifts.
+      if (event.pointerType !== 'mouse') return;
 
       const { x, y, rect } = localPoint(event);
-      const hit = press && press.dragged ? null : fields.hitTest(x, y);
+      const hit = press && press.dragged ? null : fields.hitTest(x, y, toleranceFor('mouse'));
       fields.setHovered(hit ? hit.hash : null);
       wrap.style.cursor = hit ? 'pointer' : '';
       if (hit) showTip(hit, x, y, rect);
@@ -464,11 +501,13 @@ async function boot() {
   wrap.addEventListener(
     'pointerup',
     (event) => {
-      const wasClick = press && !press.dragged;
+      const wasTap = press && !press.dragged;
+      const type = press ? press.type : event.pointerType;
       press = null;
-      if (!wasClick || isChrome(event.target)) return;
+      if (event.pointerType !== 'mouse') hideTip();
+      if (!wasTap || isChrome(event.target)) return;
       const { x, y } = localPoint(event);
-      const hit = fields.hitTest(x, y);
+      const hit = fields.hitTest(x, y, toleranceFor(type));
       if (hit) {
         select(hit);
         dismissIntro();
@@ -477,10 +516,20 @@ async function boot() {
     true,
   );
 
-  wrap.addEventListener('pointerleave', () => {
-    tip.hidden = true;
-    fields.setHovered(null);
-  });
+  // A cancelled gesture (scroll takeover, call interruption) must not leave
+  // a stale card or a half-finished press behind.
+  wrap.addEventListener(
+    'pointercancel',
+    () => {
+      press = null;
+      hideTip();
+    },
+    true,
+  );
+
+  wrap.addEventListener('pointerleave', hideTip);
+  // Opening the detail panel covers the map; the card underneath is just clutter.
+  document.addEventListener('detail:open', hideTip);
 
   /* --- Readout and redraw loop -------------------------------------- */
 
