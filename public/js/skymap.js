@@ -38,9 +38,23 @@ const BORDER_COLOUR = '#6d80a6';
 const LABEL_COLOUR = '#dce8f7';
 const GRID_COLOUR = '#7286ab';
 
-// Direct CDS service URL. Using the short id instead makes Aladin probe
+// Direct CDS service URLs. Using the short id instead makes Aladin probe
 // mirrors, and one answers without CORS headers.
+//
+// Mellinger is a wide-field mosaic: continuous and beautiful across the whole
+// sky, but it tops out around 26 arcsec per pixel, so it turns to mush once you
+// zoom in. DSS2 covers the whole sky too and is about 32 times finer, at the
+// cost of looking plate-seamed when you are looking at everything at once.
+// So: Mellinger for the wide view, DSS2 once the field is small enough to see
+// the difference.
 const DEFAULT_SURVEY = 'https://alasky.cds.unistra.fr/MellingerRGB';
+const SHARP_SURVEY = 'https://alasky.cds.unistra.fr/DSS/DSSColor';
+
+// Mellinger's pixels are 26 arcsec, so on a viewport around a thousand pixels
+// wide it starts to soften below roughly 7 degrees. Swap a little before that,
+// and swap back later than that, so a slow zoom cannot flicker between the two.
+const SHARPEN_BELOW = 8;
+const SOFTEN_ABOVE = 11;
 
 // Keyed by the short label from topAward().
 const AWARD_COLOUR = {
@@ -186,6 +200,8 @@ async function boot() {
   function setFov(value) {
     const clamped = Math.min(MAX_FOV, Math.max(MIN_FOV, value));
     attempt('setFoV', () => aladin.setFoV(clamped));
+    // Answer the zoom straight away rather than waiting for the next frame.
+    applySurvey(clamped);
   }
 
   /** Frames one image: centred, with room around it to see the context. */
@@ -384,9 +400,34 @@ async function boot() {
   bindToggle('t-fields', (on) => fields.setShowFields(on));
   bindToggle('t-photos', (on) => fields.setShowPhotos(on));
 
+  /* --- Survey, and sharpening as you zoom -------------------------- */
+
+  let baseSurvey = DEFAULT_SURVEY;
+  let activeSurvey = DEFAULT_SURVEY;
+
+  /**
+   * Picks the survey for the current field of view and only tells Aladin when
+   * the answer actually changes, since this is called on every view update.
+   */
+  function applySurvey(fov) {
+    let wanted = baseSurvey;
+    if ($('t-sharpen').checked && baseSurvey === DEFAULT_SURVEY) {
+      const sharp = activeSurvey === SHARP_SURVEY;
+      if (!sharp && fov < SHARPEN_BELOW) wanted = SHARP_SURVEY;
+      else if (sharp && fov < SOFTEN_ABOVE) wanted = SHARP_SURVEY;
+    }
+    if (wanted === activeSurvey) return;
+    activeSurvey = wanted;
+    attempt('setBaseImageLayer', () => aladin.setBaseImageLayer(wanted));
+  }
+
   $('survey').addEventListener('change', (event) => {
-    attempt('setBaseImageLayer', () => aladin.setBaseImageLayer(event.target.value));
+    baseSurvey = event.target.value;
+    activeSurvey = null;
+    applySurvey(currentFov());
   });
+
+  $('t-sharpen').addEventListener('change', () => applySurvey(currentFov()));
 
   $('projection').addEventListener('change', (event) => setProjection(event.target.value));
 
@@ -582,6 +623,7 @@ async function boot() {
     const fov = currentFov();
     if (centre && (centre[0] !== last.ra || centre[1] !== last.dec || fov !== last.fov)) {
       last = { ra: centre[0], dec: centre[1], fov };
+      applySurvey(fov);
       fields.draw();
       roRa.textContent = formatRa(centre[0]);
       roDec.textContent = formatDec(centre[1]);

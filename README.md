@@ -187,6 +187,31 @@ Things worth knowing:
 - The videos page links out to YouTube rather than embedding a player, so no
   third-party player loads and no tracking cookies are set.
 
+### Sky surveys and resolution
+
+The background survey is chosen in the Layers panel. They differ enormously in
+detail, and that is a property of the data rather than a setting:
+
+| Survey | Resolution | Sky covered |
+| --- | --- | --- |
+| Mellinger wide field | 26 arcsec/pixel | all |
+| DSS2 colour | 0.8 arcsec/pixel | all |
+| PanSTARRS | 0.2 arcsec/pixel | 76 per cent, everything above dec −30 |
+
+Mellinger is a wide-field mosaic. It is continuous and beautiful when you are
+looking at the whole sky, but it holds no detail, so it turns to mush as you
+zoom. DSS2 is about 32 times finer and also covers everything, at the cost of
+looking plate-seamed in the wide view.
+
+So the atlas uses both. "Sharpen when zoomed in" is on by default: the view
+starts on Mellinger and swaps to DSS2 once the field drops below 8 degrees,
+swapping back above 11. The two thresholds differ on purpose, so a slow zoom
+cannot flicker between them. Choosing any survey by hand turns the swapping
+off and keeps your choice.
+
+None of this affects Ali's own photographs. They are drawn from AstroBin's
+full-size renditions on top of whatever survey is showing.
+
 ## Publishing it
 
 Hosted on Cloudflare, deployed straight from the GitHub repository: push to
