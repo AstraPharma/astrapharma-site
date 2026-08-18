@@ -66,7 +66,7 @@ function navHtml() {
       </a>`;
 
   return `<nav class="nav">
-      <a class="nav__brand" href="${ROOT}index.html" aria-label="AstraPharma — home">
+      <a class="nav__brand" href="${ROOT}index.html" aria-label="AstraPharma, home">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>
           <span class="nav__wordmark">AstraPharma</span>

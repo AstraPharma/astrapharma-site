@@ -132,13 +132,13 @@ const DATA_SOURCE_LABELS = {
 function factsSection(image) {
   const sky = image.sky;
   const rows = [
-    ['Right ascension', sky ? `<span class="mono">${esc(formatRa(sky.ra))}</span>` : '—'],
-    ['Declination', sky ? `<span class="mono">${esc(formatDec(sky.dec))}</span>` : '—'],
-    ['Field of view', sky ? esc(formatFov(sky)) : '—'],
-    ['Pixel scale', sky?.pixscale ? `<span class="mono">${sky.pixscale.toFixed(2)}″/px</span>` : '—'],
+    ['Right ascension', sky ? `<span class="mono">${esc(formatRa(sky.ra))}</span>` : 'Not recorded'],
+    ['Declination', sky ? `<span class="mono">${esc(formatDec(sky.dec))}</span>` : 'Not recorded'],
+    ['Field of view', sky ? esc(formatFov(sky)) : 'Not recorded'],
+    ['Pixel scale', sky?.pixscale ? `<span class="mono">${sky.pixscale.toFixed(2)}″/px</span>` : 'Not recorded'],
     [
       'Rotation',
-      sky?.orientation != null ? `<span class="mono">${sky.orientation.toFixed(1)}°</span>` : '—',
+      sky?.orientation != null ? `<span class="mono">${sky.orientation.toFixed(1)}°</span>` : 'Not recorded',
     ],
     ['Resolution', `<span class="mono">${image.width} × ${image.height}</span>`],
   ];

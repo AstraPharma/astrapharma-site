@@ -80,7 +80,7 @@ async function boot() {
   if (typeof A === 'undefined') {
     showError(
       'The sky engine (Aladin Lite, from the Strasbourg astronomical data centre) could not be ' +
-        'loaded. Check the connection and reload — the gallery and about pages work without it.',
+        'loaded. Check the connection and reload. The gallery and about pages work without it.',
     );
     return;
   }

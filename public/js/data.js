@@ -38,7 +38,7 @@ export function loadChannel() {
 
 /** Right ascension in degrees to sexagesimal hours, e.g. "22h 32m 17.0s". */
 export function formatRa(deg) {
-  if (deg == null) return '—';
+  if (deg == null) return 'Not recorded';
   const hours = ((deg % 360) + 360) % 360 / 15;
   const h = Math.floor(hours);
   const m = Math.floor((hours - h) * 60);
@@ -48,7 +48,7 @@ export function formatRa(deg) {
 
 /** Declination in degrees to sexagesimal, e.g. "+40° 37′ 12″". */
 export function formatDec(deg) {
-  if (deg == null) return '—';
+  if (deg == null) return 'Not recorded';
   const sign = deg < 0 ? '−' : '+';
   const abs = Math.abs(deg);
   const d = Math.floor(abs);
@@ -59,20 +59,20 @@ export function formatDec(deg) {
 
 /** Angle in degrees, switched to arcminutes below a degree. */
 export function formatAngle(deg) {
-  if (deg == null) return '—';
+  if (deg == null) return 'Not recorded';
   if (deg < 1) return `${(deg * 60).toFixed(1)}′`;
   return `${deg.toFixed(2)}°`;
 }
 
 export function formatFov(sky) {
-  if (!sky?.fovWidth || !sky?.fovHeight) return '—';
+  if (!sky?.fovWidth || !sky?.fovHeight) return 'Not recorded';
   return `${formatAngle(sky.fovWidth)} × ${formatAngle(sky.fovHeight)}`;
 }
 
 /* --- Numbers, times, dates --------------------------------------- */
 
 export function formatHours(hours) {
-  if (!hours) return '—';
+  if (!hours) return 'Not recorded';
   const whole = Math.floor(hours);
   const minutes = Math.round((hours - whole) * 60);
   if (minutes === 60) return `${whole + 1}h`;
@@ -80,13 +80,13 @@ export function formatHours(hours) {
 }
 
 export function formatCount(n) {
-  if (n == null) return '—';
+  if (n == null) return 'Not recorded';
   if (n >= 1000) return `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}k`;
   return String(n);
 }
 
 export function formatDate(iso) {
-  if (!iso) return '—';
+  if (!iso) return 'Not recorded';
   return new Date(iso).toLocaleDateString(undefined, {
     year: 'numeric',
     month: 'short',
@@ -96,10 +96,10 @@ export function formatDate(iso) {
 
 export function formatNightRange(acquisitions) {
   const { firstNight, lastNight, nightCount } = acquisitions ?? {};
-  if (!firstNight) return '—';
+  if (!firstNight) return 'Not recorded';
   const nights = `${nightCount} night${nightCount === 1 ? '' : 's'}`;
   if (firstNight === lastNight) return `${nights} · ${formatDate(firstNight)}`;
-  return `${nights} · ${formatDate(firstNight)} – ${formatDate(lastNight)}`;
+  return `${nights} · ${formatDate(firstNight)} to ${formatDate(lastNight)}`;
 }
 
 /* --- Presentation ------------------------------------------------ */

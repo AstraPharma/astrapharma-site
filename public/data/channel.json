@@ -14,31 +14,154 @@
     "handle": "@AstraPharmaq8",
     "subscribers": "2.63K",
     "videoCount": 24,
-    "bio": [
-      "My name is Ali and I am an amateur astronomer!",
-      "It all started with a trip to the scientific center in my home country of Kuwait. I was 8 years old. I remember being mesmerized from the start when I saw those mini telescopes lined up in the gift store. A decade and some years later, I was back home after spending 12 years abroad. That's when I rediscovered my love for the sky. I spent weeks researching the hobby, quickly familiarizing myself with all things optical! Recalibrated my budgets and bought my second telescope. It was a 12 inch dobsonian that I can barely move, and I took it to the desert the following night. It was there that I captured my first astro-image of Saturn.",
-      "\"There has to be a better way to do this,\" I told myself.",
-      "At around 6am that very same morning, I placed an order for my first ZWO planetary camera and down the rabbit hole I was blissfully lost."
-    ],
     "videos": [
-      { "id": "rWOcwRU11Fw", "title": "I Tried a Tool That Turns Astrophotos Into 3D Flythroughs", "length": "10:56", "views": "5.3K views" },
-      { "id": "9gkbmrzNbKs", "title": "The Best Astrophotography Mount You've Never Heard Of… (FG-17)", "length": "6:57", "views": "4.5K views" },
-      { "id": "ENSew-A6-2A", "title": "This Mount Almost Beat the AM5N… | SAL-33 Review", "length": "8:19", "views": "6.8K views" },
-      { "id": "kvuNpBUgBeQ", "title": "ASIAIR Has Competition: Stellavita Finally Catches Up (Stellavita 2.0)", "length": "15:05", "views": "7.8K views" },
-      { "id": "xStnDDDQBl4", "title": "The Thinnest Rotator Ever? | Wanderer Astro Mini V2 Full Review & Test", "length": "11:02", "views": "1.6K views" },
-      { "id": "VyJ3cAOULJo", "title": "This Flat Panel Changed My Astrophotography – WandererCover EC V4 Review!", "length": "8:35", "views": "4.2K views" },
-      { "id": "AjjNZ3mdLcQ", "title": "How I run FOUR telescopes in the DESERT for Astrophotography Vlog 2", "length": "14:02", "views": "3.5K views" },
-      { "id": "CF8rPvNHCo4", "title": "I got a TOP PICK on AstroBin using this camera from AliExpress — ATR2600c Review", "length": "5:01", "views": "2.5K views" },
-      { "id": "1s95K6kKjt0", "title": "The Askar 140 APO is a BEAST! Astrophotography Review", "length": "4:44", "views": "9.8K views" },
-      { "id": "LyIBgWQxyoo", "title": "What to buy for your first astrophotography rig (Actual recommendation)", "length": "10:43", "views": "1.3K views" },
-      { "id": "xWMKQD_IvnM", "title": "T.I Astrophotography PowerBox — Tame Your Cable Monster (Review)", "length": "4:05", "views": "2.9K views" },
-      { "id": "gy52g1xfPj0", "title": "I bought a CHEAP harmonic mount from AliExpress!! — The Juwei-17", "length": "5:22", "views": "27K views" },
-      { "id": "MCdraCp9Zjo", "title": "StellarMate Pro — The Scheduler (Full Tutorial)", "length": "13:25", "views": "4.2K views" },
-      { "id": "YZi8nzUk7Z8", "title": "ToupTek's ASIAIR Plus alternative — AstroStation (Unboxing and First Light!)", "length": "3:30", "views": "9.8K views" },
-      { "id": "5NmNgtQ1SIw", "title": "MetaGuide — The best collimation tool for reflector telescopes!!", "length": "11:55", "views": "9.8K views" },
-      { "id": "c_pWhZX8xWs", "title": "Astrophotography in the Middle Eastern desert!! — Galaxy Season Vlog", "length": "6:47", "views": "3.3K views" },
-      { "id": "8NM3c1oyCmI", "title": "Esatto 2 inch and the Arco rotator for astrophotography (Full Review)", "length": "5:53", "views": "2.5K views" },
-      { "id": "vP2HGMrWpfE", "title": "Stellarmate Pro — The underdog that keeps on winning (Full Tutorial)", "length": "19:44", "views": "18K views" }
+      {
+        "id": "rWOcwRU11Fw",
+        "title": "I Tried a Tool That Turns Astrophotos Into 3D Flythroughs",
+        "length": "10:56",
+        "views": "5.3K views"
+      },
+      {
+        "id": "9gkbmrzNbKs",
+        "title": "The Best Astrophotography Mount You've Never Heard Of… (FG-17)",
+        "length": "6:57",
+        "views": "4.5K views"
+      },
+      {
+        "id": "ENSew-A6-2A",
+        "title": "This Mount Almost Beat the AM5N… | SAL-33 Review",
+        "length": "8:19",
+        "views": "6.8K views"
+      },
+      {
+        "id": "kvuNpBUgBeQ",
+        "title": "ASIAIR Has Competition: Stellavita Finally Catches Up (Stellavita 2.0)",
+        "length": "15:05",
+        "views": "7.8K views"
+      },
+      {
+        "id": "xStnDDDQBl4",
+        "title": "The Thinnest Rotator Ever? | Wanderer Astro Mini V2 Full Review & Test",
+        "length": "11:02",
+        "views": "1.6K views"
+      },
+      {
+        "id": "VyJ3cAOULJo",
+        "title": "This Flat Panel Changed My Astrophotography – WandererCover EC V4 Review!",
+        "length": "8:35",
+        "views": "4.2K views"
+      },
+      {
+        "id": "AjjNZ3mdLcQ",
+        "title": "How I run FOUR telescopes in the DESERT for Astrophotography Vlog 2",
+        "length": "14:02",
+        "views": "3.5K views"
+      },
+      {
+        "id": "CF8rPvNHCo4",
+        "title": "I got a TOP PICK on AstroBin using this camera from AliExpress — ATR2600c Review",
+        "length": "5:01",
+        "views": "2.5K views"
+      },
+      {
+        "id": "1s95K6kKjt0",
+        "title": "The Askar 140 APO is a BEAST! Astrophotography Review",
+        "length": "4:44",
+        "views": "9.8K views"
+      },
+      {
+        "id": "LyIBgWQxyoo",
+        "title": "What to buy for your first astrophotography rig (Actual recommendation)",
+        "length": "10:43",
+        "views": "1.3K views"
+      },
+      {
+        "id": "xWMKQD_IvnM",
+        "title": "T.I Astrophotography PowerBox — Tame Your Cable Monster (Review)",
+        "length": "4:05",
+        "views": "2.9K views"
+      },
+      {
+        "id": "gy52g1xfPj0",
+        "title": "I bought a CHEAP harmonic mount from AliExpress!! — The Juwei-17",
+        "length": "5:22",
+        "views": "27K views"
+      },
+      {
+        "id": "MCdraCp9Zjo",
+        "title": "StellarMate Pro — The Scheduler (Full Tutorial)",
+        "length": "13:25",
+        "views": "4.2K views"
+      },
+      {
+        "id": "YZi8nzUk7Z8",
+        "title": "ToupTek's ASIAIR Plus alternative — AstroStation (Unboxing and First Light!)",
+        "length": "3:30",
+        "views": "9.8K views"
+      },
+      {
+        "id": "5NmNgtQ1SIw",
+        "title": "MetaGuide — The best collimation tool for reflector telescopes!!",
+        "length": "11:55",
+        "views": "9.8K views"
+      },
+      {
+        "id": "c_pWhZX8xWs",
+        "title": "Astrophotography in the Middle Eastern desert!! — Galaxy Season Vlog",
+        "length": "6:47",
+        "views": "3.3K views"
+      },
+      {
+        "id": "8NM3c1oyCmI",
+        "title": "Esatto 2 inch and the Arco rotator for astrophotography (Full Review)",
+        "length": "5:53",
+        "views": "2.5K views"
+      },
+      {
+        "id": "vP2HGMrWpfE",
+        "title": "Stellarmate Pro — The underdog that keeps on winning (Full Tutorial)",
+        "length": "19:44",
+        "views": "18K views"
+      }
     ]
+  },
+  "story": {
+    "paragraphs": [
+      {
+        "style": "lede",
+        "text": "It started with a trip to the Scientific Center here in Kuwait. After a leisurely stroll through the aquarium, my beloved mother took us to the gift shop. That was when I saw it: a shiny, black painted, majestically mounted Newtonian telescope."
+      },
+      {
+        "text": "I begged for it. I was barely ten and knew almost nothing about telescopes, but I begged anyway, and with some reluctance she obliged."
+      },
+      {
+        "text": "That very night I was on our rooftop, a fish out of water, utterly incompetent with this great instrument in front of me. Yet I persisted, and lo and behold, by a grand and perhaps divine miracle, the Moon came into focus. It was full, and I saw the scars ornamenting its surface. My breath was caught by the sight, the intense glow and the utter blackness surrounding it, and I had a feeling in my stomach that I now characterise as the feeling one gets when the course of their life is beginning to change."
+      },
+      {
+        "text": "Life, however, comes with many distractions and challenges. As my teenage years came prowling we moved to the UK, and my key to the universe lay in storage, collecting dust and bearing the weight of a young boy's regret. University came and went. Hills conquered and valleys endured, countless highs and multifarious lows. Then I came home twelve years later, laden with scars I cherished and wounds I abhorred."
+      },
+      {
+        "text": "I was a pharmacist now, employed and working, with some income I could spare on hobbies. My family had moved house while I was away studying, and when I came back to Kuwait someone had unearthed a grey plastic case that held a young boy's passion within, barely contained. I remember opening that case and being overtaken by the heartbreak. With misty eyes I took the old hunk of aluminium out of its tomb, dusted its mirrors and cleaned it whole. Then I made a decision."
+      },
+      {
+        "style": "feature",
+        "text": "I was to become an amateur astronomer."
+      },
+      {
+        "text": "I spent weeks researching the hobby, quickly familiarising myself with all things optical. I recalibrated my budget and bought my second telescope, a 12 inch Dobsonian I could barely move, and I took it to the desert the following night. It was there that I felt it again, deep within my essence, that same feeling from more than a decade ago, when I beheld the rings of Saturn for the first time in my life."
+      },
+      {
+        "text": "I am an emotional person, that I don't deny, and my fingers were literally trembling while I was changing eyepieces. I screamed at my sister to come and take a look, then pushed her away (gently, of course), pulled out my phone and took a picture. I posted it everywhere and people responded, but I kept failing to induce in them that same feeling I had felt, and failed to communicate my passion. The photo was terrible."
+      },
+      {
+        "style": "quote",
+        "text": "“There has to be a better way to do this,” I told my sister after we came home."
+      },
+      {
+        "text": "“Probably,” she replied, and went to shower off and sleep. I, on the other hand, spent all night on the internet trying to answer that question. Finally, at around 6am, I placed an order for my first ZWO planetary camera, and down the rabbit hole I was blissfully lost."
+      }
+    ],
+    "signature": "Ali Alobaidly",
+    "date": "2022-04-25"
   }
 }

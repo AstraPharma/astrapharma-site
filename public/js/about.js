@@ -36,16 +36,21 @@ async function main() {
 
   /* --- Story ------------------------------------------------------- */
 
-  // A line he opened with quotation marks reads better pulled out as a quote.
-  // The punctuation is left exactly as written — the closing quote sits mid
-  // sentence ("… like this," he said), so stripping it would mangle the line.
-  $('bio').innerHTML = channel.youtube.bio
-    .map((paragraph) =>
-      /^["“]/.test(paragraph.trim())
-        ? `<blockquote>${esc(paragraph.trim())}</blockquote>`
-        : `<p>${esc(paragraph)}</p>`,
-    )
-    .join('');
+  // Ali's own account. Each paragraph may carry a style: "lede" opens the
+  // piece larger, "feature" is the line the story turns on, "quote" is spoken.
+  const story = channel.story;
+  $('bio').innerHTML =
+    story.paragraphs
+      .map((paragraph) => {
+        const text = esc(paragraph.text);
+        if (paragraph.style === 'quote') return `<blockquote>${text}</blockquote>`;
+        const cls = paragraph.style ? ` class="is-${paragraph.style}"` : '';
+        return `<p${cls}>${text}</p>`;
+      })
+      .join('') +
+    `<p class="story__signature">${esc(story.signature)}<span>${esc(
+      formatDate(story.date),
+    )}</span></p>`;
 
   // Close the layout up rather than show a broken frame if no portrait is set.
   const portrait = $('portrait');
