@@ -50,11 +50,13 @@ const GRID_COLOUR = '#7286ab';
 const DEFAULT_SURVEY = 'https://alasky.cds.unistra.fr/MellingerRGB';
 const SHARP_SURVEY = 'https://alasky.cds.unistra.fr/DSS/DSSColor';
 
-// Mellinger's pixels are 26 arcsec, so on a viewport around a thousand pixels
-// wide it starts to soften below roughly 7 degrees. Swap a little before that,
-// and swap back later than that, so a slow zoom cannot flicker between the two.
-const SHARPEN_BELOW = 8;
-const SOFTEN_ABOVE = 11;
+// Mellinger's pixels are 26 arcsec, so it starts to soften below roughly 7
+// degrees. The swap is deliberately held back past that point: arriving at one
+// of the photographs lands near 4 degrees, and the Mellinger colour is wanted
+// there. DSS2 takes over only once you zoom past the frame itself. The two
+// thresholds differ so a slow zoom cannot flicker between the two surveys.
+const SHARPEN_BELOW = 3;
+const SOFTEN_ABOVE = 4.5;
 
 // Keyed by the short label from topAward().
 const AWARD_COLOUR = {

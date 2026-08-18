@@ -204,10 +204,12 @@ zoom. DSS2 is about 32 times finer and also covers everything, at the cost of
 looking plate-seamed in the wide view.
 
 So the atlas uses both. "Sharpen when zoomed in" is on by default: the view
-starts on Mellinger and swaps to DSS2 once the field drops below 8 degrees,
-swapping back above 11. The two thresholds differ on purpose, so a slow zoom
-cannot flicker between them. Choosing any survey by hand turns the swapping
-off and keeps your choice.
+starts on Mellinger and swaps to DSS2 once the field drops below 3 degrees,
+swapping back above 4.5. The swap is held back on purpose. Flying to one of the
+photographs lands near 4 degrees, and the Mellinger colour is wanted there, so
+DSS2 only takes over once you zoom past the frame itself. The two thresholds
+differ so a slow zoom cannot flicker between them. Choosing any survey by hand
+turns the swapping off and keeps your choice.
 
 None of this affects Ali's own photographs. They are drawn from AstroBin's
 full-size renditions on top of whatever survey is showing.
