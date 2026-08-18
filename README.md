@@ -154,9 +154,9 @@ nothing looks broken.
 ## How the sky atlas works
 
 The background sky is [Aladin Lite v3](https://aladin.cds.unistra.fr/AladinLite/)
-from the Strasbourg astronomical data centre, showing real survey imagery
-(DSS2 by default, with infrared, H-alpha and wide-field options in the Layers
-panel). It handles all the panning, zooming and projection.
+from the Strasbourg astronomical data centre, showing real survey imagery.
+It handles all the panning, zooming and projection. Which survey is showing,
+and how sharp it is, is covered below.
 
 Everything of yours is drawn on a canvas over the top by `js/sky-fields.js`:
 
