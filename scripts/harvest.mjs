@@ -198,6 +198,27 @@ function slim(image) {
     dataSource: image.dataSource ?? null,
     themes: image.explorationThemes ?? [],
 
+    // Who the image belongs to. Most are Ali's own, but a collaboration is
+    // owned by whoever uploaded it, and two of these belong to the people he
+    // worked with. The site must not quietly present those as his.
+    owner: {
+      name: image.userDisplayName || image.username,
+      username: image.username,
+      avatar: image.userAvatar ?? null,
+      url: `https://app.astrobin.com/u/${image.username}`,
+      isSelf: image.username === USERNAME,
+    },
+
+    // Everyone credited on the image besides Ali. AstroBin keeps this even
+    // while an invitation is still pending, which is what we want: the credit
+    // is a fact about who did the work, not about who has clicked accept.
+    collaborators: (image.collaborators ?? []).map((c) => ({
+      name: c.displayName || c.username,
+      username: c.username,
+      avatar: c.avatar ?? null,
+      url: `https://app.astrobin.com/u/${c.username}`,
+    })),
+
     stats: {
       views: image.viewCount ?? 0,
       likes: image.likeCount ?? 0,

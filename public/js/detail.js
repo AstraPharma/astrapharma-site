@@ -258,6 +258,33 @@ function conditionsSection(image) {
   );
 }
 
+/**
+ * Who made the image. Shown only for collaborations, listing the owner first
+ * and then everyone else, each linking to their own AstroBin profile. Two of
+ * these images belong to Ali's collaborators rather than to him, so the owner
+ * is named explicitly rather than assumed.
+ */
+function creditSection(image) {
+  const others = image.collaborators ?? [];
+  if (!others.length) return '';
+
+  const seen = new Set();
+  const people = [{ ...image.owner, role: 'Image owner' }, ...others]
+    .filter((p) => p && p.username && !seen.has(p.username) && seen.add(p.username));
+
+  const rows = people
+    .map(
+      (p) => `<a class="credit" href="${esc(p.url)}" target="_blank" rel="noopener">
+        ${p.avatar ? `<img class="credit__avatar" src="${esc(p.avatar)}" alt="">` : '<span class="credit__avatar"></span>'}
+        <span class="credit__name">${esc(p.name)}</span>
+        ${p.role ? `<span class="credit__role">${esc(p.role)}</span>` : ''}
+      </a>`,
+    )
+    .join('');
+
+  return section('A collaboration by', `<div class="credits">${rows}</div>`);
+}
+
 /** A featured-elsewhere panel, currently only NASA's Astronomy Picture of the Day. */
 function featureSection(image) {
   const apod = apodFeature(image);
@@ -336,6 +363,7 @@ export function openDetail(image) {
       }
       ${unsolvedNote}
       ${locateButton ? `<div style="margin-bottom:24px">${locateButton}</div>` : ''}
+      ${creditSection(image)}
       ${featureSection(image)}
       ${objectsSection(image)}
       ${factsSection(image)}

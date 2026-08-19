@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-19T14:47:28.318Z",
+  "generated": "2026-08-19T15:06:43.069Z",
   "profile": {
     "username": "AstraPharma",
     "displayName": "Ali Alobaidly",
@@ -10,8 +10,8 @@
     "solved": 40,
     "integrationHours": 738.9,
     "frames": 9523,
-    "views": 30419,
-    "likes": 7565,
+    "views": 30424,
+    "likes": 7566,
     "nights": 60,
     "constellations": [
       "CMa",
@@ -387,9 +387,30 @@
         "COLLABORATION",
         "LRGB"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [
+        {
+          "name": "Bakry Abdullah",
+          "username": "Spastroof",
+          "avatar": "https://cdn.astrobin.com/images/avatars/8/e/100932/resized/64/f9e002794dd424e1db53812d2550280e.png",
+          "url": "https://app.astrobin.com/u/Spastroof"
+        },
+        {
+          "name": "Rabeea Alkuwari",
+          "username": "RabeeaCaptures",
+          "avatar": "https://cdn.astrobin.com/images/avatars/c/e/289872/resized/64/1512223a95ce917eaeec52dfc2b26069.png",
+          "url": "https://app.astrobin.com/u/RabeeaCaptures"
+        }
+      ],
       "stats": {
-        "views": 195,
-        "likes": 134,
+        "views": 197,
+        "likes": 135,
         "bookmarks": 5,
         "comments": 5
       },
@@ -679,6 +700,14 @@
         "LRGB",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 220,
         "likes": 140,
@@ -923,6 +952,14 @@
         "LRGB",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 1524,
         "likes": 388,
@@ -1130,6 +1167,14 @@
         "HIGH_RESOLUTION_IMAGING",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 276,
         "likes": 145,
@@ -1354,6 +1399,14 @@
         "MILKY_WAY",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 247,
         "likes": 131,
@@ -1578,6 +1631,14 @@
         "LRGB",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 551,
         "likes": 242,
@@ -1832,6 +1893,14 @@
         "HUBBLE_PALETTE",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 324,
         "likes": 171,
@@ -2010,6 +2079,27 @@
         "BROADBAND",
         "COLLABORATION",
         "LRGB"
+      ],
+      "owner": {
+        "name": "Rabeea Alkuwari",
+        "username": "RabeeaCaptures",
+        "avatar": "https://cdn.astrobin.com/images/avatars/c/e/289872/resized/64/1512223a95ce917eaeec52dfc2b26069.png",
+        "url": "https://app.astrobin.com/u/RabeeaCaptures",
+        "isSelf": false
+      },
+      "collaborators": [
+        {
+          "name": "Bakry Abdullah",
+          "username": "Spastroof",
+          "avatar": "https://cdn.astrobin.com/images/avatars/8/e/100932/resized/64/f9e002794dd424e1db53812d2550280e.png",
+          "url": "https://app.astrobin.com/u/Spastroof"
+        },
+        {
+          "name": "Ali Alobaidly",
+          "username": "AstraPharma",
+          "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+          "url": "https://app.astrobin.com/u/AstraPharma"
+        }
       ],
       "stats": {
         "views": 543,
@@ -2197,6 +2287,14 @@
         "MILKY_WAY",
         "REFLECTION_NEBULAE"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 468,
         "likes": 190,
@@ -2418,6 +2516,14 @@
         "DARK_NEBULAE",
         "LRGB"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 424,
         "likes": 186,
@@ -2613,8 +2719,16 @@
         "BROADBAND",
         "LRGB"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
-        "views": 646,
+        "views": 647,
         "likes": 214,
         "bookmarks": 19,
         "comments": 13
@@ -2813,8 +2927,16 @@
         "HIGH_RESOLUTION_IMAGING",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
-        "views": 960,
+        "views": 961,
         "likes": 277,
         "bookmarks": 25,
         "comments": 20
@@ -2994,6 +3116,14 @@
         "MILKY_WAY",
         "REFLECTION_NEBULAE"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 561,
         "likes": 209,
@@ -3210,6 +3340,14 @@
         "LRGB",
         "REFLECTION_NEBULAE"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 1198,
         "likes": 256,
@@ -3455,6 +3593,14 @@
       "themes": [
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 742,
         "likes": 180,
@@ -3620,6 +3766,21 @@
         "HIGH_RESOLUTION_IMAGING",
         "LRGB",
         "REFLECTION_NEBULAE"
+      ],
+      "owner": {
+        "name": "Bakry Abdullah",
+        "username": "Spastroof",
+        "avatar": "https://cdn.astrobin.com/images/avatars/8/e/100932/resized/64/f9e002794dd424e1db53812d2550280e.png",
+        "url": "https://app.astrobin.com/u/Spastroof",
+        "isSelf": false
+      },
+      "collaborators": [
+        {
+          "name": "Ali Alobaidly",
+          "username": "AstraPharma",
+          "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+          "url": "https://app.astrobin.com/u/AstraPharma"
+        }
       ],
       "stats": {
         "views": 1007,
@@ -3886,6 +4047,14 @@
         "LRGB",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 2212,
         "likes": 300,
@@ -4127,6 +4296,14 @@
         "NARROWBAND",
         "STAR_CLUSTERS"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 751,
         "likes": 167,
@@ -4341,6 +4518,14 @@
         "LRGB",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 773,
         "likes": 219,
@@ -4560,6 +4745,14 @@
         "OSC",
         "REFLECTION_NEBULAE"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 731,
         "likes": 179,
@@ -4733,6 +4926,14 @@
         "REFLECTION_NEBULAE",
         "SUPERNOVAE_REMNANTS"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 709,
         "likes": 152,
@@ -4947,8 +5148,16 @@
         "HIGH_RESOLUTION_IMAGING",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
-        "views": 868,
+        "views": 869,
         "likes": 183,
         "bookmarks": 11,
         "comments": 7
@@ -5165,6 +5374,14 @@
         "MILKY_WAY",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 562,
         "likes": 157,
@@ -5367,6 +5584,14 @@
         "LRGB",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 516,
         "likes": 138,
@@ -5575,6 +5800,14 @@
         "MOSAICS",
         "OSC"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 1025,
         "likes": 147,
@@ -5737,6 +5970,14 @@
         "LRGB",
         "REFLECTION_NEBULAE"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 780,
         "likes": 235,
@@ -5929,6 +6170,14 @@
         "OSC",
         "REFLECTION_NEBULAE"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 726,
         "likes": 132,
@@ -6093,6 +6342,14 @@
         "MOSAICS",
         "OSC"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 1968,
         "likes": 161,
@@ -6262,6 +6519,14 @@
         "LRGB",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 492,
         "likes": 137,
@@ -6466,6 +6731,14 @@
         "LRGB",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 1498,
         "likes": 197,
@@ -6711,6 +6984,14 @@
         "OSC",
         "REFLECTION_NEBULAE"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 617,
         "likes": 130,
@@ -6876,6 +7157,14 @@
         "HIGH_RESOLUTION_IMAGING",
         "OSC"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 547,
         "likes": 157,
@@ -7021,6 +7310,14 @@
         "NARROWBAND",
         "OSC"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 616,
         "likes": 172,
@@ -7206,6 +7503,14 @@
         "HIGH_RESOLUTION_IMAGING",
         "NARROWBAND"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 605,
         "likes": 190,
@@ -7420,6 +7725,14 @@
         "LRGB",
         "STAR_CLUSTERS"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 676,
         "likes": 166,
@@ -7636,6 +7949,14 @@
         "MOSAICS",
         "OSC"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 844,
         "likes": 204,
@@ -7813,6 +8134,14 @@
         "DARK_NEBULAE",
         "OSC"
       ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 546,
         "likes": 149,
@@ -7981,6 +8310,14 @@
       "acquisitionType": "REGULAR",
       "dataSource": "TRAVELLER",
       "themes": [],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 960,
         "likes": 210,
@@ -8146,6 +8483,14 @@
       "acquisitionType": "REGULAR",
       "dataSource": "TRAVELLER",
       "themes": [],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 569,
         "likes": 172,
@@ -8361,6 +8706,14 @@
       "acquisitionType": "REGULAR",
       "dataSource": "BACKYARD",
       "themes": [],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 549,
         "likes": 129,
@@ -8459,6 +8812,14 @@
       "acquisitionType": "REGULAR",
       "dataSource": "BACKYARD",
       "themes": [],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
       "stats": {
         "views": 393,
         "likes": 81,

@@ -116,6 +116,31 @@ survive every re-harvest. The M106 image already has its APOD entry; add
 another the same way and it appears automatically as a chip on the gallery
 card, a panel in the detail drawer, and a panel on the About page.
 
+## Collaborations and credit
+
+Three images are joint work. AstroBin models this as one owner plus named
+collaborators, and `scripts/harvest.mjs` collects both, so the detail panel can
+show a "A collaboration by" block listing everyone with a link to their own
+AstroBin profile.
+
+Two of those three are **owned by Ali's collaborators**, not by him:
+
+| Image | Owner | With |
+| --- | --- | --- |
+| NGC 1333, the Embryo Nebula | Ali Alobaidly | Bakry Abdullah, Rabeea Alkuwari |
+| LBN 96 | Rabeea Alkuwari | Bakry Abdullah, Ali Alobaidly |
+| SH2-136, the Ghost Nebula | Bakry Abdullah | Ali Alobaidly |
+
+They appear in Ali's AstroBin gallery because collaborations show in the gallery
+of everyone involved, which is why the harvester picks them up. The credit block
+names the owner explicitly so the site never quietly presents someone else's
+image as Ali's. It appears only on images that have collaborators; the other 38
+show nothing.
+
+Note that the footer's copyright line covers the site as a whole. If the two
+images owned by others need different wording, that is a deliberate decision
+rather than something the harvester can work out.
+
 ## The brand
 
 The logo files are single-colour vector paths, used as CSS masks rather than

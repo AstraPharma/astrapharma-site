@@ -979,3 +979,51 @@ button {
     margin-left: 0;
   }
 }
+
+/* --- Collaboration credits in the detail panel ------------------------- */
+
+.credits {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.credit {
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 9px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: #ffffff06;
+  color: var(--text);
+  transition: border-color var(--fast), background var(--fast);
+}
+
+.credit:hover {
+  border-color: var(--gold-dim);
+  background: var(--gold-glow);
+  color: var(--text);
+}
+
+.credit__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg-3);
+}
+
+.credit__name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.credit__role {
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
