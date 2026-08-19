@@ -1,18 +1,18 @@
 {
-  "generated": "2026-08-17T10:30:17.068Z",
+  "generated": "2026-08-19T14:47:28.318Z",
   "profile": {
     "username": "AstraPharma",
     "displayName": "Ali Alobaidly",
     "astrobinUrl": "https://app.astrobin.com/u/AstraPharma"
   },
   "totals": {
-    "images": 40,
-    "solved": 39,
-    "integrationHours": 702.2,
-    "frames": 9082,
-    "views": 30055,
-    "likes": 7419,
-    "nights": 58,
+    "images": 41,
+    "solved": 40,
+    "integrationHours": 738.9,
+    "frames": 9523,
+    "views": 30419,
+    "likes": 7565,
+    "nights": 60,
     "constellations": [
       "CMa",
       "CVn",
@@ -42,13 +42,13 @@
       "category": "cameras",
       "name": "ZWO ASI2600MM Pro",
       "type": "DEDICATED_DEEP_SKY",
-      "images": 31
+      "images": 32
     },
     {
       "category": "mounts",
       "name": "Sky-Watcher EQ8-R Pro",
       "type": "GERMAN_EQUATORIAL",
-      "images": 24
+      "images": 25
     },
     {
       "category": "telescopes",
@@ -78,7 +78,7 @@
       "category": "mounts",
       "name": "ZWO AM5",
       "type": "EQUATORIAL",
-      "images": 17
+      "images": 18
     },
     {
       "category": "filters",
@@ -90,25 +90,25 @@
       "category": "filters",
       "name": "Chroma Lum 36 mm",
       "type": "L",
-      "images": 15
+      "images": 16
     },
     {
       "category": "software",
       "name": "Stefan Berg Nighttime Imaging 'N' Astronomy (N.I.N.A. / NINA)",
       "type": null,
-      "images": 15
+      "images": 16
     },
     {
       "category": "telescopes",
       "name": "Askar 140APO",
       "type": "REFRACTOR_APOCHROMATIC",
-      "images": 14
+      "images": 15
     },
     {
       "category": "accessories",
       "name": "Askar 0.8x Full Frame Reducer / Flattener for 140APO Telescope",
       "type": "FOCAL_MODIFIER_FIELD_CORRECTOR",
-      "images": 13
+      "images": 14
     },
     {
       "category": "accessories",
@@ -117,27 +117,39 @@
       "images": 13
     },
     {
+      "category": "filters",
+      "name": "Antlia Blue 36 mm",
+      "type": "B",
+      "images": 9
+    },
+    {
+      "category": "filters",
+      "name": "Antlia Green 36 mm",
+      "type": "G",
+      "images": 9
+    },
+    {
+      "category": "filters",
+      "name": "Antlia Red 36 mm",
+      "type": "R",
+      "images": 9
+    },
+    {
       "category": "cameras",
       "name": "ZWO ASI2600MC Pro",
       "type": "DEDICATED_DEEP_SKY",
       "images": 9
     },
     {
-      "category": "filters",
-      "name": "Antlia Blue 36 mm",
-      "type": "B",
+      "category": "accessories",
+      "name": "ZWO EAF",
+      "type": "FOCUSER",
       "images": 8
     },
     {
-      "category": "filters",
-      "name": "Antlia Green 36 mm",
-      "type": "G",
-      "images": 8
-    },
-    {
-      "category": "filters",
-      "name": "Antlia Red 36 mm",
-      "type": "R",
+      "category": "accessories",
+      "name": "ZWO EFW 7 x 36mm",
+      "type": "FILTER_WHEEL",
       "images": 8
     },
     {
@@ -150,18 +162,6 @@
       "category": "filters",
       "name": "Chroma OIII 3nm Bandpass 36 mm",
       "type": "OIII",
-      "images": 7
-    },
-    {
-      "category": "accessories",
-      "name": "ZWO EAF",
-      "type": "FOCUSER",
-      "images": 7
-    },
-    {
-      "category": "accessories",
-      "name": "ZWO EFW 7 x 36mm",
-      "type": "FILTER_WHEEL",
       "images": 7
     },
     {
@@ -195,6 +195,18 @@
       "images": 4
     },
     {
+      "category": "filters",
+      "name": "Antlia Luminance Pro",
+      "type": "L",
+      "images": 3
+    },
+    {
+      "category": "mounts",
+      "name": "iOptron HAE69C",
+      "type": "DUAL_ALT_AZ_EQ",
+      "images": 3
+    },
+    {
       "category": "telescopes",
       "name": "Rokinon 135mm f/2.0 ED UMC",
       "type": "CAMERA_LENS",
@@ -213,6 +225,12 @@
       "images": 3
     },
     {
+      "category": "software",
+      "name": "Adobe Photoshop",
+      "type": null,
+      "images": 2
+    },
+    {
       "category": "filters",
       "name": "Antlia 3nm Narrowband Oxygen III 36 mm",
       "type": "OIII",
@@ -220,8 +238,14 @@
     },
     {
       "category": "filters",
-      "name": "Antlia Luminance Pro",
-      "type": "L",
+      "name": "Antlia Blue Pro",
+      "type": "B",
+      "images": 2
+    },
+    {
+      "category": "filters",
+      "name": "Antlia Green Pro",
+      "type": "G",
       "images": 2
     },
     {
@@ -231,9 +255,15 @@
       "images": 2
     },
     {
-      "category": "mounts",
-      "name": "iOptron HAE69C",
-      "type": "DUAL_ALT_AZ_EQ",
+      "category": "filters",
+      "name": "Antlia Red Pro",
+      "type": "R",
+      "images": 2
+    },
+    {
+      "category": "telescopes",
+      "name": "Askar SQA85",
+      "type": "REFRACTOR_PETZVAL",
       "images": 2
     },
     {
@@ -249,45 +279,21 @@
       "images": 2
     },
     {
+      "category": "software",
+      "name": "Pleiades Astrophoto PixInsight",
+      "type": null,
+      "images": 2
+    },
+    {
       "category": "accessories",
       "name": "William Optics Flat6A III",
       "type": "FOCAL_MODIFIER_FIELD_CORRECTOR",
       "images": 2
     },
     {
-      "category": "software",
-      "name": "Adobe Photoshop",
-      "type": null,
-      "images": 1
-    },
-    {
       "category": "filters",
       "name": "Antlia 3nm Narrowband Sulfur II 36 mm",
       "type": "SII",
-      "images": 1
-    },
-    {
-      "category": "filters",
-      "name": "Antlia Blue Pro",
-      "type": "B",
-      "images": 1
-    },
-    {
-      "category": "filters",
-      "name": "Antlia Green Pro",
-      "type": "G",
-      "images": 1
-    },
-    {
-      "category": "filters",
-      "name": "Antlia Red Pro",
-      "type": "R",
-      "images": 1
-    },
-    {
-      "category": "telescopes",
-      "name": "Askar SQA85",
-      "type": "REFRACTOR_PETZVAL",
       "images": 1
     },
     {
@@ -300,12 +306,6 @@
       "category": "accessories",
       "name": "Pegasus Astro Powerbox Advance Gen2",
       "type": "POWER_DISTRIBUTION",
-      "images": 1
-    },
-    {
-      "category": "software",
-      "name": "Pleiades Astrophoto PixInsight",
-      "type": null,
       "images": 1
     },
     {
@@ -357,7 +357,7 @@
       "state": "Al Jahra Governorate",
       "country": "KW",
       "bortle": 4.5,
-      "images": 35
+      "images": 36
     },
     {
       "name": "Home",
@@ -368,6 +368,299 @@
     }
   ],
   "images": [
+    {
+      "hash": "llf5b4",
+      "pk": 1264652,
+      "title": "NGC 1333 - The Embryo Nebula (LRGB) 36h collaboration",
+      "astrobinUrl": "https://app.astrobin.com/i/llf5b4",
+      "published": "2026-08-18T18:44:53.974710",
+      "uploaded": "2026-08-18T18:00:27.089954",
+      "descriptionHtml": "<p>NGC 1333 sits roughly 1,000 light-years away in Perseus, embedded in the Perseus molecular cloud and among the most active stellar nurseries anywhere near the Sun. Almost everything blue here is starlight scattered off dust rather than gas glowing on its own, while the small red knots buried in the dark lanes are Herbig-Haro objects: jets from newborn stars ploughing into the surrounding cloud. At least seventeen young stellar objects in this field are driving outflows, and several are Class 0 protostars, still collapsing and barely begun.</p><p>This one is a two-site collaboration. I captured 30 hours 35 minutes from the Al Salmy Desert in Kuwait on 16-17 October 2025 with an Askar 140 APO, and Bakry Abdullah captured a further 6 hours 10 minutes from Mastoorah in Makkah Province, Saudi Arabia on 17-18 October with an Askar SQA85, while Rabeea did the bulk of the  post processing work with minor inputs from all collaborators.</p><p>We totatled at 36 hours 45 minutes of total integration across 441 subframes. The two datasets sit at quite different image scales, so Bakry’s data was drizzeld to bring the image scale closer, the goal was to improve signal-to-noise rather than added resolution. Luminance benefits most, reaching 17 hours 35 minutes between us.</p>",
+      "width": 3946,
+      "height": 6104,
+      "constellation": "Per",
+      "subjectType": "DEEP_SKY",
+      "acquisitionType": "REGULAR",
+      "dataSource": "TRAVELLER",
+      "themes": [
+        "BROADBAND",
+        "COLLABORATION",
+        "LRGB"
+      ],
+      "stats": {
+        "views": 195,
+        "likes": 134,
+        "bookmarks": 5,
+        "comments": 5
+      },
+      "awards": {
+        "isIotd": false,
+        "iotdDate": null,
+        "isTopPick": false,
+        "isTopPickNomination": false
+      },
+      "features": [],
+      "sky": {
+        "ra": 52.22432275,
+        "dec": 31.38114999,
+        "pixscale": 0.987,
+        "orientation": 24.533,
+        "radius": 0.996,
+        "fovWidth": 1.0818616666666665,
+        "fovHeight": 1.6735133333333334,
+        "objectsInField": [
+          "NGC 1333"
+        ],
+        "footprint": [
+          [
+            53.21172635,
+            31.91331107
+          ],
+          [
+            52.0529892,
+            32.36487549
+          ],
+          [
+            51.24813871,
+            30.8407456
+          ],
+          [
+            52.39181455,
+            30.39577854
+          ]
+        ],
+        "footprintSource": "solved",
+        "annotationSvg": "https://cdn.astrobin.com/pixinsight-solutions-regular/JTI2LIKUEMVR5B8RMX054ONMP6W39X4J.svg",
+        "skyPlot": "https://cdn.astrobin.com/images/skyplots/images/104325/2026/5dab0088-6d91-4264-a34a-4230456e7a0a.png"
+      },
+      "thumbnails": {
+        "small": "https://cdn.astrobin.com/thumbs/5rZOA9_ZwDj3_130x130_v8wVImXw.png?v=1787078234",
+        "card": "https://cdn.astrobin.com/thumbs/5rZOA9_ZwDj3_460x320_pxxw01lk.png?v=1787078234",
+        "regular": "https://cdn.astrobin.com/thumbs/5rZOA9_ZwDj3_620x0_1g3BC9VT.png?v=1787078228",
+        "hd": "https://cdn.astrobin.com/thumbs/5rZOA9_ZwDj3_1824x0__sPnTECk.png?v=1787078217",
+        "qhd": "https://cdn.astrobin.com/thumbs/5rZOA9_ZwDj3_2560x0_n1wMX-gx.png?v=1787078222"
+      },
+      "equipment": {
+        "telescopes": [
+          {
+            "name": "Askar 140APO",
+            "type": "REFRACTOR_APOCHROMATIC",
+            "website": "https://www.sharpstar-optics.com/Products_1/90.html"
+          },
+          {
+            "name": "Askar SQA85",
+            "type": "REFRACTOR_PETZVAL",
+            "website": "https://www.sharpstar-optics.com/Products_1/SQA85.html"
+          }
+        ],
+        "cameras": [
+          {
+            "name": "ZWO ASI2600MM Pro",
+            "type": "DEDICATED_DEEP_SKY",
+            "website": "https://astronomy-imaging-camera.com/product/asi2600mm-pro-mono"
+          }
+        ],
+        "mounts": [
+          {
+            "name": "iOptron HAE69C",
+            "type": "DUAL_ALT_AZ_EQ",
+            "website": null
+          },
+          {
+            "name": "Sky-Watcher EQ8-R Pro",
+            "type": "GERMAN_EQUATORIAL",
+            "website": "https://inter-static.skywatcher.com/downloads/eq8r_v2.pdf"
+          },
+          {
+            "name": "ZWO AM5",
+            "type": "EQUATORIAL",
+            "website": null
+          }
+        ],
+        "filters": [
+          {
+            "name": "Antlia Blue 36 mm",
+            "type": "B",
+            "website": "http://www.antliafilter.com/pd.jsp?id=100#pfc=%7B%22groupIds%22%3A%5B5%5D%2C%22lid%22%3A1%2C%22sc%22%3A%7B%22key%22%3A%22addedTime%22%2C%22desc%22%3Afalse%7D%7D&_jcp=3_5"
+          },
+          {
+            "name": "Antlia Blue Pro",
+            "type": "B",
+            "website": "http://www.antliafilter.com/pd.jsp?id=100#pfc=%7B%22groupIds%22%3A%5B5%5D%2C%22lid%22%3A1%2C%22sc%22%3A%7B%22key%22%3A%22addedTime%22%2C%22desc%22%3Afalse%7D%7D&_jcp=3_5"
+          },
+          {
+            "name": "Antlia Green 36 mm",
+            "type": "G",
+            "website": "http://www.antliafilter.com/pd.jsp?id=100#pfc=%7B%22groupIds%22%3A%5B5%5D%2C%22lid%22%3A1%2C%22sc%22%3A%7B%22key%22%3A%22addedTime%22%2C%22desc%22%3Afalse%7D%7D&_jcp=3_5"
+          },
+          {
+            "name": "Antlia Green Pro",
+            "type": "G",
+            "website": "http://www.antliafilter.com/pd.jsp?id=100#pfc=%7B%22groupIds%22%3A%5B5%5D%2C%22lid%22%3A1%2C%22sc%22%3A%7B%22key%22%3A%22addedTime%22%2C%22desc%22%3Afalse%7D%7D&_jcp=3_5"
+          },
+          {
+            "name": "Antlia Luminance Pro",
+            "type": "L",
+            "website": null
+          },
+          {
+            "name": "Antlia Red 36 mm",
+            "type": "R",
+            "website": "http://www.antliafilter.com/pd.jsp?id=100#pfc=%7B%22groupIds%22%3A%5B5%5D%2C%22lid%22%3A1%2C%22sc%22%3A%7B%22key%22%3A%22addedTime%22%2C%22desc%22%3Afalse%7D%7D&_jcp=3_5"
+          },
+          {
+            "name": "Antlia Red Pro",
+            "type": "R",
+            "website": "http://www.antliafilter.com/pd.jsp?id=100#pfc=%7B%22groupIds%22%3A%5B5%5D%2C%22lid%22%3A1%2C%22sc%22%3A%7B%22key%22%3A%22addedTime%22%2C%22desc%22%3Afalse%7D%7D&_jcp=3_5"
+          },
+          {
+            "name": "Chroma Lum 36 mm",
+            "type": "L",
+            "website": "https://www.chroma.com/products/parts/lum"
+          }
+        ],
+        "accessories": [
+          {
+            "name": "Askar 0.8x Full Frame Reducer / Flattener for 140APO Telescope",
+            "type": "FOCAL_MODIFIER_FIELD_CORRECTOR",
+            "website": null
+          },
+          {
+            "name": "ZWO EAF",
+            "type": "FOCUSER",
+            "website": null
+          },
+          {
+            "name": "ZWO EFW 7 x 36mm",
+            "type": "FILTER_WHEEL",
+            "website": null
+          }
+        ],
+        "software": [
+          {
+            "name": "Adobe Photoshop",
+            "type": null,
+            "website": null
+          },
+          {
+            "name": "Pleiades Astrophoto PixInsight",
+            "type": null,
+            "website": null
+          },
+          {
+            "name": "Stefan Berg Nighttime Imaging 'N' Astronomy (N.I.N.A. / NINA)",
+            "type": null,
+            "website": null
+          }
+        ],
+        "guidingTelescopes": [],
+        "guidingCameras": []
+      },
+      "acquisitions": {
+        "totalSeconds": 132300,
+        "totalHours": 36.75,
+        "totalFrames": 441,
+        "nightCount": 2,
+        "nights": [
+          "2025-10-16",
+          "2025-10-17"
+        ],
+        "firstNight": "2025-10-16",
+        "lastNight": "2025-10-17",
+        "byFilter": [
+          {
+            "filter": "Chroma Lum 36 mm",
+            "filterType": "L",
+            "frames": 173,
+            "seconds": 51900,
+            "hours": 14.42,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "Antlia Green 36 mm",
+            "filterType": "G",
+            "frames": 70,
+            "seconds": 21000,
+            "hours": 5.83,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "Antlia Red 36 mm",
+            "filterType": "R",
+            "frames": 62,
+            "seconds": 18600,
+            "hours": 5.17,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "Antlia Blue 36 mm",
+            "filterType": "B",
+            "frames": 62,
+            "seconds": 18600,
+            "hours": 5.17,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "Antlia Luminance Pro",
+            "filterType": "L",
+            "frames": 38,
+            "seconds": 11400,
+            "hours": 3.17,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "Antlia Red Pro",
+            "filterType": "R",
+            "frames": 12,
+            "seconds": 3600,
+            "hours": 1,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "Antlia Green Pro",
+            "filterType": "G",
+            "frames": 12,
+            "seconds": 3600,
+            "hours": 1,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "Antlia Blue Pro",
+            "filterType": "B",
+            "frames": 12,
+            "seconds": 3600,
+            "hours": 1,
+            "subLengths": [
+              300
+            ]
+          }
+        ]
+      },
+      "moon": {
+        "averageAge": 25.348736819442788,
+        "averageIllumination": 0.1868428511034186
+      },
+      "location": {
+        "name": "Al Salmy Desert",
+        "state": "Al Jahra Governorate",
+        "country": "KW",
+        "bortle": 4.5
+      }
+    },
     {
       "hash": "n1kabk",
       "pk": 1259927,
@@ -387,8 +680,8 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 210,
-        "likes": 139,
+        "views": 220,
+        "likes": 140,
         "bookmarks": 7,
         "comments": 4
       },
@@ -631,9 +924,9 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 1479,
-        "likes": 386,
-        "bookmarks": 14,
+        "views": 1524,
+        "likes": 388,
+        "bookmarks": 15,
         "comments": 21
       },
       "awards": {
@@ -838,8 +1131,8 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 270,
-        "likes": 143,
+        "views": 276,
+        "likes": 145,
         "bookmarks": 2,
         "comments": 2
       },
@@ -1062,8 +1355,8 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 241,
-        "likes": 130,
+        "views": 247,
+        "likes": 131,
         "bookmarks": 6,
         "comments": 8
       },
@@ -1286,10 +1579,10 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 542,
-        "likes": 238,
+        "views": 551,
+        "likes": 242,
         "bookmarks": 19,
-        "comments": 15
+        "comments": 17
       },
       "awards": {
         "isIotd": false,
@@ -1540,8 +1833,8 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 320,
-        "likes": 169,
+        "views": 324,
+        "likes": 171,
         "bookmarks": 5,
         "comments": 3
       },
@@ -1719,7 +2012,7 @@
         "LRGB"
       ],
       "stats": {
-        "views": 535,
+        "views": 543,
         "likes": 175,
         "bookmarks": 5,
         "comments": 1
@@ -1905,7 +2198,7 @@
         "REFLECTION_NEBULAE"
       ],
       "stats": {
-        "views": 465,
+        "views": 468,
         "likes": 190,
         "bookmarks": 11,
         "comments": 3
@@ -2126,7 +2419,7 @@
         "LRGB"
       ],
       "stats": {
-        "views": 422,
+        "views": 424,
         "likes": 186,
         "bookmarks": 10,
         "comments": 12
@@ -2321,7 +2614,7 @@
         "LRGB"
       ],
       "stats": {
-        "views": 639,
+        "views": 646,
         "likes": 214,
         "bookmarks": 19,
         "comments": 13
@@ -2521,7 +2814,7 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 954,
+        "views": 960,
         "likes": 277,
         "bookmarks": 25,
         "comments": 20
@@ -2702,7 +2995,7 @@
         "REFLECTION_NEBULAE"
       ],
       "stats": {
-        "views": 560,
+        "views": 561,
         "likes": 209,
         "bookmarks": 14,
         "comments": 6
@@ -2918,7 +3211,7 @@
         "REFLECTION_NEBULAE"
       ],
       "stats": {
-        "views": 1189,
+        "views": 1198,
         "likes": 256,
         "bookmarks": 15,
         "comments": 17
@@ -3163,7 +3456,7 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 741,
+        "views": 742,
         "likes": 180,
         "bookmarks": 12,
         "comments": 3
@@ -3329,7 +3622,7 @@
         "REFLECTION_NEBULAE"
       ],
       "stats": {
-        "views": 1005,
+        "views": 1007,
         "likes": 263,
         "bookmarks": 14,
         "comments": 15
@@ -3594,7 +3887,7 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 2207,
+        "views": 2212,
         "likes": 300,
         "bookmarks": 53,
         "comments": 27
@@ -3835,7 +4128,7 @@
         "STAR_CLUSTERS"
       ],
       "stats": {
-        "views": 750,
+        "views": 751,
         "likes": 167,
         "bookmarks": 10,
         "comments": 0
@@ -4049,7 +4342,7 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 772,
+        "views": 773,
         "likes": 219,
         "bookmarks": 16,
         "comments": 13
@@ -4268,7 +4561,7 @@
         "REFLECTION_NEBULAE"
       ],
       "stats": {
-        "views": 730,
+        "views": 731,
         "likes": 179,
         "bookmarks": 9,
         "comments": 11
@@ -4441,7 +4734,7 @@
         "SUPERNOVAE_REMNANTS"
       ],
       "stats": {
-        "views": 708,
+        "views": 709,
         "likes": 152,
         "bookmarks": 9,
         "comments": 4
@@ -4655,7 +4948,7 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 865,
+        "views": 868,
         "likes": 183,
         "bookmarks": 11,
         "comments": 7
@@ -4873,7 +5166,7 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 561,
+        "views": 562,
         "likes": 157,
         "bookmarks": 7,
         "comments": 4
@@ -5075,7 +5368,7 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 515,
+        "views": 516,
         "likes": 138,
         "bookmarks": 2,
         "comments": 2
@@ -5283,7 +5576,7 @@
         "OSC"
       ],
       "stats": {
-        "views": 1022,
+        "views": 1025,
         "likes": 147,
         "bookmarks": 9,
         "comments": 15
@@ -5445,7 +5738,7 @@
         "REFLECTION_NEBULAE"
       ],
       "stats": {
-        "views": 779,
+        "views": 780,
         "likes": 235,
         "bookmarks": 12,
         "comments": 14
@@ -5637,7 +5930,7 @@
         "REFLECTION_NEBULAE"
       ],
       "stats": {
-        "views": 725,
+        "views": 726,
         "likes": 132,
         "bookmarks": 4,
         "comments": 3
@@ -5801,7 +6094,7 @@
         "OSC"
       ],
       "stats": {
-        "views": 1966,
+        "views": 1968,
         "likes": 161,
         "bookmarks": 2,
         "comments": 8
@@ -5970,7 +6263,7 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 490,
+        "views": 492,
         "likes": 137,
         "bookmarks": 12,
         "comments": 3
@@ -6174,7 +6467,7 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 1496,
+        "views": 1498,
         "likes": 197,
         "bookmarks": 16,
         "comments": 12
@@ -6419,7 +6712,7 @@
         "REFLECTION_NEBULAE"
       ],
       "stats": {
-        "views": 614,
+        "views": 617,
         "likes": 130,
         "bookmarks": 10,
         "comments": 5
@@ -6584,7 +6877,7 @@
         "OSC"
       ],
       "stats": {
-        "views": 544,
+        "views": 547,
         "likes": 157,
         "bookmarks": 4,
         "comments": 5
@@ -6729,7 +7022,7 @@
         "OSC"
       ],
       "stats": {
-        "views": 613,
+        "views": 616,
         "likes": 172,
         "bookmarks": 2,
         "comments": 2
@@ -6914,7 +7207,7 @@
         "NARROWBAND"
       ],
       "stats": {
-        "views": 604,
+        "views": 605,
         "likes": 190,
         "bookmarks": 8,
         "comments": 7
@@ -7128,7 +7421,7 @@
         "STAR_CLUSTERS"
       ],
       "stats": {
-        "views": 675,
+        "views": 676,
         "likes": 166,
         "bookmarks": 4,
         "comments": 9
@@ -7344,7 +7637,7 @@
         "OSC"
       ],
       "stats": {
-        "views": 840,
+        "views": 844,
         "likes": 204,
         "bookmarks": 13,
         "comments": 3
@@ -7521,7 +7814,7 @@
         "OSC"
       ],
       "stats": {
-        "views": 545,
+        "views": 546,
         "likes": 149,
         "bookmarks": 4,
         "comments": 3
@@ -7689,7 +7982,7 @@
       "dataSource": "TRAVELLER",
       "themes": [],
       "stats": {
-        "views": 958,
+        "views": 960,
         "likes": 210,
         "bookmarks": 11,
         "comments": 6
@@ -7854,7 +8147,7 @@
       "dataSource": "TRAVELLER",
       "themes": [],
       "stats": {
-        "views": 567,
+        "views": 569,
         "likes": 172,
         "bookmarks": 4,
         "comments": 2
@@ -8069,7 +8362,7 @@
       "dataSource": "BACKYARD",
       "themes": [],
       "stats": {
-        "views": 547,
+        "views": 549,
         "likes": 129,
         "bookmarks": 3,
         "comments": 4
@@ -8167,7 +8460,7 @@
       "dataSource": "BACKYARD",
       "themes": [],
       "stats": {
-        "views": 390,
+        "views": 393,
         "likes": 81,
         "bookmarks": 1,
         "comments": 0
