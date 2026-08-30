@@ -1,5 +1,5 @@
 {
-  "captured": "2026-08-17",
+  "captured": "2026-08-30",
   "brand": {
     "name": "AstraPharma",
     "person": "Ali Alobaidly",
@@ -12,9 +12,14 @@
   },
   "youtube": {
     "handle": "@AstraPharmaq8",
-    "subscribers": "2.63K",
-    "videoCount": 24,
+    "subscribers": "2.68K",
+    "videoCount": 25,
     "videos": [
+      {
+        "id": "2A9e0rJ5x5k",
+        "title": "Sky-Watcher SynLink: The ASIAIR Alternative We’ve Been Waiting For?",
+        "length": "16:36"
+      },
       {
         "id": "rWOcwRU11Fw",
         "title": "I Tried a Tool That Turns Astrophotos Into 3D Flythroughs",
