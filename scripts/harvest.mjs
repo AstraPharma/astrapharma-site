@@ -10,10 +10,10 @@ const API = 'https://app.astrobin.com/api/v2';
 
 const HASHES = [
   'ipxy4b', 'llf5b4', 'n1kabk', 'k8i4z0', 'xt2sxl', '43yjix', 'bimae5', 'jbqy1w', '1bbokr',
-  'b6xo1i', '9rkrm2', 'ji0kku', '6khp7e', '8y05t1', 'qmwee8', 'luspyq', '3em1tm', '27ch1a',
-  'mijfud', '6p3r82', 'ke7l8h', '85qrul', '914zv6', 'y00o5f', 'h4oack', 'fxf9s5',
-  '6kpy1d', '244jac', 'de3hde', 'lydor6', 'w20wbw', 's3yz0f', 'n8wo8z', 'e13rgk',
-  '8p3sfo', '2v3p21', '6ge38l', 'a00gvk', 's8r1qg', 's645dl', 'u5f1gz', 'apo951',
+  'b6xo1i', '9rkrm2', 'ji0kku', '6khp7e', '8y05t1', 'qmwee8', '2r7t0c', 'luspyq', '3em1tm',
+  '27ch1a', 'mijfud', '6p3r82', 'ke7l8h', '85qrul', '914zv6', 'y00o5f', 'h4oack', 'fxf9s5',
+  '6kpy1d', '244jac', 'de3hde', 'lydor6', 'w20wbw', 's3yz0f', 'n8wo8z', 'e13rgk', '8p3sfo',
+  '2v3p21', '6ge38l', 'a00gvk', 's8r1qg', 's645dl', 'u5f1gz', 'apo951',
 ];
 
 // AstroBin stores no constellation for these three; filled from their solved position.

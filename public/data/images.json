@@ -1,18 +1,18 @@
 {
-  "generated": "2026-09-13T16:00:49.773Z",
+  "generated": "2026-09-13T16:20:16.959Z",
   "profile": {
     "username": "AstraPharma",
     "displayName": "Ali Alobaidly",
     "astrobinUrl": "https://app.astrobin.com/u/AstraPharma"
   },
   "totals": {
-    "images": 42,
-    "solved": 41,
-    "integrationHours": 768.4,
-    "frames": 9877,
-    "views": 31760,
-    "likes": 7745,
-    "nights": 62,
+    "images": 43,
+    "solved": 42,
+    "integrationHours": 781.2,
+    "frames": 10031,
+    "views": 32022,
+    "likes": 7851,
+    "nights": 64,
     "constellations": [
       "CMa",
       "CVn",
@@ -35,20 +35,26 @@
     "apod": 1,
     "iotd": 1,
     "topPicks": 18,
-    "topPickNominations": 20
+    "topPickNominations": 21
   },
   "equipment": [
     {
       "category": "cameras",
       "name": "ZWO ASI2600MM Pro",
       "type": "DEDICATED_DEEP_SKY",
-      "images": 33
+      "images": 34
     },
     {
       "category": "mounts",
       "name": "Sky-Watcher EQ8-R Pro",
       "type": "GERMAN_EQUATORIAL",
-      "images": 26
+      "images": 27
+    },
+    {
+      "category": "telescopes",
+      "name": "Celestron EdgeHD 9.25\"",
+      "type": "CATADIOPTRIC_ACF_SCHMIDT_CASSEGRAIN",
+      "images": 19
     },
     {
       "category": "filters",
@@ -69,16 +75,16 @@
       "images": 19
     },
     {
-      "category": "telescopes",
-      "name": "Celestron EdgeHD 9.25\"",
-      "type": "CATADIOPTRIC_ACF_SCHMIDT_CASSEGRAIN",
-      "images": 18
-    },
-    {
       "category": "mounts",
       "name": "ZWO AM5",
       "type": "EQUATORIAL",
       "images": 18
+    },
+    {
+      "category": "filters",
+      "name": "Chroma H-alpha 3nm Bandpass 36 mm",
+      "type": "H_ALPHA",
+      "images": 17
     },
     {
       "category": "filters",
@@ -99,12 +105,6 @@
       "images": 16
     },
     {
-      "category": "filters",
-      "name": "Chroma H-alpha 3nm Bandpass 36 mm",
-      "type": "H_ALPHA",
-      "images": 16
-    },
-    {
       "category": "accessories",
       "name": "Askar 0.8x Full Frame Reducer / Flattener for 140APO Telescope",
       "type": "FOCAL_MODIFIER_FIELD_CORRECTOR",
@@ -114,7 +114,7 @@
       "category": "accessories",
       "name": "Celestron 0.7X Reducer EdgeHD925 (94245)",
       "type": "FOCAL_MODIFIER_FIELD_CORRECTOR",
-      "images": 13
+      "images": 14
     },
     {
       "category": "filters",
@@ -147,6 +147,12 @@
       "images": 8
     },
     {
+      "category": "filters",
+      "name": "Chroma OIII 3nm Bandpass 36 mm",
+      "type": "OIII",
+      "images": 8
+    },
+    {
       "category": "accessories",
       "name": "ZWO EAF",
       "type": "FOCUSER",
@@ -165,22 +171,16 @@
       "images": 7
     },
     {
-      "category": "filters",
-      "name": "Chroma OIII 3nm Bandpass 36 mm",
-      "type": "OIII",
-      "images": 7
-    },
-    {
       "category": "accessories",
       "name": "PrimaLuceLab ARCO 2\" rotator",
       "type": "FIELD_DEROTATOR",
-      "images": 6
+      "images": 7
     },
     {
       "category": "accessories",
       "name": "PrimaLuceLab ESATTO 2\" LP low profile robotic focuser",
       "type": "FOCUSER",
-      "images": 6
+      "images": 7
     },
     {
       "category": "mounts",
@@ -349,6 +349,12 @@
       "name": "ZWO H-alpha 7nm 36mm",
       "type": "H_ALPHA",
       "images": 1
+    },
+    {
+      "category": "filters",
+      "name": "ZWO S-II 7nm 36 mm",
+      "type": "SII",
+      "images": 1
     }
   ],
   "sites": [
@@ -357,7 +363,7 @@
       "state": "Al Jahra Governorate",
       "country": "KW",
       "bortle": 4.5,
-      "images": 36
+      "images": 37
     },
     {
       "name": "Home",
@@ -395,9 +401,9 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 31,
-        "likes": 19,
-        "bookmarks": 2,
+        "views": 39,
+        "likes": 28,
+        "bookmarks": 4,
         "comments": 2
       },
       "awards": {
@@ -651,7 +657,7 @@
         }
       ],
       "stats": {
-        "views": 551,
+        "views": 552,
         "likes": 231,
         "bookmarks": 13,
         "comments": 13
@@ -1418,7 +1424,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 299,
+        "views": 300,
         "likes": 146,
         "bookmarks": 2,
         "comments": 2
@@ -1650,7 +1656,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 265,
+        "views": 266,
         "likes": 131,
         "bookmarks": 6,
         "comments": 8
@@ -1882,7 +1888,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 589,
+        "views": 590,
         "likes": 242,
         "bookmarks": 19,
         "comments": 17
@@ -3591,7 +3597,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 1254,
+        "views": 1255,
         "likes": 260,
         "bookmarks": 15,
         "comments": 17
@@ -3810,6 +3816,199 @@
       "moon": {
         "averageAge": 28.516311815483927,
         "averageIllumination": 0.013751751548079685
+      },
+      "location": {
+        "name": "Al Salmy Desert",
+        "state": "Al Jahra Governorate",
+        "country": "KW",
+        "bortle": 4.5
+      }
+    },
+    {
+      "hash": "2r7t0c",
+      "pk": 1094791,
+      "title": "The Cygnus Wall - SHO",
+      "astrobinUrl": "https://app.astrobin.com/i/2r7t0c",
+      "published": "2025-08-07T16:35:18.638387",
+      "uploaded": "2025-08-07T16:30:21.937643",
+      "descriptionHtml": "This region represents one of the most active stellar nurseries within the nebula, sculpted by the radiation and winds of massive, young stars. Captured in narrowband using the iconic SHO palette (Sulfur II, Hydrogen-alpha, Oxygen III), the image isolates specific wavelengths of light emitted by ionized gases, revealing otherwise hidden structures with remarkable clarity. These emissions result from energetic ultraviolet light stripping electrons from atoms, a process known as photoionization. The data was acquired using an Edge HD 9.25-inch Schmidt-Cassegrain telescope at a focal length of 1635mm, allowing for high-resolution detail of this dynamic interstellar landscape.<br><br>What you’re seeing is the boundary between cold molecular clouds and the hot ionized gas created by massive stars, a region known as an ionization front. As high-energy photons from nearby O-type and B-type stars strike the surrounding gas, they ionize it, heating it to thousands of degrees. This difference in pressure creates a shock front that compresses the gas ahead of it.<br><br>Over time, this compression can lead to triggered star formation which is a key feedback process in astrophysics. The glowing ridges and dark tendrils are physical manifestations of these fronts and shocks, providing a glimpse into the turbulent life cycle of matter in the galaxy.<br><br>The \"Cygnus Wall\" is not just a beautiful structure, it’s a dynamic interface where stellar radiation sculpts cosmic matter, influencing the birth of the next generation of stars.",
+      "width": 5892,
+      "height": 3928,
+      "constellation": "Cyg",
+      "subjectType": "DEEP_SKY",
+      "acquisitionType": "REGULAR",
+      "dataSource": "TRAVELLER",
+      "themes": [
+        "HIGH_RESOLUTION_IMAGING",
+        "HUBBLE_PALETTE",
+        "NARROWBAND"
+      ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
+      "stats": {
+        "views": 248,
+        "likes": 97,
+        "bookmarks": 1,
+        "comments": 2
+      },
+      "awards": {
+        "isIotd": false,
+        "iotdDate": null,
+        "isTopPick": false,
+        "isTopPickNomination": true
+      },
+      "features": [],
+      "sky": {
+        "ra": 314.83886676,
+        "dec": 43.66557893,
+        "pixscale": 0.475,
+        "orientation": -40.023,
+        "radius": 0.467,
+        "fovWidth": 0.7774166666666666,
+        "fovHeight": 0.5182777777777777,
+        "objectsInField": [],
+        "footprint": [
+          [
+            315.02107389,
+            44.11291882
+          ],
+          [
+            314.19831941,
+            43.61225948
+          ],
+          [
+            314.65927626,
+            43.217695
+          ],
+          [
+            315.47983936,
+            43.71541165
+          ]
+        ],
+        "footprintSource": "solved",
+        "annotationSvg": "https://cdn.astrobin.com/pixinsight-solutions-regular/PEIVED52FGOOY0LKV1133P6HASONGNSW.svg",
+        "skyPlot": "https://cdn.astrobin.com/images/skyplots/images/104325/2025/afb69146-dd6f-4835-bcca-44975157490b.jpg"
+      },
+      "thumbnails": {
+        "small": "https://cdn.astrobin.com/thumbs/qvw3En8C_eMw_130x130_FLauWZ0o.png",
+        "card": "https://cdn.astrobin.com/thumbs/qvw3En8C_eMw_460x320_jxjN-Lnn.jpg?v=1789104057",
+        "regular": "https://cdn.astrobin.com/thumbs/qvw3En8C_eMw_620x0_esdlMP5Y.jpg?v=1789104057",
+        "hd": "https://cdn.astrobin.com/thumbs/qvw3En8C_eMw_1824x0_esdlMP5Y.jpg?v=1789104057",
+        "qhd": "https://cdn.astrobin.com/thumbs/qvw3En8C_eMw_2560x0_esdlMP5Y.jpg?v=1789104057"
+      },
+      "equipment": {
+        "telescopes": [
+          {
+            "name": "Celestron EdgeHD 9.25\"",
+            "type": "CATADIOPTRIC_ACF_SCHMIDT_CASSEGRAIN",
+            "website": "https://www.celestron.com/products/edgehd-925-optical-tube-assembly-cge-dovetail"
+          }
+        ],
+        "cameras": [
+          {
+            "name": "ZWO ASI2600MM Pro",
+            "type": "DEDICATED_DEEP_SKY",
+            "website": "https://astronomy-imaging-camera.com/product/asi2600mm-pro-mono"
+          }
+        ],
+        "mounts": [
+          {
+            "name": "Sky-Watcher EQ8-R Pro",
+            "type": "GERMAN_EQUATORIAL",
+            "website": "https://inter-static.skywatcher.com/downloads/eq8r_v2.pdf"
+          }
+        ],
+        "filters": [
+          {
+            "name": "Chroma H-alpha 3nm Bandpass 36 mm",
+            "type": "H_ALPHA",
+            "website": "https://www.chroma.com/products/parts/h-alpha-3nm-bandpass"
+          },
+          {
+            "name": "Chroma OIII 3nm Bandpass 36 mm",
+            "type": "OIII",
+            "website": "https://www.chroma.com/products/parts/oiii-3nm-bandpass"
+          },
+          {
+            "name": "ZWO S-II 7nm 36 mm",
+            "type": "SII",
+            "website": "https://astronomy-imaging-camera.com/product/zwo-new-narrowband-2-filter"
+          }
+        ],
+        "accessories": [
+          {
+            "name": "Celestron 0.7X Reducer EdgeHD925 (94245)",
+            "type": "FOCAL_MODIFIER_FIELD_CORRECTOR",
+            "website": null
+          },
+          {
+            "name": "PrimaLuceLab ARCO 2\" rotator",
+            "type": "FIELD_DEROTATOR",
+            "website": null
+          },
+          {
+            "name": "PrimaLuceLab ESATTO 2\" LP low profile robotic focuser",
+            "type": "FOCUSER",
+            "website": null
+          }
+        ],
+        "software": [],
+        "guidingTelescopes": [],
+        "guidingCameras": []
+      },
+      "acquisitions": {
+        "totalSeconds": 46200,
+        "totalHours": 12.83,
+        "totalFrames": 154,
+        "nightCount": 2,
+        "nights": [
+          "2025-07-24",
+          "2025-07-25"
+        ],
+        "firstNight": "2025-07-24",
+        "lastNight": "2025-07-25",
+        "byFilter": [
+          {
+            "filter": "Chroma H-alpha 3nm Bandpass 36 mm",
+            "filterType": "H_ALPHA",
+            "frames": 78,
+            "seconds": 23400,
+            "hours": 6.5,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "ZWO S-II 7nm 36 mm",
+            "filterType": "SII",
+            "frames": 40,
+            "seconds": 12000,
+            "hours": 3.33,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "Chroma OIII 3nm Bandpass 36 mm",
+            "filterType": "OIII",
+            "frames": 36,
+            "seconds": 10800,
+            "hours": 3,
+            "subLengths": [
+              300
+            ]
+          }
+        ]
+      },
+      "moon": {
+        "averageAge": 0.20047280164899406,
+        "averageIllumination": 0.003582197202133597
       },
       "location": {
         "name": "Al Salmy Desert",
@@ -4298,7 +4497,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 2241,
+        "views": 2242,
         "likes": 300,
         "bookmarks": 53,
         "comments": 27
