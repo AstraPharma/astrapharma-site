@@ -9,8 +9,8 @@ const USERNAME = 'AstraPharma';
 const API = 'https://app.astrobin.com/api/v2';
 
 const HASHES = [
-  'llf5b4', 'n1kabk', 'k8i4z0', 'xt2sxl', '43yjix', 'bimae5', 'jbqy1w', '1bbokr', 'b6xo1i',
-  '9rkrm2', 'ji0kku', '6khp7e', '8y05t1', 'qmwee8', 'luspyq', '3em1tm', '27ch1a',
+  'ipxy4b', 'llf5b4', 'n1kabk', 'k8i4z0', 'xt2sxl', '43yjix', 'bimae5', 'jbqy1w', '1bbokr',
+  'b6xo1i', '9rkrm2', 'ji0kku', '6khp7e', '8y05t1', 'qmwee8', 'luspyq', '3em1tm', '27ch1a',
   'mijfud', '6p3r82', 'ke7l8h', '85qrul', '914zv6', 'y00o5f', 'h4oack', 'fxf9s5',
   '6kpy1d', '244jac', 'de3hde', 'lydor6', 'w20wbw', 's3yz0f', 'n8wo8z', 'e13rgk',
   '8p3sfo', '2v3p21', '6ge38l', 'a00gvk', 's8r1qg', 's645dl', 'u5f1gz', 'apo951',
@@ -51,6 +51,43 @@ const EXTERNAL_FEATURES = {
 };
 
 const num = (v) => (v === null || v === undefined || v === '' ? null : Number(v));
+
+// Object names arrive as one comma separated string, and some carry a
+// parenthesised alias list of their own, as in
+// 'The star Navi (gamma Cas, 27 Cas)'. Splitting on every comma tears those
+// in half, so where the brackets nest properly we only break at depth zero.
+//
+// On older uploads AstroBin has already split and alphabetised the pieces
+// itself, which strands a closing bracket at the front of the string
+// ('41 Ori A), 41 Ori C, ...'). Nothing can put those back together, and
+// treating them as nested would glue unrelated names into one, so anything
+// that closes a bracket it never opened falls back to a plain split.
+const splitObjects = (text) => {
+  let depth = 0;
+  let nested = true;
+  for (const ch of text) {
+    if (ch === '(') depth += 1;
+    else if (ch === ')') depth -= 1;
+    if (depth < 0) { nested = false; break; }
+  }
+  const clean = (parts) => parts.map((o) => o.trim()).filter(Boolean);
+  if (!nested || depth !== 0) return clean(text.split(','));
+
+  const parts = [];
+  depth = 0;
+  let from = 0;
+  for (let i = 0; i < text.length; i += 1) {
+    const ch = text[i];
+    if (ch === '(') depth += 1;
+    else if (ch === ')') depth -= 1;
+    else if (ch === ',' && depth === 0) {
+      parts.push(text.slice(from, i));
+      from = i + 1;
+    }
+  }
+  parts.push(text.slice(from));
+  return clean(parts);
+};
 
 async function getJson(url) {
   const res = await fetch(url, { headers: { Accept: 'application/json' } });
@@ -243,7 +280,7 @@ function slim(image) {
           fovWidth: pixscale && image.w ? (image.w * pixscale) / 3600 : null,
           fovHeight: pixscale && image.h ? (image.h * pixscale) / 3600 : null,
           objectsInField: s.objectsInField
-            ? s.objectsInField.split(',').map((o) => o.trim()).filter(Boolean)
+            ? splitObjects(s.objectsInField)
             : [],
           footprint: frame.corners,
           footprintSource: frame.source,

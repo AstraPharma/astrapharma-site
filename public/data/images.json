@@ -1,18 +1,18 @@
 {
-  "generated": "2026-08-26T14:57:40.039Z",
+  "generated": "2026-09-13T16:00:49.773Z",
   "profile": {
     "username": "AstraPharma",
     "displayName": "Ali Alobaidly",
     "astrobinUrl": "https://app.astrobin.com/u/AstraPharma"
   },
   "totals": {
-    "images": 41,
-    "solved": 40,
-    "integrationHours": 738.9,
-    "frames": 9523,
-    "views": 30970,
-    "likes": 7665,
-    "nights": 60,
+    "images": 42,
+    "solved": 41,
+    "integrationHours": 768.4,
+    "frames": 9877,
+    "views": 31760,
+    "likes": 7745,
+    "nights": 62,
     "constellations": [
       "CMa",
       "CVn",
@@ -42,36 +42,36 @@
       "category": "cameras",
       "name": "ZWO ASI2600MM Pro",
       "type": "DEDICATED_DEEP_SKY",
-      "images": 32
+      "images": 33
     },
     {
       "category": "mounts",
       "name": "Sky-Watcher EQ8-R Pro",
       "type": "GERMAN_EQUATORIAL",
-      "images": 25
-    },
-    {
-      "category": "telescopes",
-      "name": "Celestron EdgeHD 9.25\"",
-      "type": "CATADIOPTRIC_ACF_SCHMIDT_CASSEGRAIN",
-      "images": 18
+      "images": 26
     },
     {
       "category": "filters",
       "name": "Chroma Blue 36 mm",
       "type": "B",
-      "images": 18
+      "images": 19
     },
     {
       "category": "filters",
       "name": "Chroma Green 36 mm",
       "type": "G",
-      "images": 18
+      "images": 19
     },
     {
       "category": "filters",
       "name": "Chroma Red 36 mm",
       "type": "R",
+      "images": 19
+    },
+    {
+      "category": "telescopes",
+      "name": "Celestron EdgeHD 9.25\"",
+      "type": "CATADIOPTRIC_ACF_SCHMIDT_CASSEGRAIN",
       "images": 18
     },
     {
@@ -82,33 +82,33 @@
     },
     {
       "category": "filters",
-      "name": "Chroma H-alpha 3nm Bandpass 36 mm",
-      "type": "H_ALPHA",
-      "images": 16
-    },
-    {
-      "category": "filters",
       "name": "Chroma Lum 36 mm",
       "type": "L",
-      "images": 16
+      "images": 17
     },
     {
       "category": "software",
       "name": "Stefan Berg Nighttime Imaging 'N' Astronomy (N.I.N.A. / NINA)",
       "type": null,
-      "images": 16
+      "images": 17
     },
     {
       "category": "telescopes",
       "name": "Askar 140APO",
       "type": "REFRACTOR_APOCHROMATIC",
-      "images": 15
+      "images": 16
+    },
+    {
+      "category": "filters",
+      "name": "Chroma H-alpha 3nm Bandpass 36 mm",
+      "type": "H_ALPHA",
+      "images": 16
     },
     {
       "category": "accessories",
       "name": "Askar 0.8x Full Frame Reducer / Flattener for 140APO Telescope",
       "type": "FOCAL_MODIFIER_FIELD_CORRECTOR",
-      "images": 14
+      "images": 15
     },
     {
       "category": "accessories",
@@ -141,6 +141,12 @@
       "images": 9
     },
     {
+      "category": "filters",
+      "name": "Antlia 3nm Narrowband H-alpha 36 mm",
+      "type": "H_ALPHA",
+      "images": 8
+    },
+    {
       "category": "accessories",
       "name": "ZWO EAF",
       "type": "FOCUSER",
@@ -154,8 +160,8 @@
     },
     {
       "category": "filters",
-      "name": "Antlia 3nm Narrowband H-alpha 36 mm",
-      "type": "H_ALPHA",
+      "name": "Antlia Luminance 36 mm",
+      "type": "L",
       "images": 7
     },
     {
@@ -163,12 +169,6 @@
       "name": "Chroma OIII 3nm Bandpass 36 mm",
       "type": "OIII",
       "images": 7
-    },
-    {
-      "category": "filters",
-      "name": "Antlia Luminance 36 mm",
-      "type": "L",
-      "images": 6
     },
     {
       "category": "accessories",
@@ -183,15 +183,15 @@
       "images": 6
     },
     {
-      "category": "telescopes",
-      "name": "William Optics Gran Turismo 81 IV / GT81 IV",
-      "type": "REFRACTOR_APOCHROMATIC",
-      "images": 4
-    },
-    {
       "category": "mounts",
       "name": "ZWO AM5N",
       "type": "EQUATORIAL",
+      "images": 5
+    },
+    {
+      "category": "telescopes",
+      "name": "William Optics Gran Turismo 81 IV / GT81 IV",
+      "type": "REFRACTOR_APOCHROMATIC",
       "images": 4
     },
     {
@@ -357,7 +357,7 @@
       "state": "Al Jahra Governorate",
       "country": "KW",
       "bortle": 4.5,
-      "images": 35
+      "images": 36
     },
     {
       "name": "Home",
@@ -368,6 +368,248 @@
     }
   ],
   "images": [
+    {
+      "hash": "ipxy4b",
+      "pk": 1278894,
+      "title": "IC 63 - The Ghost Of cassiopeia (HaLRGB)",
+      "astrobinUrl": "https://app.astrobin.com/i/ipxy4b",
+      "published": "2026-09-13T15:22:16.454735",
+      "uploaded": "2026-09-13T13:56:28.310312",
+      "descriptionHtml": "<p>IC 63 is shaped by one of the brightest stars in Cassiopeia, Gamma Cassiopeiae, informally named Navi. Why? During the Apollo program, astronaut Gus Grissom playfully invented the name by spelling his middle name, Ivan, backwards. He secretly added it to NASA's navigation charts.The name Navi was never officially approved by the International Astronomical Union (IAU), the body that standardizes celestial names. The IAU eventually gave the star the official name, Tiansi, based on traditional Chinese astronomy but the nickname Navi remains popular today among space history enthusiasts and amateur stargazers like myself!</p><p>The Star's intense radiation both ionises the surrounding hydrogen and illuminates the nearby dust, creating a mixture of deep red emission and delicate blue reflections. Capturing it was only half the challenge and a complete HaLRGB image proved particularly unforgiving here. The faint structure of the nebula sits incredibly close to Navi, and every attempt to reveal more of the surrounding dust also amplified the gradients and the enormous blue halo around the star. Producing a mainly broadband image without allowing the star to dominate the entire frame became a difficult balancing act and this was one of those images where the processing took almost as much patience as the acquisition, constantly deciding how far to push the faint dust, how much of the star's overwhelming presence to preserve, and when to stop fighting the light and simply allow it to remain part of the story.</p><p>The final image totals at around 29 hours of HaLRGB data, captured with a pair of 140 mm APO refractors working side by side beneath the Kuwaiti sky.</p>",
+      "width": 6159,
+      "height": 4072,
+      "constellation": "Cas",
+      "subjectType": "DEEP_SKY",
+      "acquisitionType": "REGULAR",
+      "dataSource": "TRAVELLER",
+      "themes": [
+        "LRGB",
+        "NARROWBAND"
+      ],
+      "owner": {
+        "name": "Ali Alobaidly",
+        "username": "AstraPharma",
+        "avatar": "https://cdn.astrobin.com/images/avatars/5/1/104325/resized/64/9854cc835a287a6b00f529bf981a00f7.png",
+        "url": "https://app.astrobin.com/u/AstraPharma",
+        "isSelf": true
+      },
+      "collaborators": [],
+      "stats": {
+        "views": 31,
+        "likes": 19,
+        "bookmarks": 2,
+        "comments": 2
+      },
+      "awards": {
+        "isIotd": false,
+        "iotdDate": null,
+        "isTopPick": false,
+        "isTopPickNomination": false
+      },
+      "features": [],
+      "sky": {
+        "ra": 14.89553513,
+        "dec": 61.03250513,
+        "pixscale": 0.985,
+        "orientation": -153.983,
+        "radius": 1.009,
+        "fovWidth": 1.6851708333333333,
+        "fovHeight": 1.1141444444444444,
+        "objectsInField": [
+          "IC 59",
+          "IC 63",
+          "The star Navi (γ Cas, 27 Cas)"
+        ],
+        "footprint": [
+          [
+            12.84306267,
+            60.88672461
+          ],
+          [
+            15.92169818,
+            60.1607522
+          ],
+          [
+            16.96384167,
+            61.14672384
+          ],
+          [
+            13.81118519,
+            61.89631642
+          ]
+        ],
+        "footprintSource": "solved",
+        "annotationSvg": "https://cdn.astrobin.com/pixinsight-solutions-regular/3GEPIVT1DV1RVOYVKYGW410WG9UEJTKU.svg",
+        "skyPlot": "https://cdn.astrobin.com/images/skyplots/images/104325/2026/51d684f9-4dd5-4fc5-939d-364b545831cb.png"
+      },
+      "thumbnails": {
+        "small": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_130x130_94y-JmeC.png?v=1789311722",
+        "card": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_460x320_CuOxknU-.png?v=1789307990",
+        "regular": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_620x0_1g3BC9VT.png?v=1789307995",
+        "hd": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_1824x0__sPnTECk.png?v=1789307994",
+        "qhd": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_2560x0_n1wMX-gx.png?v=1789307998"
+      },
+      "equipment": {
+        "telescopes": [
+          {
+            "name": "Askar 140APO",
+            "type": "REFRACTOR_APOCHROMATIC",
+            "website": "https://www.sharpstar-optics.com/Products_1/90.html"
+          }
+        ],
+        "cameras": [
+          {
+            "name": "ZWO ASI2600MM Pro",
+            "type": "DEDICATED_DEEP_SKY",
+            "website": "https://astronomy-imaging-camera.com/product/asi2600mm-pro-mono"
+          }
+        ],
+        "mounts": [
+          {
+            "name": "Sky-Watcher EQ8-R Pro",
+            "type": "GERMAN_EQUATORIAL",
+            "website": "https://inter-static.skywatcher.com/downloads/eq8r_v2.pdf"
+          },
+          {
+            "name": "ZWO AM5N",
+            "type": "EQUATORIAL",
+            "website": null
+          }
+        ],
+        "filters": [
+          {
+            "name": "Antlia 3nm Narrowband H-alpha 36 mm",
+            "type": "H_ALPHA",
+            "website": "http://www.antliafilter.com/pd.jsp?id=53#pfc=%7B%22groupIds%22%3A%5B4%5D%2C%22lid%22%3A1%2C%22sc%22%3A%7B%22key%22%3A%22addedTime%22%2C%22desc%22%3Afalse%7D%7D&_jcp=3_4"
+          },
+          {
+            "name": "Antlia Luminance 36 mm",
+            "type": "L",
+            "website": "http://www.antliafilter.com/pd.jsp?id=100#pfc=%7B%22groupIds%22%3A%5B5%5D%2C%22lid%22%3A1%2C%22sc%22%3A%7B%22key%22%3A%22addedTime%22%2C%22desc%22%3Afalse%7D%7D&_jcp=3_5"
+          },
+          {
+            "name": "Chroma Blue 36 mm",
+            "type": "B",
+            "website": "https://www.chroma.com/products/parts/blue"
+          },
+          {
+            "name": "Chroma Green 36 mm",
+            "type": "G",
+            "website": "https://www.chroma.com/products/parts/green"
+          },
+          {
+            "name": "Chroma Lum 36 mm",
+            "type": "L",
+            "website": "https://www.chroma.com/products/parts/lum"
+          },
+          {
+            "name": "Chroma Red 36 mm",
+            "type": "R",
+            "website": "https://www.chroma.com/products/parts/red"
+          }
+        ],
+        "accessories": [
+          {
+            "name": "Askar 0.8x Full Frame Reducer / Flattener for 140APO Telescope",
+            "type": "FOCAL_MODIFIER_FIELD_CORRECTOR",
+            "website": null
+          }
+        ],
+        "software": [
+          {
+            "name": "Stefan Berg Nighttime Imaging 'N' Astronomy (N.I.N.A. / NINA)",
+            "type": null,
+            "website": null
+          }
+        ],
+        "guidingTelescopes": [],
+        "guidingCameras": []
+      },
+      "acquisitions": {
+        "totalSeconds": 106200,
+        "totalHours": 29.5,
+        "totalFrames": 354,
+        "nightCount": 2,
+        "nights": [
+          "2026-09-09",
+          "2026-09-11"
+        ],
+        "firstNight": "2026-09-09",
+        "lastNight": "2026-09-11",
+        "byFilter": [
+          {
+            "filter": "Chroma Lum 36 mm",
+            "filterType": "L",
+            "frames": 94,
+            "seconds": 28200,
+            "hours": 7.83,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "Antlia 3nm Narrowband H-alpha 36 mm",
+            "filterType": "H_ALPHA",
+            "frames": 92,
+            "seconds": 27600,
+            "hours": 7.67,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "Antlia Luminance 36 mm",
+            "filterType": "L",
+            "frames": 82,
+            "seconds": 24600,
+            "hours": 6.83,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "Chroma Green 36 mm",
+            "filterType": "G",
+            "frames": 30,
+            "seconds": 9000,
+            "hours": 2.5,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "Chroma Blue 36 mm",
+            "filterType": "B",
+            "frames": 30,
+            "seconds": 9000,
+            "hours": 2.5,
+            "subLengths": [
+              300
+            ]
+          },
+          {
+            "filter": "Chroma Red 36 mm",
+            "filterType": "R",
+            "frames": 26,
+            "seconds": 7800,
+            "hours": 2.17,
+            "subLengths": [
+              300
+            ]
+          }
+        ]
+      },
+      "moon": {
+        "averageAge": 28.4851131916529,
+        "averageIllumination": 0.02344170990430333
+      },
+      "location": {
+        "name": "Al Salmy Desert",
+        "state": "Al Jahra Governorate",
+        "country": "KW",
+        "bortle": 4.5
+      }
+    },
     {
       "hash": "llf5b4",
       "pk": 1264652,
@@ -404,15 +646,15 @@
         {
           "name": "Rabeea Alkuwari",
           "username": "RabeeaCaptures",
-          "avatar": "https://cdn.astrobin.com/images/avatars/c/e/289872/resized/64/1512223a95ce917eaeec52dfc2b26069.png",
+          "avatar": "https://cdn.astrobin.com/images/avatars/c/e/289872/resized/64/ad5bae376f2c3f179379dac9c26dadcc.png",
           "url": "https://app.astrobin.com/u/RabeeaCaptures"
         }
       ],
       "stats": {
-        "views": 451,
-        "likes": 209,
-        "bookmarks": 11,
-        "comments": 12
+        "views": 551,
+        "likes": 231,
+        "bookmarks": 13,
+        "comments": 13
       },
       "awards": {
         "isIotd": false,
@@ -709,10 +951,10 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 310,
-        "likes": 158,
-        "bookmarks": 10,
-        "comments": 5
+        "views": 419,
+        "likes": 177,
+        "bookmarks": 12,
+        "comments": 9
       },
       "awards": {
         "isIotd": false,
@@ -961,8 +1203,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 1585,
-        "likes": 389,
+        "views": 1677,
+        "likes": 395,
         "bookmarks": 15,
         "comments": 21
       },
@@ -1176,8 +1418,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 282,
-        "likes": 145,
+        "views": 299,
+        "likes": 146,
         "bookmarks": 2,
         "comments": 2
       },
@@ -1408,7 +1650,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 256,
+        "views": 265,
         "likes": 131,
         "bookmarks": 6,
         "comments": 8
@@ -1640,7 +1882,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 560,
+        "views": 589,
         "likes": 242,
         "bookmarks": 19,
         "comments": 17
@@ -1902,8 +2144,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 331,
-        "likes": 171,
+        "views": 366,
+        "likes": 174,
         "bookmarks": 5,
         "comments": 3
       },
@@ -2083,7 +2325,7 @@
       "owner": {
         "name": "Rabeea Alkuwari",
         "username": "RabeeaCaptures",
-        "avatar": "https://cdn.astrobin.com/images/avatars/c/e/289872/resized/64/1512223a95ce917eaeec52dfc2b26069.png",
+        "avatar": "https://cdn.astrobin.com/images/avatars/c/e/289872/resized/64/ad5bae376f2c3f179379dac9c26dadcc.png",
         "url": "https://app.astrobin.com/u/RabeeaCaptures",
         "isSelf": false
       },
@@ -2102,8 +2344,8 @@
         }
       ],
       "stats": {
-        "views": 559,
-        "likes": 176,
+        "views": 588,
+        "likes": 177,
         "bookmarks": 5,
         "comments": 1
       },
@@ -2296,7 +2538,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 470,
+        "views": 486,
         "likes": 190,
         "bookmarks": 11,
         "comments": 3
@@ -2525,7 +2767,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 425,
+        "views": 433,
         "likes": 186,
         "bookmarks": 10,
         "comments": 12
@@ -2728,7 +2970,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 650,
+        "views": 669,
         "likes": 214,
         "bookmarks": 19,
         "comments": 13
@@ -2936,7 +3178,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 968,
+        "views": 1000,
         "likes": 277,
         "bookmarks": 25,
         "comments": 20
@@ -3125,7 +3367,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 564,
+        "views": 576,
         "likes": 209,
         "bookmarks": 14,
         "comments": 6
@@ -3349,8 +3591,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 1212,
-        "likes": 256,
+        "views": 1254,
+        "likes": 260,
         "bookmarks": 15,
         "comments": 17
       },
@@ -3602,9 +3844,9 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 745,
-        "likes": 180,
-        "bookmarks": 12,
+        "views": 763,
+        "likes": 182,
+        "bookmarks": 13,
         "comments": 3
       },
       "awards": {
@@ -3783,8 +4025,8 @@
         }
       ],
       "stats": {
-        "views": 1007,
-        "likes": 263,
+        "views": 1019,
+        "likes": 265,
         "bookmarks": 14,
         "comments": 15
       },
@@ -4056,7 +4298,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 2223,
+        "views": 2241,
         "likes": 300,
         "bookmarks": 53,
         "comments": 27
@@ -4305,7 +4547,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 761,
+        "views": 770,
         "likes": 172,
         "bookmarks": 11,
         "comments": 0
@@ -4527,7 +4769,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 775,
+        "views": 781,
         "likes": 219,
         "bookmarks": 16,
         "comments": 13
@@ -4754,7 +4996,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 734,
+        "views": 738,
         "likes": 179,
         "bookmarks": 9,
         "comments": 11
@@ -4935,7 +5177,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 711,
+        "views": 717,
         "likes": 152,
         "bookmarks": 9,
         "comments": 4
@@ -5157,7 +5399,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 871,
+        "views": 880,
         "likes": 183,
         "bookmarks": 11,
         "comments": 7
@@ -5383,7 +5625,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 563,
+        "views": 576,
         "likes": 157,
         "bookmarks": 7,
         "comments": 4
@@ -5593,7 +5835,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 519,
+        "views": 523,
         "likes": 138,
         "bookmarks": 2,
         "comments": 2
@@ -5809,7 +6051,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 1031,
+        "views": 1049,
         "likes": 147,
         "bookmarks": 9,
         "comments": 15
@@ -5979,7 +6221,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 780,
+        "views": 784,
         "likes": 235,
         "bookmarks": 12,
         "comments": 14
@@ -6179,7 +6421,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 726,
+        "views": 730,
         "likes": 132,
         "bookmarks": 4,
         "comments": 3
@@ -6351,8 +6593,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 1975,
-        "likes": 161,
+        "views": 1989,
+        "likes": 162,
         "bookmarks": 2,
         "comments": 8
       },
@@ -6528,7 +6770,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 492,
+        "views": 495,
         "likes": 137,
         "bookmarks": 12,
         "comments": 3
@@ -6740,7 +6982,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 1502,
+        "views": 1509,
         "likes": 197,
         "bookmarks": 16,
         "comments": 12
@@ -6993,7 +7235,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 617,
+        "views": 623,
         "likes": 130,
         "bookmarks": 10,
         "comments": 5
@@ -7166,7 +7408,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 547,
+        "views": 553,
         "likes": 157,
         "bookmarks": 4,
         "comments": 5
@@ -7319,7 +7561,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 616,
+        "views": 620,
         "likes": 172,
         "bookmarks": 2,
         "comments": 2
@@ -7512,7 +7754,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 607,
+        "views": 612,
         "likes": 190,
         "bookmarks": 8,
         "comments": 7
@@ -7734,7 +7976,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 676,
+        "views": 679,
         "likes": 166,
         "bookmarks": 4,
         "comments": 9
@@ -7958,7 +8200,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 846,
+        "views": 853,
         "likes": 204,
         "bookmarks": 13,
         "comments": 3
@@ -7992,28 +8234,22 @@
           "The star Antares",
           "Cor Scorpii",
           "Vespertilio",
-          "Kalb al Akrab (α Sco",
-          "21 Sco)",
+          "Kalb al Akrab (α Sco, 21 Sco)",
           "The star ψ Oph",
           "4 Oph",
           "The star ω Oph",
           "9 Oph",
           "The star Alniyat",
           "Alniyat I",
-          "Al Niyat (σ Sco",
-          "20 Sco)",
+          "Al Niyat (σ Sco, 20 Sco)",
           "The star Acrab",
           "Graffias",
-          "Akrab (β1 Sco",
-          "8 Sco A)",
-          "The star Jabhat Acrabi I (ω1 Sco",
-          "9 Sco)",
-          "The star Jabbah (ν Sco",
-          "14 Sco)",
+          "Akrab (β1 Sco, 8 Sco A)",
+          "The star Jabhat Acrabi I (ω1 Sco, 9 Sco)",
+          "The star Jabbah (ν Sco, 14 Sco)",
           "The star χ Oph",
           "7 Oph",
-          "The star Jabhat Acrabi II (ω2 Sco",
-          "10 Sco)",
+          "The star Jabhat Acrabi II (ω2 Sco, 10 Sco)",
           "The star φ Oph",
           "8 Oph"
         ],
@@ -8143,7 +8379,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 547,
+        "views": 551,
         "likes": 149,
         "bookmarks": 4,
         "comments": 3
@@ -8172,16 +8408,12 @@
           "9 Oph",
           "The star Acrab",
           "Graffias",
-          "Akrab (β1 Sco",
-          "8 Sco A)",
-          "The star Jabhat Acrabi I (ω1 Sco",
-          "9 Sco)",
-          "The star Jabbah (ν Sco",
-          "14 Sco)",
+          "Akrab (β1 Sco, 8 Sco A)",
+          "The star Jabhat Acrabi I (ω1 Sco, 9 Sco)",
+          "The star Jabbah (ν Sco, 14 Sco)",
           "The star χ Oph",
           "7 Oph",
-          "The star Jabhat Acrabi II (ω2 Sco",
-          "10 Sco)",
+          "The star Jabhat Acrabi II (ω2 Sco, 10 Sco)",
           "The star φ Oph",
           "8 Oph",
           "The star β2 Sco",
@@ -8314,7 +8546,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 962,
+        "views": 971,
         "likes": 210,
         "bookmarks": 11,
         "comments": 6
@@ -8346,8 +8578,7 @@
           "The star Antares",
           "Cor Scorpii",
           "Vespertilio",
-          "Kalb al Akrab (α Sco",
-          "21 Sco)",
+          "Kalb al Akrab (α Sco, 21 Sco)",
           "The star ρ Oph",
           "5 Oph",
           "The star ω Oph",
@@ -8358,8 +8589,7 @@
           "22 Sco",
           "The star Alniyat",
           "Alniyat I",
-          "Al Niyat (σ Sco",
-          "20 Sco)",
+          "Al Niyat (σ Sco, 20 Sco)",
           "The star c2 Sco",
           "13 Sco",
           "The star d Sco",
@@ -8487,7 +8717,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 571,
+        "views": 575,
         "likes": 172,
         "bookmarks": 4,
         "comments": 2
@@ -8710,7 +8940,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 550,
+        "views": 555,
         "likes": 129,
         "bookmarks": 3,
         "comments": 4
@@ -8816,7 +9046,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 393,
+        "views": 401,
         "likes": 81,
         "bookmarks": 1,
         "comments": 0
