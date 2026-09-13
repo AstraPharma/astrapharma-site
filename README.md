@@ -134,7 +134,7 @@ Two of those three are **owned by Ali's collaborators**, not by him:
 They appear in Ali's AstroBin gallery because collaborations show in the gallery
 of everyone involved, which is why the harvester picks them up. The credit block
 names the owner explicitly so the site never quietly presents someone else's
-image as Ali's. It appears only on images that have collaborators; the other 38
+image as Ali's. It appears only on images that have collaborators; the other 40
 show nothing.
 
 Note that the footer's copyright line covers the site as a whole. If the two
