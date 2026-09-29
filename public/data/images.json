@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-13T16:20:16.959Z",
+  "generated": "2026-09-29T07:29:26.303Z",
   "profile": {
     "username": "AstraPharma",
     "displayName": "Ali Alobaidly",
@@ -10,8 +10,8 @@
     "solved": 42,
     "integrationHours": 781.2,
     "frames": 10031,
-    "views": 32022,
-    "likes": 7851,
+    "views": 34209,
+    "likes": 8091,
     "nights": 64,
     "constellations": [
       "CMa",
@@ -34,7 +34,7 @@
     ],
     "apod": 1,
     "iotd": 1,
-    "topPicks": 18,
+    "topPicks": 19,
     "topPickNominations": 21
   },
   "equipment": [
@@ -401,15 +401,15 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 39,
-        "likes": 28,
-        "bookmarks": 4,
-        "comments": 2
+        "views": 479,
+        "likes": 183,
+        "bookmarks": 21,
+        "comments": 19
       },
       "awards": {
         "isIotd": false,
         "iotdDate": null,
-        "isTopPick": false,
+        "isTopPick": true,
         "isTopPickNomination": false
       },
       "features": [],
@@ -450,10 +450,10 @@
       },
       "thumbnails": {
         "small": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_130x130_94y-JmeC.png?v=1789311722",
-        "card": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_460x320_CuOxknU-.png?v=1789307990",
-        "regular": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_620x0_1g3BC9VT.png?v=1789307995",
-        "hd": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_1824x0__sPnTECk.png?v=1789307994",
-        "qhd": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_2560x0_n1wMX-gx.png?v=1789307998"
+        "card": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_460x320_CuOxknU-.png?v=1790587384",
+        "regular": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_620x0_1g3BC9VT.png?v=1790587384",
+        "hd": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_1824x0__sPnTECk.png?v=1790587384",
+        "qhd": "https://cdn.astrobin.com/thumbs/OI6rC_CRPsO4_2560x0_n1wMX-gx.png?v=1790587384"
       },
       "equipment": {
         "telescopes": [
@@ -657,9 +657,9 @@
         }
       ],
       "stats": {
-        "views": 552,
-        "likes": 231,
-        "bookmarks": 13,
+        "views": 635,
+        "likes": 240,
+        "bookmarks": 14,
         "comments": 13
       },
       "awards": {
@@ -957,9 +957,9 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 419,
-        "likes": 177,
-        "bookmarks": 12,
+        "views": 505,
+        "likes": 186,
+        "bookmarks": 13,
         "comments": 9
       },
       "awards": {
@@ -1209,8 +1209,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 1677,
-        "likes": 395,
+        "views": 1780,
+        "likes": 398,
         "bookmarks": 15,
         "comments": 21
       },
@@ -1424,8 +1424,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 300,
-        "likes": 146,
+        "views": 346,
+        "likes": 147,
         "bookmarks": 2,
         "comments": 2
       },
@@ -1656,8 +1656,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 266,
-        "likes": 131,
+        "views": 322,
+        "likes": 138,
         "bookmarks": 6,
         "comments": 8
       },
@@ -1888,9 +1888,9 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 590,
-        "likes": 242,
-        "bookmarks": 19,
+        "views": 652,
+        "likes": 252,
+        "bookmarks": 20,
         "comments": 17
       },
       "awards": {
@@ -2150,8 +2150,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 366,
-        "likes": 174,
+        "views": 433,
+        "likes": 175,
         "bookmarks": 5,
         "comments": 3
       },
@@ -2350,8 +2350,8 @@
         }
       ],
       "stats": {
-        "views": 588,
-        "likes": 177,
+        "views": 624,
+        "likes": 178,
         "bookmarks": 5,
         "comments": 1
       },
@@ -2544,8 +2544,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 486,
-        "likes": 190,
+        "views": 524,
+        "likes": 192,
         "bookmarks": 11,
         "comments": 3
       },
@@ -2773,7 +2773,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 433,
+        "views": 463,
         "likes": 186,
         "bookmarks": 10,
         "comments": 12
@@ -2976,10 +2976,10 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 669,
-        "likes": 214,
-        "bookmarks": 19,
-        "comments": 13
+        "views": 715,
+        "likes": 219,
+        "bookmarks": 20,
+        "comments": 15
       },
       "awards": {
         "isIotd": false,
@@ -3184,9 +3184,9 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 1000,
-        "likes": 277,
-        "bookmarks": 25,
+        "views": 1053,
+        "likes": 284,
+        "bookmarks": 26,
         "comments": 20
       },
       "awards": {
@@ -3373,8 +3373,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 576,
-        "likes": 209,
+        "views": 609,
+        "likes": 210,
         "bookmarks": 14,
         "comments": 6
       },
@@ -3597,10 +3597,10 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 1255,
-        "likes": 260,
-        "bookmarks": 15,
-        "comments": 17
+        "views": 1558,
+        "likes": 273,
+        "bookmarks": 21,
+        "comments": 24
       },
       "awards": {
         "isIotd": false,
@@ -3852,7 +3852,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 248,
+        "views": 290,
         "likes": 97,
         "bookmarks": 1,
         "comments": 2
@@ -4043,8 +4043,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 763,
-        "likes": 182,
+        "views": 818,
+        "likes": 190,
         "bookmarks": 13,
         "comments": 3
       },
@@ -4224,9 +4224,9 @@
         }
       ],
       "stats": {
-        "views": 1019,
-        "likes": 265,
-        "bookmarks": 14,
+        "views": 1071,
+        "likes": 267,
+        "bookmarks": 15,
         "comments": 15
       },
       "awards": {
@@ -4497,8 +4497,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 2242,
-        "likes": 300,
+        "views": 2285,
+        "likes": 301,
         "bookmarks": 53,
         "comments": 27
       },
@@ -4746,7 +4746,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 770,
+        "views": 803,
         "likes": 172,
         "bookmarks": 11,
         "comments": 0
@@ -4968,7 +4968,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 781,
+        "views": 803,
         "likes": 219,
         "bookmarks": 16,
         "comments": 13
@@ -5195,7 +5195,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 738,
+        "views": 754,
         "likes": 179,
         "bookmarks": 9,
         "comments": 11
@@ -5376,7 +5376,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 717,
+        "views": 745,
         "likes": 152,
         "bookmarks": 9,
         "comments": 4
@@ -5598,7 +5598,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 880,
+        "views": 906,
         "likes": 183,
         "bookmarks": 11,
         "comments": 7
@@ -5824,8 +5824,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 576,
-        "likes": 157,
+        "views": 591,
+        "likes": 159,
         "bookmarks": 7,
         "comments": 4
       },
@@ -6034,8 +6034,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 523,
-        "likes": 138,
+        "views": 535,
+        "likes": 139,
         "bookmarks": 2,
         "comments": 2
       },
@@ -6250,7 +6250,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 1049,
+        "views": 1068,
         "likes": 147,
         "bookmarks": 9,
         "comments": 15
@@ -6420,7 +6420,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 784,
+        "views": 802,
         "likes": 235,
         "bookmarks": 12,
         "comments": 14
@@ -6620,7 +6620,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 730,
+        "views": 746,
         "likes": 132,
         "bookmarks": 4,
         "comments": 3
@@ -6792,7 +6792,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 1989,
+        "views": 2021,
         "likes": 162,
         "bookmarks": 2,
         "comments": 8
@@ -6969,9 +6969,9 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 495,
+        "views": 507,
         "likes": 137,
-        "bookmarks": 12,
+        "bookmarks": 11,
         "comments": 3
       },
       "awards": {
@@ -7181,9 +7181,9 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 1509,
-        "likes": 197,
-        "bookmarks": 16,
+        "views": 1557,
+        "likes": 198,
+        "bookmarks": 17,
         "comments": 12
       },
       "awards": {
@@ -7434,7 +7434,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 623,
+        "views": 645,
         "likes": 130,
         "bookmarks": 10,
         "comments": 5
@@ -7607,7 +7607,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 553,
+        "views": 574,
         "likes": 157,
         "bookmarks": 4,
         "comments": 5
@@ -7760,7 +7760,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 620,
+        "views": 639,
         "likes": 172,
         "bookmarks": 2,
         "comments": 2
@@ -7953,7 +7953,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 612,
+        "views": 635,
         "likes": 190,
         "bookmarks": 8,
         "comments": 7
@@ -8175,7 +8175,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 679,
+        "views": 697,
         "likes": 166,
         "bookmarks": 4,
         "comments": 9
@@ -8399,7 +8399,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 853,
+        "views": 869,
         "likes": 204,
         "bookmarks": 13,
         "comments": 3
@@ -8578,7 +8578,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 551,
+        "views": 561,
         "likes": 149,
         "bookmarks": 4,
         "comments": 3
@@ -8745,7 +8745,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 971,
+        "views": 984,
         "likes": 210,
         "bookmarks": 11,
         "comments": 6
@@ -8916,7 +8916,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 575,
+        "views": 588,
         "likes": 172,
         "bookmarks": 4,
         "comments": 2
@@ -9139,8 +9139,8 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 555,
-        "likes": 129,
+        "views": 601,
+        "likes": 130,
         "bookmarks": 3,
         "comments": 4
       },
@@ -9245,7 +9245,7 @@
       },
       "collaborators": [],
       "stats": {
-        "views": 401,
+        "views": 416,
         "likes": 81,
         "bookmarks": 1,
         "comments": 0
