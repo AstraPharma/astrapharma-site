@@ -594,6 +594,12 @@
   animation: tip-in 200ms var(--ease) both;
 }
 
+/* The display above outranks the browser's own [hidden] rule, so without
+   this the card stays painted whenever the script hides it. */
+.sky-tip[hidden] {
+  display: none;
+}
+
 @keyframes tip-in {
   from {
     opacity: 0;
