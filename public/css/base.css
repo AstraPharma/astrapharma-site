@@ -554,6 +554,18 @@ button {
   margin-left: auto;
 }
 
+/* The sky map is used under CC BY-SA, which asks for the credit and a link to
+   the licence. Without a rule of its own the link would come out browser blue. */
+.footer__credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer__credit a:hover {
+  color: var(--gold);
+}
+
 /* --- Page shell ------------------------------------------------------ */
 
 .page {

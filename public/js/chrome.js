@@ -109,6 +109,10 @@ function footerHtml() {
     <div class="footer__base">
       <span>© <span data-year></span> Ali Alobaidly · AstraPharma</span>
       <span>Images all rights reserved</span>
+      <span class="footer__credit">
+        Sky map ESA/Gaia/DPAC, reprojected ·
+        <a href="https://creativecommons.org/licenses/by-sa/3.0/igo/" target="_blank" rel="noopener">CC BY-SA 3.0 IGO</a>
+      </span>
     </div>`;
 }
 

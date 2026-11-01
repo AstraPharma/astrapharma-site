@@ -178,10 +178,16 @@ nothing looks broken.
 
 ## How the sky atlas works
 
-The background sky is [Aladin Lite v3](https://aladin.cds.unistra.fr/AladinLite/)
-from the Strasbourg astronomical data centre, showing real survey imagery.
-It handles all the panning, zooming and projection. Which survey is showing,
-and how sharp it is, is covered below.
+The background sky is [Aladin Lite v3](https://aladin.cds.unistra.fr/AladinLite/),
+written at the Strasbourg astronomical data centre, and loaded from a pinned
+copy on a CDN. It handles all the panning, zooming and projection. Which survey
+is showing, and how sharp it is, is covered below.
+
+It used to be loaded from Strasbourg itself, as a blocking script tag. When that
+data centre went dark on 22 October 2026 the tag sat there for 21 seconds before
+failing, and because the controller gave up at that point the image rail never
+rendered either. One unreachable host in France was taking down the whole front
+page. Hence the CDN, and hence the second sources below.
 
 Everything of yours is drawn on a canvas over the top by `js/sky-fields.js`:
 
@@ -207,8 +213,9 @@ Things worth knowing:
   this repository, so the site needs an internet connection and stays in step
   with any re-processing you upload.
 - Aladin Lite pings a usage counter at CDS on startup, sending the page URL and
-  referrer. That is built into the library and cannot be switched off with an
-  option. Worth knowing if you ever publish a privacy notice.
+  the referrer. Since our deep links carry the hash of whichever photograph is
+  open, that told a third party what each visitor was looking at. It is off:
+  the library takes a `log` option, and the atlas passes `log: false`.
 - The videos page links out to YouTube rather than embedding a player, so no
   third-party player loads and no tracking cookies are set.
 
@@ -217,24 +224,46 @@ Things worth knowing:
 The background survey is chosen in the Layers panel. They differ enormously in
 detail, and that is a property of the data rather than a setting:
 
-| Survey | Resolution | Sky covered |
-| --- | --- | --- |
-| Mellinger wide field | 26 arcsec/pixel | all |
-| DSS2 colour | 0.8 arcsec/pixel | all |
-| PanSTARRS | 0.2 arcsec/pixel | 76 per cent, everything above dec −30 |
+| Survey | Resolution | Sky covered | Served from |
+| --- | --- | --- | --- |
+| Gaia colour sky | 26 arcsec/pixel | all | this site |
+| Mellinger wide field | 26 arcsec/pixel | all | Strasbourg only |
+| DSS2 colour | 0.8 arcsec/pixel | all | Strasbourg, ESA |
+| PanSTARRS | 0.2 arcsec/pixel | 76 per cent, everything above dec −30 | Strasbourg, Space Telescope archive |
+| AllWISE, 2MASS | infrared | all | Strasbourg, ESA |
+| Finkbeiner H-alpha, DSS2 red | | all | Strasbourg only |
 
-Mellinger is a wide-field mosaic. It is continuous and beautiful when you are
-looking at the whole sky, but it holds no detail, so it turns to mush as you
-zoom. DSS2 is about 32 times finer and also covers everything, at the cost of
-looking plate-seamed in the wide view.
+Every survey here lives at Strasbourg. Most are mirrored somewhere, and the
+atlas probes Strasbourg once at startup and quietly uses the mirrors when it
+does not answer. The surveys with no second source drop out of the picker while
+that is true. IPAC mirrors far more of them but serves tiles without
+Access-Control-Allow-Origin, so a browser cannot use those as textures.
 
-So the atlas uses both. "Sharpen when zoomed in" is on by default: the view
-starts on Mellinger and swaps to DSS2 once the field drops below 3 degrees,
-swapping back above 4.5. The swap is held back on purpose. Flying to one of the
-photographs lands near 4 degrees, and the Mellinger colour is wanted there, so
-DSS2 only takes over once you zoom past the frame itself. The two thresholds
-differ so a slow zoom cannot flicker between them. Choosing any survey by hand
-turns the swapping off and keeps your choice.
+Mellinger, the old wide view, is mirrored nowhere. The IVOA registry lists 689
+HiPS services worldwide and 642 of them are at Strasbourg; Mellinger is
+registered exactly once. That is why the wide view is now a map we host
+ourselves, built from the Gaia colour sky that ESA publishes as a 40000 by
+20000 image. It is real optical data, it is a shade finer than Mellinger's own
+36 arcsec per pixel, and no outage anywhere can take it away.
+
+So the atlas uses two layers. "Sharpen when zoomed in" is on by default: the
+view starts on the Gaia map and swaps to DSS2 once the field drops below 3
+degrees, swapping back above 4.5. The swap is held back on purpose. Flying to
+one of the photographs lands near 4 degrees, and the wide colour is wanted
+there, so DSS2 only takes over once you zoom past the frame itself. The two
+thresholds differ so a slow zoom cannot flicker between them. Choosing any
+survey by hand turns the swapping off and keeps your choice.
+
+#### Rebuilding the sky map
+
+The tiles live in `public/sky/gaia` and are built by `scripts/build-sky.py`,
+which reprojects an equirectangular galactic image into HiPS tiles. It needs
+`numpy`, `pillow` and `astropy-healpix`. There is no reason to rerun it
+unless ESA publishes a better source image:
+
+```
+python scripts/build-sky.py gaia40k.png public/sky/gaia 82
+```
 
 None of this affects Ali's own photographs. They are drawn from AstroBin's
 full-size renditions on top of whatever survey is showing.
@@ -256,7 +285,11 @@ command.
 ## Credits
 
 - Sky rendering: [Aladin Lite v3](https://aladin.cds.unistra.fr/AladinLite/),
-  CDS Strasbourg (GPL-3.0). Survey imagery via CDS HiPS services.
+  CDS Strasbourg (GPL-3.0), loaded from jsDelivr.
+- Wide-field sky map: Gaia colour sky, ESA/Gaia/DPAC, used under
+  [CC BY-SA 3.0 IGO](https://creativecommons.org/licenses/by-sa/3.0/igo/) and
+  reprojected here into HiPS tiles.
+- Other survey imagery via CDS, ESA and the Space Telescope archive.
 - Constellation figures and borders:
   [d3-celestial](https://github.com/ofrohn/d3-celestial) by Olaf Frohn
   (BSD-3-Clause).

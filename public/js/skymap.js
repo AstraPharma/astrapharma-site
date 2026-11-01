@@ -54,7 +54,12 @@ const CDS = 'https://alasky.cds.unistra.fr';
 const ESA = 'https://skies.esac.esa.int';
 const MAST = 'https://stpubdata.s3.us-east-1.amazonaws.com/mast/skybackgrounds';
 
+// Our own copy, built from ESA's published Gaia sky and served from this site.
+// Nothing outside can take it away, which is the whole point of it.
+const SELF = new URL('../sky/gaia', import.meta.url).href;
+
 const SURVEYS = [
+  { key: 'gaia', self: SELF },
   { key: 'mellinger', cds: CDS + '/MellingerRGB' },
   { key: 'dss2', cds: CDS + '/DSS/DSSColor', mirror: ESA + '/DSSColor' },
   { key: 'panstarrs', cds: CDS + '/Pan-STARRS/DR1/color-i-r-g', mirror: MAST + '/PanSTARRS' },
@@ -64,17 +69,19 @@ const SURVEYS = [
   { key: 'dss2red', cds: CDS + '/DSS/DSS2Merged' },
 ];
 
-// Mellinger is a wide-field mosaic: continuous and beautiful across the whole
-// sky, but it tops out around 26 arcsec per pixel, so it turns to mush once you
-// zoom in. DSS2 covers the whole sky too and is about 32 times finer, at the
-// cost of looking plate-seamed when you are looking at everything at once.
-// So: Mellinger for the wide view, DSS2 once the field is small enough to see
-// the difference.
+// The wide view used to be Mellinger, which lives only in Strasbourg, so when
+// that data centre went dark the atlas had nothing good to fall back on. DSS2
+// shows its plate seams at that scale and AllWISE its scan tracks, and 2MASS,
+// the best of a bad set, is infrared and reads as the wrong colour entirely.
 //
-// Without Strasbourg there is no Mellinger, and the wide view falls to 2MASS.
-// It is the only whole-sky survey left that stays smooth at that scale: DSS2
-// shows its plate seams and AllWISE its scan tracks once the field is that wide.
-const WIDE_SURVEY = { cds: 'mellinger', esa: '2mass' };
+// So the wide view is now ours. It is Gaia's colour sky, which ESA publishes as
+// a 40000 by 20000 image, reprojected here into sky tiles. At 26 arcsec per
+// pixel it is a shade finer than Mellinger's own 36, it is real optical data
+// rather than a rendering, and it cannot go offline while the site is up.
+//
+// It still softens as you zoom, as any whole-sky map does, so DSS2 continues to
+// take over once the field is small enough for the difference to show.
+const WIDE_KEY = 'gaia';
 const SHARP_KEY = 'dss2';
 
 // The renderer itself. This used to be a script tag in the page pointing at
@@ -188,17 +195,18 @@ async function boot() {
     return;
   }
 
-  // Resolve every survey to whichever data centre can serve it today. The ones
-  // with no second source simply disappear while Strasbourg is offline.
+  // Resolve every survey to whatever can serve it today. Ours wins outright,
+  // the rest prefer Strasbourg and fall back to a mirror, and the ones with no
+  // mirror simply disappear from the picker while Strasbourg is offline.
   const surveyUrl = new Map();
   for (const survey of SURVEYS) {
-    const url = onCds ? survey.cds : survey.mirror;
+    const url = survey.self || (onCds ? survey.cds : survey.mirror);
     if (url) surveyUrl.set(survey.key, url);
   }
-  const defaultKey = onCds ? WIDE_SURVEY.cds : WIDE_SURVEY.esa;
+  const defaultKey = WIDE_KEY;
   const DEFAULT_SURVEY = surveyUrl.get(defaultKey);
   const SHARP_SURVEY = surveyUrl.get(SHARP_KEY);
-  if (!onCds) console.info('[atlas] Strasbourg is not answering. Using ESA imagery.');
+  if (!onCds) console.info('[atlas] Strasbourg is not answering. Using mirrors.');
 
   await A.init;
 
