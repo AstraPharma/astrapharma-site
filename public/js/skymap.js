@@ -38,17 +38,50 @@ const BORDER_COLOUR = '#6d80a6';
 const LABEL_COLOUR = '#dce8f7';
 const GRID_COLOUR = '#7286ab';
 
-// Direct CDS service URLs. Using the short id instead makes Aladin probe
-// mirrors, and one answers without CORS headers.
+// Where the sky imagery comes from. Strasbourg is preferred whenever it
+// answers, because it is the only source carrying Mellinger, PanSTARRS and the
+// H-alpha map. Every other survey names ESA's copy as a second source.
 //
+// A direct service URL rather than a short id matters: an id makes Aladin probe
+// mirrors first, and one of them answers without CORS headers. IPAC is absent
+// for the same reason. It mirrors most of these, but serves its tiles with no
+// Access-Control-Allow-Origin, so the renderer cannot use them as textures.
+const CDS = 'https://alasky.cds.unistra.fr';
+const ESA = 'https://skies.esac.esa.int';
+
+const SURVEYS = [
+  { key: 'mellinger', cds: CDS + '/MellingerRGB' },
+  { key: 'dss2', cds: CDS + '/DSS/DSSColor', esa: ESA + '/DSSColor' },
+  { key: 'panstarrs', cds: CDS + '/Pan-STARRS/DR1/color-i-r-g' },
+  { key: 'halpha', cds: CDS + '/FinkbeinerHalpha' },
+  { key: 'allwise', cds: CDS + '/AllWISE/RGB-W4-W2-W1', esa: ESA + '/AllWISEColor' },
+  { key: '2mass', cds: CDS + '/2MASS/Color', esa: ESA + '/2MASSColor' },
+  { key: 'dss2red', cds: CDS + '/DSS/DSS2Merged' },
+];
+
 // Mellinger is a wide-field mosaic: continuous and beautiful across the whole
 // sky, but it tops out around 26 arcsec per pixel, so it turns to mush once you
 // zoom in. DSS2 covers the whole sky too and is about 32 times finer, at the
 // cost of looking plate-seamed when you are looking at everything at once.
 // So: Mellinger for the wide view, DSS2 once the field is small enough to see
 // the difference.
-const DEFAULT_SURVEY = 'https://alasky.cds.unistra.fr/MellingerRGB';
-const SHARP_SURVEY = 'https://alasky.cds.unistra.fr/DSS/DSSColor';
+//
+// Without Strasbourg there is no Mellinger, and the wide view falls to 2MASS.
+// It is the only whole-sky survey left that stays smooth at that scale: DSS2
+// shows its plate seams and AllWISE its scan tracks once the field is that wide.
+const WIDE_SURVEY = { cds: 'mellinger', esa: '2mass' };
+const SHARP_KEY = 'dss2';
+
+// The renderer itself. This used to be a script tag in the page pointing at
+// Strasbourg, which made the whole atlas wait on that one host: when the data
+// centre went dark in October 2026 the tag blocked for 21 seconds and then
+// failed, and nothing rendered in the meantime. A pinned copy on a CDN cannot
+// take the page down with it.
+const ENGINE_URL = 'https://cdn.jsdelivr.net/npm/aladin-lite@3.8.2/dist/aladin.js';
+
+// Long enough for an honest round trip to France, short enough that nobody
+// waits on a host that has stopped answering.
+const CDS_PROBE_MS = 2500;
 
 // Mellinger's pixels are 26 arcsec, so it starts to soften below roughly 7
 // degrees. The swap is deliberately held back past that point: arriving at one
@@ -84,8 +117,57 @@ function showError(html) {
 
 /* ================================================================= */
 
+/**
+ * Decides which set of sources to use. Strasbourg either answers quickly or it
+ * is treated as down. The answer is remembered for the tab, so moving between
+ * pages does not pay for the probe over and over.
+ */
+async function strasbourgAnswers() {
+  try {
+    const seen = sessionStorage.getItem('sky-cds');
+    if (seen !== null) return seen === 'yes';
+  } catch (err) {
+    /* private browsing: just run the probe */
+  }
+
+  const control = new AbortController();
+  const timer = setTimeout(() => control.abort(), CDS_PROBE_MS);
+  let up = false;
+  try {
+    up = (await fetch(CDS + '/MellingerRGB/properties', { signal: control.signal })).ok;
+  } catch (err) {
+    up = false;
+  } finally {
+    clearTimeout(timer);
+  }
+
+  try {
+    sessionStorage.setItem('sky-cds', up ? 'yes' : 'no');
+  } catch (err) {
+    /* nothing to remember it in; the probe simply runs again */
+  }
+  return up;
+}
+
+/** Fetches the renderer, handing back null rather than throwing if it cannot. */
+async function loadEngine() {
+  try {
+    return (await import(ENGINE_URL)).default;
+  } catch (err) {
+    console.error('[atlas] sky engine:', err);
+    return null;
+  }
+}
+
 async function boot() {
-  const [catalogue, skyLines] = await Promise.all([loadCatalogue(), loadSkyLines()]);
+  // These four do not depend on each other, so the catalogue, the renderer and
+  // the question of whether Strasbourg is up all go out at once.
+  const [catalogue, skyLines, A, onCds] = await Promise.all([
+    loadCatalogue(),
+    loadSkyLines(),
+    loadEngine(),
+    strasbourgAnswers(),
+  ]);
   setConstellationNames(skyLines.constellations);
 
   const constellationName = new Map(skyLines.constellations.map((c) => [c.id, c.name]));
@@ -93,13 +175,25 @@ async function boot() {
   const mapped = images.filter((i) => i.sky && i.sky.footprint);
   const index = new Map(images.map((i) => [i.hash, searchIndex(i)]));
 
-  if (typeof A === 'undefined') {
+  if (!A) {
     showError(
-      'The sky engine (Aladin Lite, from the Strasbourg astronomical data centre) could not be ' +
-        'loaded. Check the connection and reload. The gallery and about pages work without it.',
+      'The sky engine could not be loaded, so the atlas cannot draw the sky. The gallery, ' +
+        'videos and about pages are unaffected.',
     );
     return;
   }
+
+  // Resolve every survey to whichever data centre can serve it today. The ones
+  // with no second source simply disappear while Strasbourg is offline.
+  const surveyUrl = new Map();
+  for (const survey of SURVEYS) {
+    const url = onCds ? survey.cds : survey.esa;
+    if (url) surveyUrl.set(survey.key, url);
+  }
+  const defaultKey = onCds ? WIDE_SURVEY.cds : WIDE_SURVEY.esa;
+  const DEFAULT_SURVEY = surveyUrl.get(defaultKey);
+  const SHARP_SURVEY = surveyUrl.get(SHARP_KEY);
+  if (!onCds) console.info('[atlas] Strasbourg is not answering. Using ESA imagery.');
 
   await A.init;
 
@@ -125,6 +219,12 @@ async function boot() {
     showStatusBar: false,
     showContextMenu: false,
     realFullscreen: false,
+
+    // Left on, the renderer posts the page URL, the referrer and what the
+    // viewer is doing to a usage logger in Strasbourg. That hands a third
+    // party the hash of whichever photograph each visitor opened, and while
+    // the data centre is down it is also an uncaught error on every load.
+    log: false,
   });
 
   /* --- Constellation figures, borders and names ------------------- */
@@ -404,6 +504,12 @@ async function boot() {
 
   /* --- Survey, and sharpening as you zoom -------------------------- */
 
+  const surveyEl = $('survey');
+  for (const option of [...surveyEl.options]) {
+    if (!surveyUrl.has(option.value)) option.remove();
+  }
+  surveyEl.value = defaultKey;
+
   let baseSurvey = DEFAULT_SURVEY;
   let activeSurvey = DEFAULT_SURVEY;
 
@@ -413,7 +519,7 @@ async function boot() {
    */
   function applySurvey(fov) {
     let wanted = baseSurvey;
-    if ($('t-sharpen').checked && baseSurvey === DEFAULT_SURVEY) {
+    if ($('t-sharpen').checked && SHARP_SURVEY && baseSurvey === DEFAULT_SURVEY) {
       const sharp = activeSurvey === SHARP_SURVEY;
       if (!sharp && fov < SHARPEN_BELOW) wanted = SHARP_SURVEY;
       else if (sharp && fov < SOFTEN_ABOVE) wanted = SHARP_SURVEY;
@@ -423,8 +529,8 @@ async function boot() {
     attempt('setBaseImageLayer', () => aladin.setBaseImageLayer(wanted));
   }
 
-  $('survey').addEventListener('change', (event) => {
-    baseSurvey = event.target.value;
+  surveyEl.addEventListener('change', (event) => {
+    baseSurvey = surveyUrl.get(event.target.value) || DEFAULT_SURVEY;
     activeSurvey = null;
     applySurvey(currentFov());
   });

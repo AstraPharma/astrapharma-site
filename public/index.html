@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/skymap.css" />
-    <script src="https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js" charset="utf-8"></script>
   </head>
   <body class="body--app">
     <header data-nav></header>
@@ -154,18 +153,19 @@
               <label class="sky-select">
                 <span>Sky survey</span>
                 <!--
-                  Direct HiPS service URLs rather than short ids: passing an id
-                  makes Aladin probe mirrors first, and one of them answers
-                  without CORS headers, costing a failed round trip on load.
+                  Keys, not URLs. The controller works out at load which data
+                  centre can serve each survey, and removes the ones that none
+                  of them can, so this is the full list rather than the
+                  available one.
                 -->
                 <select id="survey">
-                  <option value="https://alasky.cds.unistra.fr/MellingerRGB">Mellinger wide field</option>
-                  <option value="https://alasky.cds.unistra.fr/DSS/DSSColor">DSS2 colour</option>
-                  <option value="https://alasky.cds.unistra.fr/Pan-STARRS/DR1/color-i-r-g">PanSTARRS, sharpest</option>
-                  <option value="https://alasky.cds.unistra.fr/FinkbeinerHalpha">Finkbeiner H-alpha</option>
-                  <option value="https://alasky.cds.unistra.fr/AllWISE/RGB-W4-W2-W1">AllWISE infrared</option>
-                  <option value="https://alasky.cds.unistra.fr/2MASS/Color">2MASS near infrared</option>
-                  <option value="https://alasky.cds.unistra.fr/DSS/DSS2Merged">DSS2 red</option>
+                  <option value="mellinger">Mellinger wide field</option>
+                  <option value="dss2">DSS2 colour</option>
+                  <option value="panstarrs">PanSTARRS, sharpest</option>
+                  <option value="halpha">Finkbeiner H-alpha</option>
+                  <option value="allwise">AllWISE infrared</option>
+                  <option value="2mass">2MASS near infrared</option>
+                  <option value="dss2red">DSS2 red</option>
                 </select>
               </label>
               <label class="sky-select">
