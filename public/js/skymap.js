@@ -46,16 +46,21 @@ const GRID_COLOUR = '#7286ab';
 // mirrors first, and one of them answers without CORS headers. IPAC is absent
 // for the same reason. It mirrors most of these, but serves its tiles with no
 // Access-Control-Allow-Origin, so the renderer cannot use them as textures.
+//
+// The mirrors come from two places. ESA carries the all-sky surveys, and the
+// Space Telescope archive keeps PanSTARRS on S3, which is the only copy of it
+// outside Strasbourg.
 const CDS = 'https://alasky.cds.unistra.fr';
 const ESA = 'https://skies.esac.esa.int';
+const MAST = 'https://stpubdata.s3.us-east-1.amazonaws.com/mast/skybackgrounds';
 
 const SURVEYS = [
   { key: 'mellinger', cds: CDS + '/MellingerRGB' },
-  { key: 'dss2', cds: CDS + '/DSS/DSSColor', esa: ESA + '/DSSColor' },
-  { key: 'panstarrs', cds: CDS + '/Pan-STARRS/DR1/color-i-r-g' },
+  { key: 'dss2', cds: CDS + '/DSS/DSSColor', mirror: ESA + '/DSSColor' },
+  { key: 'panstarrs', cds: CDS + '/Pan-STARRS/DR1/color-i-r-g', mirror: MAST + '/PanSTARRS' },
   { key: 'halpha', cds: CDS + '/FinkbeinerHalpha' },
-  { key: 'allwise', cds: CDS + '/AllWISE/RGB-W4-W2-W1', esa: ESA + '/AllWISEColor' },
-  { key: '2mass', cds: CDS + '/2MASS/Color', esa: ESA + '/2MASSColor' },
+  { key: 'allwise', cds: CDS + '/AllWISE/RGB-W4-W2-W1', mirror: ESA + '/AllWISEColor' },
+  { key: '2mass', cds: CDS + '/2MASS/Color', mirror: ESA + '/2MASSColor' },
   { key: 'dss2red', cds: CDS + '/DSS/DSS2Merged' },
 ];
 
@@ -187,7 +192,7 @@ async function boot() {
   // with no second source simply disappear while Strasbourg is offline.
   const surveyUrl = new Map();
   for (const survey of SURVEYS) {
-    const url = onCds ? survey.cds : survey.esa;
+    const url = onCds ? survey.cds : survey.mirror;
     if (url) surveyUrl.set(survey.key, url);
   }
   const defaultKey = onCds ? WIDE_SURVEY.cds : WIDE_SURVEY.esa;
